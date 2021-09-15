@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="plugins/chalkboard/style.css">
+<link rel="stylesheet" href="plugins/menu/font-awesome/css/fontawesome.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./images/cover.jpg">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">Fall 2021 - 17 Sep</h2>
+</section>
+<section>
+<section id="slide-org7680af0">
+<h2 id="org7680af0">Today</h2>
+<div class="twocolumn"><div>
+<ul>
+<li>Pressure measurements</li>
+<li>Barometer/Manometer</li>
+<li>Pascal's law</li>
+<li><p>
+Hydrostatic forces on plane surfaces
+</p>
+</div><div>
+
+<div id="org443d587" class="figure">
+<p><img src="images/07_word_cloud.png" alt="07_word_cloud.png" />
+</p>
+</div>
+</div></div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3373782">
+<h2 id="org3373782">Application to manometry</h2>
+<p>
+<b>Manometer</b>: A device used to measure the pressure differences between two points using one or more liquid gases in a static column
+</p>
+<p class="fragment">
+\[ p_5 - p_1 = -\gamma_o (z_2 - z_1) - \gamma_w (z_3 - z_2) - \gamma_G (z_4 - z_3) - \gamma_M (z_5 - z_4) \]
+</p>
+
+<div id="org09af8d2" class="figure">
+<p><img src="images/fig_2_8.png" alt="fig_2_8.png" width="50%" class="fragment" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org474d08c">
+<h2 id="org474d08c">Pressure increases downward</h2>
+<p>
+\(p_2 - p_1 = -\gamma (z_2 - z_1)\) combines two negative signs to increase \(p\) downward
+</p>
+<p class="fragment">
+\[ p_5 - \gamma_M (z_4 - z_5) - \gamma_G (z_3 - z_4) - \gamma_w (z_2 - z_3) - \gamma_o (z_1 - z_2) = p_1 \]
+</p>
+
+<div id="org7c48bd2" class="figure">
+<p><img src="images/fig_2_8.png" alt="fig_2_8.png" width="50%" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfb02024">
+<h2 id="orgfb02024">Simple open manometer</h2>
+
+<div id="org65d851f" class="figure">
+<p><img src="images/fig_2_9.png" alt="fig_2_9.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgd7003c3">
+<h3 id="orgd7003c3"></h3>
+<div class="column" style="float:left; width:30%">
+<p>
+Start at <b>A</b>
+</p>
+</div>
+<div class="column" style="float:right; width:70%">
+
+<div id="orgaa9dc32" class="figure">
+<p><img src="images/fig_2_9.png" alt="fig_2_9.png" width="80%" />
+</p>
+</div>
+</div>
+<p class="fragment">
+\[ p_A + \gamma_1 | z_A - z_1 | - \gamma_2 | z_1 - z_2 | = p_2 \approx p_a \]
+</p>
+<p class="fragment">
+<font color="cornflowerblue"> Any two points at the same elevation in a continuous mass of the same static fluid will be at the same pressure</font>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgec5c4ef">
+<h2 id="orgec5c4ef">Example 2.3</h2>
+<p>
+Derive a formula for the pressure difference \(p_a-p_b\) in terms of the system parameters.
+</p>
+
+<div id="org22150be" class="figure">
+<p><img src="images/e_2_3.png" alt="e_2_3.png" width="60%" />
+</p>
+</div>
+</section>
+<section id="slide-org503ef69">
+<h3 id="org503ef69"></h3>
+<p>
+\[ p_a + \rho_1 g (L + h) - \rho_2 g h - \rho_1 g L = p_b \]
+</p>
+<p class="fragment">
+\[ p_a - p_b = (\rho_2 - \rho_1)g h \]
+</p>
+</section>
+<section id="slide-org299ac93">
+<h3 id="org299ac93"></h3>
+
+<div id="org4d7f9a9" class="figure">
+<p><img src="images/fig_2_10.png" alt="fig_2_10.png" width="60%" />
+</p>
+</div>
+<p class="fragment">
+\[ p_A + \gamma_1 (z_A - z_1) - \gamma_2 (z_2  - z_1) + \gamma_3 (z_2 - z_3) - \gamma_4 (z_B - z_3) = p_B \]
+</p>
+<p class="fragment">
+\[ p_A - p_B = -\gamma_1 (z_A - z_1) + \gamma_2 (z_2  - z_1) - \gamma_3 (z_2 - z_3) + \gamma_4 (z_B - z_3) \]
+</p>
+</section>
+<section id="slide-orgd219a84">
+<h3 id="orgd219a84">Exercise</h3>
+<p>
+What is the pressure at <i>A</i> if \(p_B=87\) kPa? Specific weights for water, mercury, and oil are 9790, 133100, and 8720 N/m<sup>3</sup> respectively.
+</p>
+
+<div id="orgf4e20fb" class="figure">
+<p><img src="images/e_2_4.png" alt="e_2_4.png" width="50%" />
+</p>
+</div>
+</section>
+<section id="slide-org3e10777">
+<h3 id="org3e10777"></h3>
+<p>
+\(\gamma_w = 9790\,\mathrm{N/m^3}\), \(\gamma_m=133100\,\mathrm{N/m^3}\), \(\gamma_o=8720\,\mathrm{N/m^3}\)
+</p>
+<div class="column" style="float:left; width:30%">
+
+<div id="orge61d9ec" class="figure">
+<p><img src="images/e_2_4.png" alt="e_2_4.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:70%">
+<p class="fragment">
+\[ p_A + \gamma_w \Delta z_w - \gamma_m \Delta z_m - \gamma_o \Delta z_o = p_B \]
+</p>
+<p class="fragment">
+\[ p_A + (9790)(0.05) - (133100)(0.07) - \\(8720)(0.06) =  87000 \]
+</p>
+<p class="fragment">
+\[ p_A \approx 96.4\,\mathrm{kPa} \]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc5fe593">
+<h2 id="orgc5fe593">Hydrostatic forces on plane surfaces</h2>
+<ul>
+<li class="fragment appear">Design of containment structures requires calculating hydrostatic forces</li>
+<li class="fragment appear">Container with flat, horizontal bottom experiences downward force \(F=\gamma h A\)</li>
+<li class="fragment appear">If surface is not horizontal, additional computations are needed!</li>
+<li class="fragment appear">Can still use \(p_2 - p_1 = -\gamma (z_2 - z_1)\)</li>
+
+</ul>
+</section>
+<section id="slide-orgbc968cf">
+<h3 id="orgbc968cf"></h3>
+<div class="column" style="float:left; width:60%">
+
+<div id="org0a20817" class="figure">
+<p><img src="images/fig_2_11.png" alt="fig_2_11.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:40%">
+<p class="fragment">
+\[ F = \int p dA \]
+</p>
+<p class="fragment">
+\[ F = \int (p_a + \gamma h) dA \]
+</p>
+<p class="fragment">
+\[ F =  p_a A + \gamma \int h dA \]
+</p>
+</div>
+</section>
+<section id="slide-org8d6dc06">
+<h3 id="org8d6dc06"></h3>
+<div class="column" style="float:left; width:60%">
+
+<div id="orgef227b1" class="figure">
+<p><img src="images/fig_2_11.png" alt="fig_2_11.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:40%">
+<p>
+\[ h = \xi \sin \theta \]
+</p>
+<p class="fragment">
+\[ \xi_{CG} = \dfrac{1}{A} \int  \xi dA \]
+</p>
+<p class="fragment">
+\[ F = p_a A + \gamma \sin \theta  \int \xi dA \]
+</p>
+<p class="fragment">
+\[ F = p_a A + \gamma \sin \theta \, \xi_{CG} A \]
+</p>
+</div>
+<p class="fragment">
+\[ F = p_a A + \gamma h_{CG} A = (p_a + \gamma h_{CG})A = p_{CG} A \]
+</p>
+</section>
+<section id="slide-org9ebfd84">
+<h3 id="org9ebfd84">Center of pressure</h3>
+<div class="column" style="float:left; width:50%">
+
+<div id="orgc7557ce" class="figure">
+<p><img src="images/fig_2_12.png" alt="fig_2_12.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:50%">
+<p class="fragment">
+\[ y_{CP} = -\gamma \sin \theta \dfrac{I_{xx}}{p_{CG}A} \]
+\[ I_{xx} =  \int y^2 dA \]
+</p>
+<p class="fragment">
+\[ x_{CP} = -\gamma \sin \theta \dfrac{I_{xy}}{p_{CG} A} \]
+\[ I_{xy} = \int x y dA \]
+</p>
+</div>
+</section>
+<section id="slide-orgc98bc1a">
+<h3 id="orgc98bc1a">Gage pressure formulas</h3>
+<p>
+Most cases \(p_a\) can be neglected  as it acts on both sides of the plate.
+</p>
+<p class="fragment">
+\[F=\gamma h_{CG} A ~~~~ y_{CP} = -\dfrac{I_{xx}\sin \theta}{h_{CG}A} ~~~~ x_{CP} = -\dfrac{I_{xy}\sin \theta}{h_{CG}A} \]
+</p>
+</section>
+<section id="slide-orgfd91f5b">
+<h3 id="orgfd91f5b"></h3>
+<div class="threecolumn"><div>
+<p>
+<img src="images/fig_2_13a.png" alt="fig_2_13a.png" />
+<img src="images/fig_2_13b.png" alt="fig_2_13b.png" />
+</p>
+</div><div>
+<p>
+<img src="images/fig_2_13c.png" alt="fig_2_13c.png" />
+<img src="images/fig_2_13d.png" alt="fig_2_13d.png" />
+</p>
+</div><div>
+<p>
+<img src="images/fig_2_13e.png" alt="fig_2_13e.png" />
+<img src="images/fig_2_13f.png" alt="fig_2_13f.png" />
+</p>
+</div></div>
+</section>
+</section>
+<section>
+<section id="slide-org6d0f776">
+<h2 id="org6d0f776">Example 2.5</h2>
+<div class="column" style="float:left; width:50%">
+<p>
+Gate is 5 ft wide, hinged at point <i>B</i>, and rests against smooth wall at point <i>A</i>. Compute (<i>a</i>) the force on the gate due to seawater pressure, (<i>b</i>) the horizontal force \(P\) exerted by the wall at point <i>A</i>, and (<i>c</i>) the reactions at the hinge <i>B</i>.
+</p>
+</div>
+<div class="column" style="float:right; width:50%">
+
+<div id="orgb473478" class="figure">
+<p><img src="images/e_2_5a.png" alt="e_2_5a.png" width="60%" />
+</p>
+</div>
+</div>
+</section>
+<section id="slide-org6acc3ec">
+<h3 id="org6acc3ec">Part (a)</h3>
+<div class="column" style="float:left; width:30%">
+
+<div id="org6da9b27" class="figure">
+<p><img src="images/e_2_5a.png" alt="e_2_5a.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:70%">
+<p class="fragment">
+\[ A \rightarrow B = 10\,\mathrm{ft} \]
+</p>
+<p class="fragment">
+\[ h_{CG} = 15 - 3 = 12\,\mathrm{ft} \]
+</p>
+<p class="fragment">
+\[ F = p_{CG} A = (64\,\mathrm{lbf/ft^3})(12\,\mathrm{ft})(5\,\mathrm{ft})(10\,\mathrm{ft}) \\ = 38400\,\mathrm{lbf}\]
+</p>
+</div>
+</section>
+<section id="slide-org6d18c25">
+<h3 id="org6d18c25">Part (b)</h3>
+<div class="column" style="float:left; width:30%">
+
+<div id="org80f1ef5" class="figure">
+<p><img src="images/e_2_5b.png" alt="e_2_5b.png" />
+</p>
+</div>
+</div>
+<div class="column" style="float:right; width:70%">
+<p>
+Gate is a rectangle
+</p>
+<p class="fragment">
+\[ I_{xy}=0, ~~~ I_{xx}=\dfrac{bL^3}{12}=\dfrac{(5)(10)}{12}=417\,\mathrm{ft^4} \]
+</p>
+<p class="fragment">
+\[ l = -y_{CP}=\dfrac{I_{xx}\sin \theta}{h_{CG}A}=\dfrac{417(6/10)}{(12)(50)}=0.417\,\mathrm{ft} \]
+</p>
+</div>
+<p class="fragment">
+\[ P L \sin \theta - F (5 - l) = P(6) - (38400)(5-0.417) = 0 \Rightarrow \\ p=29300\,\mathrm{lbf} \]
+</p>
+</section>
+<section id="slide-org0b684cc">
+<h3 id="org0b684cc">Part (c)</h3>
+<p class="fragment">
+\[ \sum F_{x,z} = 0 \]
+</p>
+<p class="fragment">
+\[ B_x + F \sin \theta - P = 0 \]
+</p>
+<p class="fragment">
+\[ \Rightarrow B_x = 29300 - (38400)(0.6) = 6300\,\mathrm{lbf} \]
+</p>
+<p class="fragment">
+\[ B_z - F \cos \theta = 0 \]
+</p>
+<p class="fragment">
+\[ \Rightarrow B_z = (38400)(0.8) = 30700\,\mathrm{lbf} \]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org1927c49">
+<h2 id="org1927c49">Example 2.7</h2>
+<p>
+A tank of oil has a right-triangular panel near the bottom. Omitting \(p_a\), find the (<i>a</i>) hydrostatic force and (<i>b</i>) CP on the panel.
+</p>
+
+<div id="org29e8d18" class="figure">
+<p><img src="images/e_2_7.png" alt="e_2_7.png" width="40%" />
+</p>
+</div>
+</section>
+<section id="slide-orgec6446f">
+<h3 id="orgec6446f">Part (a)</h3>
+<p class="fragment">
+Area is \(\dfrac{1}{2}(6\,\mathrm{m})(12\,\mathrm{m})=36\,\mathrm{m^2}\)
+</p>
+<p class="fragment">
+\[ I_{xx} = \dfrac{bL^3}{36} = \dfrac{(6)(12)^3}{36}=288\,\mathrm{m^4} \]
+</p>
+<p class="fragment">
+\[ I_{xy} = \dfrac{b(b-2s)L^2}{72}=\dfrac{(6)[6-2(6)](12)^2}{72}=-72\,\mathrm{m^4} \]
+</p>
+<p class="fragment">
+\[ F = \rho g h_{CG} A = (800\,\mathrm{kg/m^3})(9.81\,\mathrm{m/s^2})(5+4\,\mathrm{m})(36\,\mathrm{m^2}) \\ = 2.54\times 10^6\,\mathrm{N} \]
+</p>
+</section>
+<section id="slide-org71fa244">
+<h3 id="org71fa244">Part (b)</h3>
+<p>
+\[ y_{CP} = -\dfrac{I_{xx}\sin \theta}{h_{CG} A} = -\dfrac{(288\,\mathrm{m^4})(\sin 30\mathrm{^{\circ}})}{(9\,\mathrm{m})(36\,\mathrm{m^2})} = -0.444\,\mathrm{m} \]
+</p>
+<p class="fragment">
+\[ x_{CP} = -\dfrac{I_{xy} \sin \theta}{h_{CG}A} = -\dfrac{(-72\,\mathrm{m^4})(\sin 30\mathrm{^{\circ}})}{(9\,\mathrm{m})(36\,\mathrm{m^2})} = 0.111\,\mathrm{m} \]
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/rajgoel/reveal.js-plugins/chalkboard/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom, RevealChalkboard ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
