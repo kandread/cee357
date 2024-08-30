@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org81419a9">
+<h2 id="org81419a9">Today</h2>
+<ul>
+<li class="fragment appear">What is a fluid?</li>
+<li class="fragment appear">The fluid as a continuum</li>
+<li class="fragment appear">System and control volume</li>
+<li class="fragment appear">Classification of fluid flows</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org0b5913b">
+<h2 id="org0b5913b">Material phases</h2>
+
+<figure id="orgd5b0f70">
+<img src="https://1.bp.blogspot.com/-fJvI1K-cYtg/Xq_bZGNLe8I/AAAAAAAALcY/52dtTtFiDgUUA5otmsnPc0W2radKP_G3ACLcBGAsYHQ/s1600/IMG_20200504_143600.jpg" alt="IMG_20200504_143600.jpg">
+
+</figure>
+</section>
+<section>
+<blockquote>
+<p>
+A solid can resist a shear stress by a static deflection; a fluid cannot and will deform continuously under that shear stress.
+</p>
+</blockquote>
+</section>
+<section id="slide-orge0a1782">
+<h3 id="orge0a1782">Deformation of a rubber block</h3>
+
+<figure id="org3d0d96a">
+<img src="images/rubber_deform.png" alt="rubber_deform.png">
+
+</figure>
+</section>
+<section id="slide-org5ee5486">
+<h3 id="org5ee5486">Normal and shear stress</h3>
+<div class="twocolumn"><div>
+
+<figure id="orgb9447b0">
+<img src="images/stresses.png" alt="stresses.png">
+
+</figure>
+</div><div>
+<p>
+Normal stress
+\[\sigma = \dfrac{dF_n}{dA}\]
+Shear stress
+\[\tau = \dfrac{dF_t}{dA}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org75ef870">
+<h2 id="org75ef870">Liquids and Gases</h2>
+<span class="fragment"><img src="./images/liquid_gas.png" style="width:40%"></span>
+<span class="fragment">
+<ul>
+<li>Liquids will tends to retain their volume and will form a <b>free surface</b></li>
+<li>Gases will expand until contained (e.g., walls of a container)</li>
+
+</ul>
+</span>
+</section>
+<section>
+<p>
+Cohesive forces between molecules in different phases
+<img src="images/molecules_phases.png" alt="molecules_phases.png">
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org10ad12d">
+<h2 id="org10ad12d">Fluid or not?</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/ali88n9z2hdue5enuxkf11ythedz8vyk/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+<section id="slide-orgbac3379">
+<h3 id="orgbac3379">Pitch drop experiment</h3>
+<video
+  controls muted
+  data-autoplay
+  src='./images/pitch_drop.webm'>
+  </video>
+<p>
+ <font size="5"><a href="https://www.nature.com/articles/nature.2013.13418">World's slowest-moving drop caught on camera at last</a></font>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org72be4ca">
+<h2 id="org72be4ca">Fluid as a continuum</h2>
+<ul>
+<li class="fragment appear">Density (<font color="deepskyblue">mass per unit volume</font>)?</li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org30522c0">
+<img src="images/rho_dV.png" alt="rho_dV.png" width="90%">
+
+</figure>
+</span>
+<span class="fragment">
+<p>
+\[\rho = \lim_{\delta V \rightarrow \delta V^{\ast}} \dfrac{\delta m}{\delta V}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org0977488">
+<h2 id="org0977488">System</h2>
+<blockquote>
+<p>
+A <i>system</i> is an arbitrary quantity of mass.
+</p>
+</blockquote>
+<span class="fragment">
+
+<figure id="org7915db3">
+<img src="images/system.png" alt="system.png" width="60%">
+
+</figure>
+</span>
+</section>
+<section id="slide-orgcc74b3c">
+<h3 id="orgcc74b3c">Closed system</h3>
+<ul>
+<li>Fixed amount of mass</li>
+<li>Heat and work can cross boundaries</li>
+
+</ul>
+
+<figure id="org415e5f5">
+<img src="images/closed_system.png" alt="closed_system.png" width="50%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org7836677">
+<h2 id="org7836677">Control volume</h2>
+<blockquote>
+<p>
+An arbitrary <i>region</i> in space through which fluid flows.
+</p>
+</blockquote>
+
+<figure id="org3956d37">
+<img src="images/open_system.png" alt="open_system.png" width="40%">
+
+</figure>
+</section>
+<section id="slide-org1fbbb23">
+<h3 id="org1fbbb23">Define the control volume</h3>
+
+<figure id="orgbb7808c">
+<img src="images/cv_example.png" alt="cv_example.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org33b1cef">
+<h2 id="org33b1cef">Methods of description</h2>
+<ul>
+<li class="fragment appear">Frame of reference that follows fluid particles</li>
+<li class="fragment appear"><font color="indianred">Lagrangian</font> method</li>
+<li class="fragment appear">Determination of fluid properties as <i>a function of position and time</i></li>
+<li class="fragment appear"><font color="mediumseagreen">Eulerian</font> method</li>
+
+</ul>
+</section>
+<section id="slide-orge7b4732">
+<h3 id="orge7b4732">Seven Chances (1925)</h3>
+<div class="twocolumn"><div>
+
+<figure id="orge10650e">
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3B6YzhicThvaWJpajFzZmVyZDRkeTJnczhmbjRveWY0c2pkN3ZzYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BzS8Zsp1Z3v2M/giphy.webp" alt="giphy.webp">
+
+</figure>
+</div><div><span class="fragment">
+
+<figure id="orgd2e0cd8">
+<img src="images/seven_chances.gif" alt="seven_chances.gif">
+
+</figure>
+</span></div>
+</section>
+<section id="slide-org529fd3b">
+<h3 id="org529fd3b">Velocity and acceleration fields</h3>
+<span class="fragment">
+<p>
+\[V(x,y,z,t) = \textbf{i} u(x,y,z,t) + \textbf{j} v(x,y,z,t) + \textbf{k} w(x,y,z,t)\]
+</p>
+</span>
+
+<span class="fragment">
+<p>
+\[\mathbf{a} = \dfrac{d \mathbf{V}}{dt} = \dfrac{\partial V}{\partial t} + u \dfrac{\partial V}{\partial x} + v \dfrac{\partial V}{\partial y} + w \dfrac{\partial V}{\partial z}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org341eefb">
+<h2 id="org341eefb">Modeling in engineering</h2>
+<p>
+<i>Experimental</i> vs <i>Analytical</i> study
+</p>
+<span class="fragment">
+
+<figure id="orgc75ab52">
+<img src="images/math_modeling.png" alt="math_modeling.png" width="40%">
+
+</figure>
+</span>
+</section>
+<section>
+<p>
+Complexity and accuracy
+<img src="images/simple_models.png" alt="simple_models.png">
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgdc28022">
+<h2 id="orgdc28022">Problem-solving technique</h2>
+<ol>
+<li class="fragment appear">Problem statement</li>
+<li class="fragment appear">Schematic</li>
+<li class="fragment appear">Assumptions and approximations</li>
+<li class="fragment appear">Physical laws</li>
+<li class="fragment appear">Properties</li>
+<li class="fragment appear">Calculations</li>
+<li class="fragment appear">Reasoning, verification and discussion</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org6a9fa5c">
+<h2 id="org6a9fa5c">Classification of fluid flows</h2>
+<div class="outline-text-2" id="text-org6a9fa5c">
+</div>
+</section>
+<section id="slide-org4596cfa">
+<h3 id="org4596cfa">Viscous and Inviscid regions of flow</h3>
+<p>
+Internal resistance of flow: <b>viscosity</b>
+</p>
+<span class="fragment">
+
+<figure id="org2c4b855">
+<img src="images/viscous_inviscid.png" alt="viscous_inviscid.png" width="60%">
+
+</figure>
+</span>
+</section>
+<section id="slide-org361ae81">
+<h3 id="org361ae81">Internal and External flow</h3>
+<ul>
+<li class="fragment appear">Flow completely bounded by solid surfaces: <b>Internal</b></li>
+<li class="fragment appear">Flow of unbounded fluid over a surface: <b>External</b></li>
+<li class="fragment appear">Flow of liquids in a duct (partially filled): <b>Open channel flow</b></li>
+
+</ul>
+</section>
+<section id="slide-org07be511">
+<h3 id="org07be511">Compressible and Incompressible flow</h3>
+
+<figure id="org3ecf8f6">
+<img src="images/compressible_incompressible.gif" alt="compressible_incompressible.gif" width="70%">
+
+</figure>
+<div class="bottom-left"><a href="https://youtu.be/TI53_L_jdJs?si=9fgvVittwIqlfV2M">Compressible and Incompressible Flow (Just a Minute)</a></div>
+</section>
+<section id="slide-orgfdb9d06">
+<h3 id="orgfdb9d06">Laminar and Turbulent flow</h3>
+
+<figure id="orgd5f10ce">
+<img src="images/laminar_turbulent.png" alt="laminar_turbulent.png" width="55%">
+
+</figure>
+</section>
+<section id="slide-org945c1ff">
+<h3 id="org945c1ff">Steady and Unsteady flow</h3>
+<ul>
+<li class="fragment appear"><b>Steady</b>: no change in properties, velocity etc. with time <i>at a point</i></li>
+<li class="fragment appear"><b>Uniform</b>: no change with location either</li>
+<li class="fragment appear"><b>Unsteady</b>: dynamic properties, velocity etc. with time</li>
+<li class="fragment appear"><b>Transient</b>: developing flows</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3c9d599">
+<h2 id="org3c9d599">You should know&#x2026;</h2>
+<ul>
+<li class="fragment appear"></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
