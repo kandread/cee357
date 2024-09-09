@@ -3,3 +3,5 @@
 [Lecture #1 - Introduction](https://kandread.github.io/cee357/01_introduction.html)
 
 [Lecture #2 - Fluid Flows](https://kandread.github.io/cee357/02_fluid_flows.html)
+
+[Lecture #3 - Fluid Properties](https://kandread.github.io/cee357/02_fluid_properties.html)
