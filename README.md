@@ -7,3 +7,5 @@
 [Lecture #3 - Fluid Properties](https://kandread.github.io/cee357/03_fluid_properties.html)
 
 [Lecture #4 - Viscosity](https://kandread.github.io/cee357/04_viscosity.html)
+
+[Lecture #5 - Fluid Flow Effects](https://kandread.github.io/cee357/05_fluid_flow_effects.html)

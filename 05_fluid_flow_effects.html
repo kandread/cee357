@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org7d865d7">
+<h2 id="org7d865d7">Problem</h2>
+<p>
+Consider a Newtonian fluid of viscosity \(\mu\) flowing between parallel plates with a velocity profile of \(u(y) = 4u_{max} [ y / h - (y / h)^2]\). Derive a relation for the drag force exerted on both plates by the fluid in the flow direction per unit area of the plates.
+</p>
+
+<figure id="org05d5ba2">
+<img src="images/05problem.png" alt="05problem.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org7cf266a">
+<h2 id="org7cf266a">Today</h2>
+<ul>
+<li class="fragment appear">Surface tension</li>
+<li class="fragment appear">Vapor pressure</li>
+<li class="fragment appear">Cavitation</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgc4ac3de">
+<h2 id="orgc4ac3de">Walks on water&#x2026;</h2>
+<span class="fragment">
+<video
+  controls muted
+  data-autoplay
+  src='./images/water_striders.mp4'>
+  </video>
+<p>
+ <font size="5"><a href="https://youtu.be/5NCOnr3VSAY?si=fpAcWhoWIHtTII-V">What is Surface Tension (BBC)</a></font>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgd940010">
+<h2 id="orgd940010">Surface tension</h2>
+
+<figure id="org5d3fdd9">
+<img src="images/tension_attractive_forces.png" alt="tension_attractive_forces.png" width="40%">
+
+</figure>
+<ul>
+<li class="fragment appear">Net attractive force which pulls surface molecule toward interior</li>
+<li class="fragment appear">Liquid tends to minimize its surface area</li>
+
+</ul>
+</section>
+<section>
+<video
+  controls muted
+  data-autoplay
+  src='./images/milk_in_water.mp4'>
+  </video>
+<p>
+ <font size="5"><a href="https://youtu.be/5NCOnr3VSAY?si=fpAcWhoWIHtTII-V">What is Surface Tension (BBC)</a></font>
+</p>
+</section>
+<section>
+<p>
+Magnitude of this pulling force is <font color="firebrick">Surface Tension</font>
+</p>
+<span class="fragment">
+<p>
+or coefficient of surface tension \(Y\) (units of \(\mathrm{N/m}\))
+</p>
+</span>
+<span class="fragment">
+<p>
+\[Y = \left\{ \begin{array}{ll} 0.073\,\mathrm{N/m} & \text{air-water} \\ 0.48\,\mathrm{N/m} & \text{air-mercury} \end{array} \right.\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Surface tension can be changed by <i>impurities</i>!
+</p>
+</span>
+</section>
+<section id="slide-orgf9ba616">
+<h3 id="orgf9ba616">Surface tension of a curved interface</h3>
+
+<figure id="orgb692723">
+<img src="images/pressure_curved_surfaces.png" alt="pressure_curved_surfaces.png">
+
+</figure>
+<span class="fragment">
+<p>
+Pressure is higher on the <i>concave</i> side
+</p>
+</span>
+</section>
+<section>
+
+<figure id="org4109007">
+<img src="images/pressure_curved_surfaces.png" alt="pressure_curved_surfaces.png" width="80%">
+
+</figure>
+<div class="threecolumn"><div>
+<span class="fragment">
+<p>
+\[2 R L = 2 Y L\]
+\[\Rightarrow \Delta p = \dfrac{Y}{L}\]
+</p>
+</span>
+</div><div>
+<span class="fragment">
+<p>
+\[\pi R^2 \Delta p = 2 \pi R Y\]
+\[\Rightarrow \Delta p = \dfrac{2 Y}{R}\]
+</p>
+</span>
+</div><div>
+<span class="fragment">
+<p>
+General case
+\[\boxed{\Delta p = Y (R_1^{-1} + R_2^{-1})}\]
+</p>
+</span>
+</div>
+</section>
+<section id="slide-orgc9dff08">
+<h3 id="orgc9dff08">\(\Delta p\) of bubbles</h3>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/al4dhcaeh2zgu9bpcxsrv4ywwbhcvtek/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-orgf92675e">
+<h2 id="orgf92675e">Vapor pressure</h2>
+
+<figure id="org6c05502">
+<img src="images/water_vp.png" alt="water_vp.png" width="50%">
+
+</figure>
+<blockquote>
+<p>
+Vapor pressure is the pressure at which a liquid boils and is in equilibrium with its own vapor
+</p>
+</blockquote>
+</section>
+<section>
+<ul>
+<li>If \(p_l > p_v\) then only evaporation occurs</li>
+<li>If \(p_l < p_v\) then vapor bubbles begin to appear</li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org140cca4">
+<img src="images/water_vp_plot.png" alt="water_vp_plot.png" width="70%">
+
+</figure>
+</span>
+</section>
+<section id="slide-orgb937b18">
+<h3 id="orgb937b18">Cavitation</h3>
+
+<figure id="org39cb2e5">
+<img src="images/cavitation_propeller.png" alt="cavitation_propeller.png" width="70%">
+
+</figure>
+</section>
+<section>
+<ul>
+<li>Reduces performance</li>
+<li>Generates vibrations</li>
+<li>Causes damage due to erosion, fatiguing, surface pitting</li>
+
+</ul>
+
+<figure id="org6209722">
+<img src="images/cavitation_damage.png" alt="cavitation_damage.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-org2a4ef89">
+<h3 id="org2a4ef89">Cavitation number</h3>
+<p>
+\[C_a = \dfrac{p_a - p_v}{0.5 \rho V^2}\]
+</p>
+<ul>
+<li>\(p_a\): ambient pressure</li>
+<li>\(p_v\): vapor pressure</li>
+<li>\(V\): characteristic flow velocity</li>
+<li>\(\rho\): fluid density</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgd04ac72">
+<h2 id="orgd04ac72">You should&#x2026;</h2>
+<ul>
+<li class="fragment appear">Know what surface tension is</li>
+<li class="fragment appear">Calculate surface tension across curved interfaces</li>
+<li class="fragment appear">Know how cavitation is caused</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
