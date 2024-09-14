@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org36ae633">
+<h2 id="org36ae633">Today</h2>
+<ul>
+<li class="fragment appear">Fluid statics</li>
+<li class="fragment appear">Pressure gradients</li>
+<li class="fragment appear">Pressure equilibrium</li>
+<li class="fragment appear">Hydrostatic pressure</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org0cc3499" data-background="./images/snowshoes.png" data-background-opacity="0.4" data-background-transition="slide">
+<h2 id="org0cc3499">Pressure</h2>
+<span class="fragment">
+<blockquote>
+<p>
+Pressure is defined as a normal force exerted by a fluid per unit area
+</p>
+</blockquote>
+</span>
+<ul>
+<li class="fragment appear">Pressure has a magnitude but not a direction</li>
+<li class="fragment appear">It is a <font color="skyblue">thermodynamic property of a fluid</font></li>
+
+</ul>
+</section>
+<section id="slide-org1b6910d">
+<h3 id="org1b6910d">Small wedge of fluid at rest</h3>
+
+<figure id="org9ce2c98">
+<img src="images/wedge_pressure.png" alt="wedge_pressure.png" width="70%">
+
+</figure>
+<span class="fragment">
+<p>
+\[\sum F_x = 0 = p_x b \Delta z - p_n b \Delta s \sin{\theta}\]
+\[\sum F_z = 0 = p_z b \Delta x - p_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\sum F_x = 0 = p_x b \Delta z - p_n b \Delta s \sin{\theta}\]
+\[\sum F_z = 0 = p_z b \Delta x - p_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
+\[\Delta s \sin{\theta} = \Delta z\]
+\[\Delta s \cos{\theta} = \Delta x\]
+</p>
+<span class="fragment">
+<p>
+\[p_x = p_n\]
+\[p_z = p_n + \frac{1}{2} \rho g \Delta z\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org629fed3">
+<h2 id="org629fed3">Pressure force on a fluid element</h2>
+<p width="60%">
+<img src="images/pressure_fluid_element.png" alt="pressure_fluid_element.png" width="60%">
+\[dF_y = p dx dz - \left( p + \dfrac{\partial p}{\partial y} dy \right) dx dz = - \dfrac{\partial p}{\partial y} dx dy dz\]
+</p>
+</section>
+<section>
+<p>
+\[d\mathbf{F}_{press} = \left( -\mathbf{i} \dfrac{\partial p}{\partial x} -\mathbf{j} \dfrac{\partial p}{\partial y} -\mathbf{k} \dfrac{\partial p}{\partial z} \right) dx dy dz\]
+</p>
+<span class="fragment">
+<p>
+\[\mathbf{f}_{press} = - \nabla p\]
+</p>
+</span>
+<span class="fragment">
+<p>
+The pressure gradient is causing a net force that needs to be balanced by gravity, acceleration etc.
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org9cae91b">
+<h2 id="org9cae91b">Gage pressure</h2>
+<div class="twocolumn"><div>
+
+<figure id="org56db2f0">
+<img src="images/pressure_gages.png" alt="pressure_gages.png">
+
+</figure>
+</div><div>
+<ul>
+<li class="fragment appear">Actual pressure is <font color="palegreen">absolute pressure</font></li>
+<li class="fragment appear">Pressure gages read zero as atmospheric pressure</li>
+<li class="fragment appear"><font color="firebrick">Gage pressure</font> can be positive or negative</li>
+
+</ul>
+</div>
+</section>
+<section>
+<p>
+Pressures below atmospheric pressure are called <font color="skyblue">vacuum pressures</font>
+</p>
+<span class="fragment">
+<p>
+\[p\text{(gage)} = p - p_a\]
+\[p\text{(vacuum)} = p_a - p\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgde63566">
+<img src="images/pressure_readings2.png" alt="pressure_readings2.png">
+
+</figure>
+</section>
+<section>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/aluc17o2c4p5dtwdw6ne24968rnnm4rd/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-org164523c">
+<h2 id="org164523c">Hydrostatic pressure distributions</h2>
+<p>
+If a fluid is at rest or at constant velocity then
+</p>
+<span class="fragment">
+<p>
+\[d\mathbf{F}_{\text{grav}} = \rho \mathbf{g} dx dy dz\]
+\[\mathbf{f}_{\text{grav}} = \rho \mathbf{g} = \nabla p\]
+</p>
+</span>
+<span class="fragment">
+<p>
+<b>Hydrostatic condition</b>
+</p>
+</span>
+</section>
+<section id="slide-org0ae0d5b">
+<h3 id="org0ae0d5b">Solution to the hydrostatic problem</h3>
+<p>
+\[\mathbf{g} = -g \mathbf{k}\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{\partial p}{\partial x} = 0, \dfrac{\partial p}{\partial y} = 0, \dfrac{\partial p}{\partial z}=-\rho g = -\gamma\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{dp}{dz} = - \gamma\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[p_2 - p_1 = - \int_{1}^{2} \gamma dz\]
+</p>
+</span>
+</section>
+<section id="slide-org06d4002">
+<h3 id="org06d4002">Hydrostatic condition</h3>
+<ul>
+<li class="fragment appear">Pressure in a static fluid
+<ul>
+<li>varies only with vertical distance</li>
+<li>is independent of the shape of the container</li>
+
+</ul></li>
+<li class="fragment appear">Pressure is the same at all points on a given horizontal plane in the fluid</li>
+<li class="fragment appear">Pressure increases with depth in the fluid</li>
+
+</ul>
+</section>
+<section>
+
+<figure id="org5e8b5f3">
+<img src="images/hydrostatic_distribution.png" alt="hydrostatic_distribution.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgfe20b02">
+<h2 id="orgfe20b02">Hydrostatic pressure in liquids</h2>
+<p>
+Assumption of incompressible flow for liquids \(\rightarrow\) constant density
+</p>
+<span class="fragment">
+<p>
+\[\boxed{p_2 - p_1 = -\gamma (z_2 - z_1)}\]
+</p>
+</span>
+<span class="fragment">
+
+<figure id="orgd3c4bff">
+<img src="images/specific_weight_table.png" alt="specific_weight_table.png" width="60%">
+
+</figure>
+</span>
+</section>
+<section id="slide-org3217912">
+<h3 id="org3217912">Hydrostatic pressure in oceans and atmospheres</h3>
+
+<figure id="orga6f1faf">
+<img src="images/ocean_atm_hydrostatic_pressure.png" alt="ocean_atm_hydrostatic_pressure.png">
+
+</figure>
+</section>
+<section id="slide-org41139a2" data-background="./images/newfound_lake.png" data-background-opacity="0.4" data-background-transition="slide">
+<h3 id="org41139a2">Example</h3>
+<p>
+Newfound lake has a maximum depth of 60m and the mean atmospheric pressure is 91 kPa. Estimate the absolute pressure in kPa at this maximum depth.
+</p>
+</section>
+<section id="slide-org05565eb">
+<h4 id="org05565eb">Solution</h4>
+<p>
+\[p_{\text{max}} - p_a = -\gamma z\]
+\[\Rightarrow p_{\text{max}} = p_a - \gamma z = (91000\,\mathrm{Pa}) - (9790\,\mathrm{N/m^3})(-60\,\mathrm{m})\]
+\[ = 678400\,\mathrm{Pa}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org1e40630">
+<h2 id="org1e40630">Hydrostatic pressure in gases</h2>
+<p>
+Gases are compressible with density proportional to pressure
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{dp}{dz} = -\rho g = - \dfrac{p}{RT} g\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\int_1^2 \dfrac{dp}{p} = \ln{\dfrac{p_2}{p_1}} = - \dfrac{g}{R} \int_1^2 \dfrac{dz}{T}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\(T=T_0\) &rarr; \(p_2 = p_1 \exp{\left[ - \dfrac{g(z_2 - z_1)}{R T_0} \right]}\)
+</p>
+</span>
+</section>
+<section>
+
+<figure id="org5522c4e">
+<img src="images/temperature_lapse_rate.png" alt="temperature_lapse_rate.png">
+
+</figure>
+</section>
+<section id="slide-orgc44b4df">
+<h3 id="orgc44b4df">Standard atmosphere</h3>
+<ul>
+<li class="fragment appear">Atmospheric temperature drops with altitude</li>
+<li class="fragment appear">\(T \approx T_0 - B z\) in the troposphere</li>
+<li class="fragment appear">\(T_0 = 288.16\,\mathrm{K} = 15\,\mathrm{^{\circ}C}\)</li>
+<li class="fragment appear">\(B = 0.00650\,\mathrm{K/m}\)</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[p = p_a \left( 1 - \dfrac{B z}{T_0} \right)^{\frac{g}{RB}}\]
+\[\rho = \rho_0 \left( 1 - \dfrac{Bz}{T_0} \right)^{\frac{g}{RB} - 1}\]
+</p>
+</span>
+</section>
+<section id="slide-org9bdeced">
+<h3 id="org9bdeced">Is the linear approximation adequate for gases?</h3>
+<p>
+\[\delta p \approx -\rho g \delta z\]
+</p>
+<span class="fragment">
+<p>
+\[\delta z < \dfrac{2 T_0}{(\frac{g}{RB}-1)B}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Error is less than 1% if \(\delta z < 200\,\mathrm{m}\)
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org016a7fd">
+<h2 id="org016a7fd">You should know&#x2026;</h2>
+<ul>
+<li class="fragment appear">the definition of pressure and its force</li>
+<li class="fragment appear">the difference between gage and absolute pressure</li>
+<li class="fragment appear">what the hydrostatic condition is</li>
+<li class="fragment appear">how to use the solution to the hydrostatic problem in liquids and gases</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
