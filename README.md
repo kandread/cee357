@@ -11,3 +11,5 @@
 [Lecture #5 - Fluid Flow Effects](https://kandread.github.io/cee357/05_fluid_flow_effects.html)
 
 [Lecture #6 - Fluid Pressure](https://kandread.github.io/cee357/06_fluid_pressure.html)
+
+[Lecture #7 - Hydrostatic Forces](https://kandread.github.io/cee357/07_hydrostatic_forces.html)
