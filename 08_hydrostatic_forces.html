@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org4bd7831">
+<h2 id="org4bd7831">Reminder</h2>
+
+<figure id="org02a8d3e">
+<img src="images/plane_surface_hydrostatic_forces.png" alt="plane_surface_hydrostatic_forces.png" width="70%">
+
+</figure>
+</section>
+<section>
+<p>
+\[F = \gamma h_{\text{CG}} A = P_{\text{CG}}A\]
+\[y_{\text{CP}} = - \dfrac{I_{xx} \sin{\theta}}{h_{\text{CG}} A}\]
+\[x_{\text{CP}} = - \dfrac{I_{xy} \sin{\theta}}{h_{\text{CG}} A}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org788b349">
+<h2 id="org788b349">Example</h2>
+<p>
+The gate is 5 ft wide, hinged at B. What is the force on the gate due to seawater pressure? What is the horizontal force exerted by the wall at A? What are the reactions at C?
+</p>
+
+<figure id="org9f3073d">
+<img src="images/hydrostatic_forces_example_1a.png" alt="hydrostatic_forces_example_1a.png" width="50%">
+
+</figure>
+</section>
+<section id="slide-org494b59c">
+<h3 id="org494b59c">What is the force on the gate?</h3>
+<span class="fragment">
+<p>
+Gate is 10 ft long from A to B, and CG is at 3 ft.
+\[h_{\text{CG}} = 15 - 3 = 12\,\mathrm{ft}\]
+\[F = P_{\text{CG}} A = \gamma h_{\text{CG}} A = (64)(12)(5)(10) = 384000\,\mathrm{lbf}\]
+</p>
+</span>
+</section>
+<section id="slide-orgd76ef62">
+<h3 id="orgd76ef62">What is the horizontal force at A?</h3>
+<span class="fragment">
+
+<figure id="org4e6e2ef">
+<img src="images/hydrostatic_forces_example_1b.png" alt="hydrostatic_forces_example_1b.png" width="50%">
+
+</figure>
+</span>
+</section>
+<section>
+<p>
+\[I_{xy} = 0\]
+\[I_{xx} = \dfrac{b L^3}{12} = \dfrac{(5)(10)}{12} = 417\,\mathrm{ft^4}\]
+\[l=-y_{\text{CP}} = \dfrac{I_{xx} \sin{\theta}}{h_{\text{CG}} A} = \dfrac{(417)(6/10)}{(12)(50)}=0.417\,\mathrm{ft}\]
+Distance from B to F is \(10-l-5=4.583\,\mathrm{ft}\)
+\[F_P L \sin{\theta} - F (5 - l) = 0 \Rightarrow F_P (6) - (38400)(4.583) = 0\]
+\[\Rightarrow F_P = 29300\,\mathrm{lbf}\]
+</p>
+</section>
+<section id="slide-org409cc73">
+<h3 id="org409cc73">What are the reactions at C?</h3>
+<span class="fragment">
+<p>
+\[\sum F_x = 0 = B_x + F \sin{\theta} - F_P\]
+\[\Rightarrow 0 = B_x + (38400)(0.6) - 29300\]
+\[\Rightarrow B_x = 6300\,\mathrm{lbf}\]
+\[\sum F_z = 0 = B_z - F \cos{\theta} = B_z - (38400)(0.8)\]
+\[\Rightarrow B_z = 30700\,\mathrm{lbf}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orga1e3734">
+<h2 id="orga1e3734">Problem</h2>
+<p>
+A tank of oil has a right-triangular panel near the bottom. Ignoring \(P_a\), find the hydrostatic force and the CP on the panel.
+</p>
+
+<figure id="org7b89c2d">
+<img src="images/hydrostatic_forces_example_2a.png" alt="hydrostatic_forces_example_2a.png" width="50%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org2984780">
+<h2 id="org2984780">Example</h2>
+<div class="twocolumn"><div>
+
+<figure id="org9ae04f8">
+<img src="images/submerged_car.png" alt="submerged_car.png">
+
+</figure>
+</div><div>
+<p>
+What is the hydrostatic force on the door and the location of the pressure center?
+</p>
+
+<p>
+What assumptions do we have to make for the solution?
+</p>
+</div>
+</section>
+<section id="slide-org027b716">
+<h3 id="org027b716">Solution</h3>
+<span class="fragment">
+<p>
+\[P_C = \rho g h_C = (1000)(9.81)(8+1.2/2) = 84400\,\mathrm{N/m^2}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[F = P_C A = (84400)(1)(1.2) = 101300\,\mathrm{N}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[y_P = s + \dfrac{b}{2} + \dfrac{b^2}{12(s+b/2)} = 8 + \dfrac{1.2}{2} + \dfrac{1.2^2}{12(8+1.2/2)}\]
+\[= 8.61\,\mathrm{m}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org89ceea9">
+<h2 id="org89ceea9">You should</h2>
+<ul>
+<li class="fragment appear">Know the operating principle of a manometer</li>
+<li class="fragment appear">Be able to calculate the hydrostatic forces on a submerged plane surface</li>
+<li class="fragment appear">Be able to calculate the pressure on the plane surface</li>
+<li class="fragment appear">Be able to calculate the line of action coordinates</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
