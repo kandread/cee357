@@ -26,21 +26,30 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org7d865d7">
-<h2 id="org7d865d7">Problem</h2>
+<section id="slide-org6ee9843">
+<h2 id="org6ee9843">Problem</h2>
 <p>
 Consider a Newtonian fluid of viscosity \(\mu\) flowing between parallel plates with a velocity profile of \(u(y) = 4u_{max} [ y / h - (y / h)^2]\). Derive a relation for the drag force exerted on both plates by the fluid in the flow direction per unit area of the plates.
 </p>
 
-<figure id="org05d5ba2">
+<figure id="orgaf298f0">
 <img src="images/05problem.png" alt="05problem.png" width="60%">
 
 </figure>
 </section>
+<section id="slide-org0874403">
+<h3 id="org0874403">Solution</h3>
+<p>
+In general \(F = \tau A\)
+\[\tau = \mu \dfrac{du}{dy} = 4 \mu u_{\text{max}} \dfrac{d}{dy} \left( \dfrac{y}{h} - \dfrac{y^2}{h^2} \right)\]
+\[ = 4 \mu u_{\text{max}} \left( \dfrac{1}{h} - \dfrac{2y}{h^2} \right) = \dfrac{4 \mu u_{\text{max}}}{h}\]
+\[F = 2 \tau A = \dfrac{8 \mu u_{\text{max}}}{h} A \Rightarrow F / A = \dfrac{8 \mu u_{\text{max}}}{h}\]
+</p>
+</section>
 </section>
 <section>
-<section id="slide-org7cf266a">
-<h2 id="org7cf266a">Today</h2>
+<section id="slide-org84689e1">
+<h2 id="org84689e1">Today</h2>
 <ul>
 <li class="fragment appear">Surface tension</li>
 <li class="fragment appear">Vapor pressure</li>
@@ -50,8 +59,8 @@ Consider a Newtonian fluid of viscosity \(\mu\) flowing between parallel plates 
 </section>
 </section>
 <section>
-<section id="slide-orgc4ac3de">
-<h2 id="orgc4ac3de">Walks on water&#x2026;</h2>
+<section id="slide-orgf2347ad">
+<h2 id="orgf2347ad">Walks on water&#x2026;</h2>
 <span class="fragment">
 <video
   controls muted
@@ -65,10 +74,10 @@ Consider a Newtonian fluid of viscosity \(\mu\) flowing between parallel plates 
 </section>
 </section>
 <section>
-<section id="slide-orgd940010">
-<h2 id="orgd940010">Surface tension</h2>
+<section id="slide-org7c8cf23">
+<h2 id="org7c8cf23">Surface tension</h2>
 
-<figure id="org5d3fdd9">
+<figure id="org6987d9f">
 <img src="images/tension_attractive_forces.png" alt="tension_attractive_forces.png" width="40%">
 
 </figure>
@@ -108,10 +117,10 @@ Surface tension can be changed by <i>impurities</i>!
 </p>
 </span>
 </section>
-<section id="slide-orgf9ba616">
-<h3 id="orgf9ba616">Surface tension of a curved interface</h3>
+<section id="slide-orga2e0ca8">
+<h3 id="orga2e0ca8">Surface tension of a curved interface</h3>
 
-<figure id="orgb692723">
+<figure id="org1cdfc32">
 <img src="images/pressure_curved_surfaces.png" alt="pressure_curved_surfaces.png">
 
 </figure>
@@ -123,15 +132,15 @@ Pressure is higher on the <i>concave</i> side
 </section>
 <section>
 
-<figure id="org4109007">
+<figure id="org34c0806">
 <img src="images/pressure_curved_surfaces.png" alt="pressure_curved_surfaces.png" width="80%">
 
 </figure>
 <div class="threecolumn"><div>
 <span class="fragment">
 <p>
-\[2 R L = 2 Y L\]
-\[\Rightarrow \Delta p = \dfrac{Y}{L}\]
+\[2 R L \Delta p = 2 Y L\]
+\[\Rightarrow \Delta p = \dfrac{Y}{R}\]
 </p>
 </span>
 </div><div>
@@ -150,16 +159,23 @@ General case
 </span>
 </div>
 </section>
-<section id="slide-orgc9dff08">
-<h3 id="orgc9dff08">\(\Delta p\) of bubbles</h3>
+<section id="slide-org398720e">
+<h3 id="org398720e">\(\Delta p\) of bubbles</h3>
 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/al4dhcaeh2zgu9bpcxsrv4ywwbhcvtek/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+<section>
+
+<figure id="org054d13a">
+<img src="images/soap_bubble.png" alt="soap_bubble.png" width="60%">
+
+</figure>
 </section>
 </section>
 <section>
-<section id="slide-orgf92675e">
-<h2 id="orgf92675e">Vapor pressure</h2>
+<section id="slide-orgc1453a4">
+<h2 id="orgc1453a4">Vapor pressure</h2>
 
-<figure id="org6c05502">
+<figure id="org9e5496b">
 <img src="images/water_vp.png" alt="water_vp.png" width="50%">
 
 </figure>
@@ -177,16 +193,16 @@ Vapor pressure is the pressure at which a liquid boils and is in equilibrium wit
 </ul>
 <span class="fragment">
 
-<figure id="org140cca4">
+<figure id="org047a6b0">
 <img src="images/water_vp_plot.png" alt="water_vp_plot.png" width="70%">
 
 </figure>
 </span>
 </section>
-<section id="slide-orgb937b18">
-<h3 id="orgb937b18">Cavitation</h3>
+<section id="slide-org4ad2b2b">
+<h3 id="org4ad2b2b">Cavitation</h3>
 
-<figure id="org39cb2e5">
+<figure id="org250c5af">
 <img src="images/cavitation_propeller.png" alt="cavitation_propeller.png" width="70%">
 
 </figure>
@@ -199,13 +215,13 @@ Vapor pressure is the pressure at which a liquid boils and is in equilibrium wit
 
 </ul>
 
-<figure id="org6209722">
+<figure id="orge85545b">
 <img src="images/cavitation_damage.png" alt="cavitation_damage.png" width="60%">
 
 </figure>
 </section>
-<section id="slide-org2a4ef89">
-<h3 id="org2a4ef89">Cavitation number</h3>
+<section id="slide-org3a7119e">
+<h3 id="org3a7119e">Cavitation number</h3>
 <p>
 \[C_a = \dfrac{p_a - p_v}{0.5 \rho V^2}\]
 </p>
@@ -219,8 +235,8 @@ Vapor pressure is the pressure at which a liquid boils and is in equilibrium wit
 </section>
 </section>
 <section>
-<section id="slide-orgd04ac72">
-<h2 id="orgd04ac72">You should&#x2026;</h2>
+<section id="slide-org93ad407">
+<h2 id="org93ad407">You should&#x2026;</h2>
 <ul>
 <li class="fragment appear">Know what surface tension is</li>
 <li class="fragment appear">Calculate surface tension across curved interfaces</li>

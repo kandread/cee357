@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org859c212">
+<h2 id="org859c212">Hydrostatic forces on curved surfaces</h2>
+<div class="twocolumn"><div><span class="fragment">
+
+<figure id="org6fcee5f">
+<img src="images/curved_submerged_surface.png" alt="curved_submerged_surface.png">
+
+</figure>
+</span></div><div>
+<ul>
+<li class="fragment appear">Submerged surfaces are not flat</li>
+<li class="fragment appear">Integration of pressure forces difficult as they <i>change direction along the surface</i></li>
+
+</ul>
+</div>
+</section>
+<section id="slide-org54c5278">
+<h3 id="org54c5278">An easier way</h3>
+
+<figure id="org15338d7">
+<img src="images/curved_free_body_forces.png" alt="curved_free_body_forces.png" width="100%">
+
+</figure>
+<span class="fragment">
+<p>
+\[F_H = F_x\]
+\[F_V = F_y \pm W\]
+</p>
+</span>
+</section>
+<section id="slide-orgb3192de">
+<h3 id="orgb3192de">General rules</h3>
+<blockquote>
+<p>
+The horizontal component of force on a curved surface equals the force on the plane area formed by the projection of the curved surface onto a vertical plane normal to the component.
+</p>
+</blockquote>
+<span class="fragment">
+<blockquote>
+<p>
+The vertical component of pressure force on a curved surface equals in magnitude and direction the weight of the entire column of fluid above the curved surface.
+</p>
+</blockquote>
+</span>
+</section>
+<section id="slide-org6f522e5">
+<h3 id="org6f522e5">Resultant force</h3>
+<ul>
+<li class="fragment appear">Magnitude of force \(F_R = \sqrt{F_H^2 + F_V^2}\)</li>
+<li class="fragment appear">Angle with the horizontal is \(\tan{\alpha} = \dfrac{F_V}{F_H}\)</li>
+<li class="fragment appear">Line of action can be derived by taking moment about an appropriate point</li>
+
+</ul>
+</section>
+<section id="slide-org3c8ec1f">
+<h3 id="org3c8ec1f">Curved surface above a liquid</h3>
+
+<figure id="orga2a3d9b">
+<img src="images/curved_surface_above_liquid.png" alt="curved_surface_above_liquid.png" width="48%">
+
+</figure>
+
+<p>
+Weight needs to be <font color="darkolivegreen">subtracted</font> from the vertical force component
+</p>
+</section>
+<section id="slide-org5b769c5">
+<h3 id="org5b769c5">Example</h3>
+<p>
+A parabolic dam is 50-ft wide, with \(x_0=10\,\mathrm{ft}\) and water (\(\gamma=62.4\,\mathrm{lbf/ft^3}\)). Compute the horizontal and vertical forces.
+</p>
+
+<figure id="orga9e6bcd">
+<img src="images/parabolic_dam.png" alt="parabolic_dam.png" width="45%">
+
+</figure>
+</section>
+<section id="slide-orgb28e0cc">
+<h4 id="orgb28e0cc">Solution</h4>
+
+<figure id="orgfc40bb7">
+<img src="images/parabolic_dam_diagram.png" alt="parabolic_dam_diagram.png" width="80%">
+
+</figure>
+</section>
+<section>
+<p>
+\[h_{C} = 24/2 = 12\,\mathrm{ft}\]
+\[A = (24)(50) = 1200\,\mathrm{ft^2}\]
+\[F_H = \gamma h_C A = (62.4)(12)(1200) = 898560\,\mathrm{lbf}\]
+\[y_P = - \dfrac{I_{xx} \sin{\theta}}{h_C A} = - \dfrac{(1/12)(50)(24)\sin{90^{\circ}}}{(12)(1200)} = -4\,\mathrm{ft}\]
+</p>
+</section>
+<section>
+<p>
+\[F_V = \gamma A_p b = (62.4)\left(\dfrac{2}{3}(24)(10)\right)(50) = 499200\,\mathrm{lbf}\]
+\[x_P = \dfrac{3x_0}{8} = 3.75\,\mathrm{ft}\]
+\[F = \sqrt{F_H^2 + F_V^2} = \sqrt{898560^2 + 499200^2} \approx 1027916\,\mathrm{lbf}\]
+\[\alpha = \tan^{-1}{\dfrac{499200}{898560}} = 29^{\circ}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgefcbf61">
+<h2 id="orgefcbf61">Think - pair - share</h2>
+<div class="outline-text-2" id="text-orgefcbf61">
+</div>
+</section>
+<section id="slide-org696bcc8">
+<h3 id="org696bcc8">Question</h3>
+<p>
+Someone claims that they can compute the magnitude of the hydrostatic force acting on a submerged plane surface regardless of its shape and orientation if they knew the vertical distance of the centroid from the free surface and the area of the surface. True or False? Why?
+</p>
+</section>
+<section id="slide-orgceb7a0c">
+<h3 id="orgceb7a0c">Question</h3>
+<p>
+A submerged horizontal plate is suspended in water by a string attached at the centroid of its upper surface. Now the plate is rotated 45° about an axis that passes through the centroid. How is the hydrostatic force going to change? Assume that the plate remains submerged at all times.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org2581958">
+<h2 id="org2581958">Hydrostatic forces in layered fluids</h2>
+<ul>
+<li class="fragment appear">Fluid layered with different densities</li>
+<li class="fragment appear">Equations for hydrostatic forces are valid for each layer</li>
+<li class="fragment appear">Compute and sum separate layer forces and moments</li>
+
+</ul>
+</section>
+<section>
+
+<figure id="orgc43971a">
+<img src="images/submerged_surface_multifluid.png" alt="submerged_surface_multifluid.png" width="80%">
+
+</figure>
+
+<span class="fragment">
+<p>
+\[F = \sum F_i = \sum P_{C,i} A_i\]
+</p>
+</span>
+</section>
+<section>
+<p>
+Center of pressure for each layer's force
+\[y_P = - \dfrac{\rho_i g \sin{\theta_i}I_{xx}}{P_{C,i}A_i}\]
+\[x_P = -\dfrac{\rho_i g \sin{\theta_i}I_{xy}}{P_{C,i}A_i}\]
+</p>
+<ul>
+<li class="fragment appear">These coordinates are <font color="red">relative to the centroid of each layer</font></li>
+<li class="fragment appear">Center of pressure of total force \(\leftarrow\) summing moments about some point (e.g., surface)</li>
+
+</ul>
+</section>
+<section id="slide-org4462dd4">
+<h3 id="org4462dd4">Example</h3>
+<p>
+A tank 20 ft deep and 7 ft wide is layered with 8 ft oil, 6 ft of water and 4 ft of mercury. What is the total hydrostatic force and the center of pressure on the right-hand side of the tank?
+</p>
+</section>
+<section>
+
+<figure id="org3844916">
+<img src="images/multifluid_tank.png" alt="multifluid_tank.png">
+
+</figure>
+</section>
+<section id="slide-org6eb8bc3">
+<h4 id="org6eb8bc3">Solution</h4>
+<p>
+\[P_{C,1} = (55)(4) = 220\,\mathrm{lbf/ft^2}\]
+\[P_{C,2} = (55)(8) + (62.4)(3) = 627\,\mathrm{lbf/ft^2}\]
+\[P_{C,3} = (55)(8) + (62.4)(6) + (846)(2) = 2506\,\mathrm{lbf/ft^2}\]
+</p>
+</section>
+<section>
+<p>
+\[F_1 = P_{C,1} A_1 = (220)(8)(7) = 12300\,\mathrm{lbf}\]
+\[F_2 = P_{C,2} A_2 = (627)(6)(7) = 26300\,\mathrm{lbf}\]
+\[F_3 = P_{C,3} A_3 = (2506)(4)(7) = 70200\,\mathrm{lbf}\]
+\[F = \sum F_i = 108800\,\mathrm{lbf}\]
+</p>
+</section>
+<section>
+<p>
+\[\theta=90^{\circ} \Rightarrow \sin{\theta}=1\]
+\[y_{P,1} = -\dfrac{\rho_1 g I_{xx,1}}{F_1} = - \dfrac{(55)(7)(8)^3/12}{12300}=-1.33\,\mathrm{ft}\]
+\[y_{P,2} = -\dfrac{\rho_2 g I_{xx,2}}{F_2} = - \dfrac{(62.4)(7)(6)^3/12}{26300}=-0.30\,\mathrm{ft}\]
+\[y_{P,3} = -\dfrac{\rho_3 g I_{xx,3}}{F_3} = - \dfrac{(846)(7)(4)^3/12}{70200}=-0.45\,\mathrm{ft}\]
+</p>
+</section>
+<section>
+<p>
+Summing the moments about the surface
+\[\sum F_i z_{P,i} = F z_P\]
+\[\Rightarrow (12300)(-4-1.33) + (26300)(-11-0.3) + (70200)(-16-0.45)\]
+\[= (108800)z_P\]
+\[\Rightarrow z_P = -\dfrac{1518000}{108800} = -13.95\,\mathrm{ft}\]
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

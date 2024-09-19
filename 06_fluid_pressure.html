@@ -26,14 +26,14 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org73c425f">
-<h2 id="org73c425f"></h2>
+<section id="slide-org5ee3d17">
+<h2 id="org5ee3d17"></h2>
 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/al845ahnw5962wprjfjeatseeya9b8is/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
 </section>
 </section>
 <section>
-<section id="slide-orgdc886b5">
-<h2 id="orgdc886b5">Today</h2>
+<section id="slide-org189361f">
+<h2 id="org189361f">Today</h2>
 <ul>
 <li class="fragment appear">Fluid statics</li>
 <li class="fragment appear">Pressure gradients</li>
@@ -44,8 +44,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgfd6511c" data-background="./images/snowshoes.png" data-background-opacity="0.4" data-background-transition="slide">
-<h2 id="orgfd6511c">Pressure</h2>
+<section id="slide-orgc5b0445" data-background="./images/snowshoes.png" data-background-opacity="0.4" data-background-transition="slide">
+<h2 id="orgc5b0445">Pressure</h2>
 <span class="fragment">
 <blockquote>
 <p>
@@ -59,46 +59,46 @@ Pressure is defined as a normal force exerted by a fluid per unit area
 
 </ul>
 </section>
-<section id="slide-orgc8102e1">
-<h3 id="orgc8102e1">Small wedge of fluid at rest</h3>
+<section id="slide-org7c88174">
+<h3 id="org7c88174">Small wedge of fluid at rest</h3>
 
-<figure id="org5d4d8ff">
+<figure id="orgc11409e">
 <img src="images/wedge_pressure.png" alt="wedge_pressure.png" width="70%">
 
 </figure>
 <span class="fragment">
 <p>
-\[\sum F_x = 0 = p_x b \Delta z - p_n b \Delta s \sin{\theta}\]
-\[\sum F_z = 0 = p_z b \Delta x - p_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
+\[\sum F_x = 0 = P_x b \Delta z - P_n b \Delta s \sin{\theta}\]
+\[\sum F_z = 0 = P_z b \Delta x - P_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
 </p>
 </span>
 </section>
 <section>
 <p>
-\[\sum F_x = 0 = p_x b \Delta z - p_n b \Delta s \sin{\theta}\]
-\[\sum F_z = 0 = p_z b \Delta x - p_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
+\[\sum F_x = 0 = P_x b \Delta z - P_n b \Delta s \sin{\theta}\]
+\[\sum F_z = 0 = P_z b \Delta x - P_n b \Delta s \cos{\theta} - (1/2) \rho g b \Delta x \Delta z\]
 \[\Delta s \sin{\theta} = \Delta z\]
 \[\Delta s \cos{\theta} = \Delta x\]
 </p>
 <span class="fragment">
 <p>
-\[p_x = p_n\]
-\[p_z = p_n + \frac{1}{2} \rho g \Delta z\]
+\[P_x = P_n\]
+\[P_z = P_n + \frac{1}{2} \rho g \Delta z\]
 </p>
 </span>
 </section>
 </section>
 <section>
-<section id="slide-orga23bb10">
-<h2 id="orga23bb10">Pressure force on a fluid element</h2>
+<section id="slide-org58a18a5">
+<h2 id="org58a18a5">Pressure force on a fluid element</h2>
 <p width="60%">
 <img src="images/pressure_fluid_element.png" alt="pressure_fluid_element.png" width="60%">
-\[dF_y = p dx dz - \left( p + \dfrac{\partial p}{\partial y} dy \right) dx dz = - \dfrac{\partial p}{\partial y} dx dy dz\]
+\[dF_y = P dx dz - \left( P + \dfrac{\partial P}{\partial y} dy \right) dx dz = - \dfrac{\partial P}{\partial y} dx dy dz\]
 </p>
 </section>
 <section>
 <p>
-\[d\mathbf{F}_{press} = \left( -\mathbf{i} \dfrac{\partial p}{\partial x} -\mathbf{j} \dfrac{\partial p}{\partial y} -\mathbf{k} \dfrac{\partial p}{\partial z} \right) dx dy dz\]
+\[d\mathbf{F}_{press} = \left( -\mathbf{i} \dfrac{\partial P}{\partial x} -\mathbf{j} \dfrac{\partial P}{\partial y} -\mathbf{k} \dfrac{\partial P}{\partial z} \right) dx dy dz\]
 </p>
 <span class="fragment">
 <p>
@@ -113,11 +113,11 @@ The pressure gradient is causing a net force that needs to be balanced by gravit
 </section>
 </section>
 <section>
-<section id="slide-orgc418fba">
-<h2 id="orgc418fba">Gage pressure</h2>
+<section id="slide-orgf455b99">
+<h2 id="orgf455b99">Gage pressure</h2>
 <div class="twocolumn"><div>
 
-<figure id="org8ff3dbf">
+<figure id="orgd21f37c">
 <img src="images/pressure_gages.png" alt="pressure_gages.png">
 
 </figure>
@@ -136,14 +136,14 @@ Pressures below atmospheric pressure are called <font color="skyblue">vacuum pre
 </p>
 <span class="fragment">
 <p>
-\[p\text{(gage)} = p - p_a\]
-\[p\text{(vacuum)} = p_a - p\]
+\[P\text{(gage)} = P - P_a\]
+\[P\text{(vacuum)} = P_a - P\]
 </p>
 </span>
 </section>
 <section>
 
-<figure id="org3d5df36">
+<figure id="orge601557">
 <img src="images/pressure_readings2.png" alt="pressure_readings2.png">
 
 </figure>
@@ -153,8 +153,8 @@ Pressures below atmospheric pressure are called <font color="skyblue">vacuum pre
 </section>
 </section>
 <section>
-<section id="slide-orgfb7eb0a">
-<h2 id="orgfb7eb0a">Hydrostatic pressure distributions</h2>
+<section id="slide-org8c42dd2">
+<h2 id="org8c42dd2">Hydrostatic pressure distributions</h2>
 <p>
 If a fluid is at rest or at constant velocity then
 </p>
@@ -170,29 +170,29 @@ If a fluid is at rest or at constant velocity then
 </p>
 </span>
 </section>
-<section id="slide-org3bb25aa">
-<h3 id="org3bb25aa">Solution to the hydrostatic problem</h3>
+<section id="slide-org8838fbd">
+<h3 id="org8838fbd">Solution to the hydrostatic problem</h3>
 <p>
 \[\mathbf{g} = -g \mathbf{k}\]
 </p>
 <span class="fragment">
 <p>
-\[\dfrac{\partial p}{\partial x} = 0, \dfrac{\partial p}{\partial y} = 0, \dfrac{\partial p}{\partial z}=-\rho g = -\gamma\]
+\[\dfrac{\partial P}{\partial x} = 0, \dfrac{\partial P}{\partial y} = 0, \dfrac{\partial P}{\partial z}=-\rho g = -\gamma\]
 </p>
 </span>
 <span class="fragment">
 <p>
-\[\dfrac{dp}{dz} = - \gamma\]
+\[\dfrac{dP}{dz} = - \gamma\]
 </p>
 </span>
 <span class="fragment">
 <p>
-\[p_2 - p_1 = - \int_{1}^{2} \gamma dz\]
+\[P_2 - P_1 = - \int_{1}^{2} \gamma dz\]
 </p>
 </span>
 </section>
-<section id="slide-orgda8342b">
-<h3 id="orgda8342b">Hydrostatic condition</h3>
+<section id="slide-org2bb99e5">
+<h3 id="org2bb99e5">Hydrostatic condition</h3>
 <ul>
 <li class="fragment appear">Pressure in a static fluid
 <ul>
@@ -207,85 +207,85 @@ If a fluid is at rest or at constant velocity then
 </section>
 <section>
 
-<figure id="org12fb2b7">
+<figure id="orga919116">
 <img src="images/hydrostatic_distribution.png" alt="hydrostatic_distribution.png">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org96a598c">
-<h2 id="org96a598c">Hydrostatic pressure in liquids</h2>
+<section id="slide-org7b11974">
+<h2 id="org7b11974">Hydrostatic pressure in liquids</h2>
 <p>
 Assumption of incompressible flow for liquids \(\rightarrow\) constant density
 </p>
 <span class="fragment">
 <p>
-\[\boxed{p_2 - p_1 = -\gamma (z_2 - z_1)}\]
+\[\boxed{P_2 - P_1 = -\gamma (z_2 - z_1)}\]
 </p>
 </span>
 <span class="fragment">
 
-<figure id="orge06ab90">
+<figure id="org8eee9ef">
 <img src="images/specific_weight_table.png" alt="specific_weight_table.png" width="60%">
 
 </figure>
 </span>
 </section>
-<section id="slide-orgb5303ab">
-<h3 id="orgb5303ab">Hydrostatic pressure in oceans and atmospheres</h3>
+<section id="slide-org4fb944d">
+<h3 id="org4fb944d">Hydrostatic pressure in oceans and atmospheres</h3>
 
-<figure id="org9238d60">
+<figure id="orgd1f2e2b">
 <img src="images/ocean_atm_hydrostatic_pressure.png" alt="ocean_atm_hydrostatic_pressure.png">
 
 </figure>
 </section>
-<section id="slide-org13afe53" data-background="./images/newfound_lake.png" data-background-opacity="0.4" data-background-transition="slide">
-<h3 id="org13afe53">Example</h3>
+<section id="slide-org8220624" data-background="./images/newfound_lake.png" data-background-opacity="0.4" data-background-transition="slide">
+<h3 id="org8220624">Example</h3>
 <p>
 Newfound lake has a maximum depth of 60m and the mean atmospheric pressure is 91 kPa. Estimate the absolute pressure in kPa at this maximum depth.
 </p>
 </section>
-<section id="slide-orgda21e33">
-<h4 id="orgda21e33">Solution</h4>
+<section id="slide-org1dadfdb">
+<h4 id="org1dadfdb">Solution</h4>
 <p>
-\[p_{\text{max}} - p_a = -\gamma z\]
-\[\Rightarrow p_{\text{max}} = p_a - \gamma z = (91000\,\mathrm{Pa}) - (9790\,\mathrm{N/m^3})(-60\,\mathrm{m})\]
+\[P_{\text{max}} - P_a = -\gamma z\]
+\[\Rightarrow P_{\text{max}} = P_a - \gamma z = (91000\,\mathrm{Pa}) - (9790\,\mathrm{N/m^3})(-60\,\mathrm{m})\]
 \[ = 678400\,\mathrm{Pa}\]
 </p>
 </section>
 </section>
 <section>
-<section id="slide-orgb31b2c2">
-<h2 id="orgb31b2c2">Hydrostatic pressure in gases</h2>
+<section id="slide-orgd7fc113">
+<h2 id="orgd7fc113">Hydrostatic pressure in gases</h2>
 <p>
 Gases are compressible with density proportional to pressure
 </p>
 <span class="fragment">
 <p>
-\[\dfrac{dp}{dz} = -\rho g = - \dfrac{p}{RT} g\]
+\[\dfrac{dP}{dz} = -\rho g = - \dfrac{P}{RT} g\]
 </p>
 </span>
 <span class="fragment">
 <p>
-\[\int_1^2 \dfrac{dp}{p} = \ln{\dfrac{p_2}{p_1}} = - \dfrac{g}{R} \int_1^2 \dfrac{dz}{T}\]
+\[\int_1^2 \dfrac{dP}{P} = \ln{\dfrac{P_2}{P_1}} = - \dfrac{g}{R} \int_1^2 \dfrac{dz}{T}\]
 </p>
 </span>
 <span class="fragment">
 <p>
-\(T=T_0\) &rarr; \(p_2 = p_1 \exp{\left[ - \dfrac{g(z_2 - z_1)}{R T_0} \right]}\)
+\(T=T_0\) &rarr; \(P_2 = P_1 \exp{\left[ - \dfrac{g(z_2 - z_1)}{R T_0} \right]}\)
 </p>
 </span>
 </section>
 <section>
 
-<figure id="orgf8e802d">
+<figure id="org56306d5">
 <img src="images/temperature_lapse_rate.png" alt="temperature_lapse_rate.png">
 
 </figure>
 </section>
-<section id="slide-org7681c47">
-<h3 id="org7681c47">Standard atmosphere</h3>
+<section id="slide-org9d6c65c">
+<h3 id="org9d6c65c">Standard atmosphere</h3>
 <ul>
 <li class="fragment appear">Atmospheric temperature drops with altitude</li>
 <li class="fragment appear">\(T \approx T_0 - B z\) in the troposphere</li>
@@ -295,15 +295,15 @@ Gases are compressible with density proportional to pressure
 </ul>
 <span class="fragment">
 <p>
-\[p = p_a \left( 1 - \dfrac{B z}{T_0} \right)^{\frac{g}{RB}}\]
+\[P = P_a \left( 1 - \dfrac{B z}{T_0} \right)^{\frac{g}{RB}}\]
 \[\rho = \rho_0 \left( 1 - \dfrac{Bz}{T_0} \right)^{\frac{g}{RB} - 1}\]
 </p>
 </span>
 </section>
-<section id="slide-org8e6cc92">
-<h3 id="org8e6cc92">Is the linear approximation adequate for gases?</h3>
+<section id="slide-org86a42aa">
+<h3 id="org86a42aa">Is the linear approximation adequate for gases?</h3>
 <p>
-\[\delta p \approx -\rho g \delta z\]
+\[\delta P \approx -\rho g \delta z\]
 </p>
 <span class="fragment">
 <p>
@@ -318,8 +318,8 @@ Error is less than 1% if \(\delta z < 200\,\mathrm{m}\)
 </section>
 </section>
 <section>
-<section id="slide-org0fae33c">
-<h2 id="org0fae33c">You should know&#x2026;</h2>
+<section id="slide-org123654b">
+<h2 id="org123654b">You should know&#x2026;</h2>
 <ul>
 <li class="fragment appear">the definition of pressure and its force</li>
 <li class="fragment appear">the difference between gage and absolute pressure</li>

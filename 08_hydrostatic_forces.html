@@ -26,10 +26,10 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org4bd7831">
-<h2 id="org4bd7831">Reminder</h2>
+<section id="slide-orgbb7ac2c">
+<h2 id="orgbb7ac2c">Reminder</h2>
 
-<figure id="org02a8d3e">
+<figure id="orgdf5d78e">
 <img src="images/plane_surface_hydrostatic_forces.png" alt="plane_surface_hydrostatic_forces.png" width="70%">
 
 </figure>
@@ -43,19 +43,19 @@
 </section>
 </section>
 <section>
-<section id="slide-org788b349">
-<h2 id="org788b349">Example</h2>
+<section id="slide-org10669d1">
+<h2 id="org10669d1">Example</h2>
 <p>
 The gate is 5 ft wide, hinged at B. What is the force on the gate due to seawater pressure? What is the horizontal force exerted by the wall at A? What are the reactions at C?
 </p>
 
-<figure id="org9f3073d">
+<figure id="org43c312c">
 <img src="images/hydrostatic_forces_example_1a.png" alt="hydrostatic_forces_example_1a.png" width="50%">
 
 </figure>
 </section>
-<section id="slide-org494b59c">
-<h3 id="org494b59c">What is the force on the gate?</h3>
+<section id="slide-orgf758b4b">
+<h3 id="orgf758b4b">What is the force on the gate?</h3>
 <span class="fragment">
 <p>
 Gate is 10 ft long from A to B, and CG is at 3 ft.
@@ -64,11 +64,11 @@ Gate is 10 ft long from A to B, and CG is at 3 ft.
 </p>
 </span>
 </section>
-<section id="slide-orgd76ef62">
-<h3 id="orgd76ef62">What is the horizontal force at A?</h3>
+<section id="slide-orgfc59756">
+<h3 id="orgfc59756">What is the horizontal force at A?</h3>
 <span class="fragment">
 
-<figure id="org4e6e2ef">
+<figure id="org88a4816">
 <img src="images/hydrostatic_forces_example_1b.png" alt="hydrostatic_forces_example_1b.png" width="50%">
 
 </figure>
@@ -84,8 +84,8 @@ Distance from B to F is \(10-l-5=4.583\,\mathrm{ft}\)
 \[\Rightarrow F_P = 29300\,\mathrm{lbf}\]
 </p>
 </section>
-<section id="slide-org409cc73">
-<h3 id="org409cc73">What are the reactions at C?</h3>
+<section id="slide-org3fb7032">
+<h3 id="org3fb7032">What are the reactions at C?</h3>
 <span class="fragment">
 <p>
 \[\sum F_x = 0 = B_x + F \sin{\theta} - F_P\]
@@ -98,24 +98,40 @@ Distance from B to F is \(10-l-5=4.583\,\mathrm{ft}\)
 </section>
 </section>
 <section>
-<section id="slide-orga1e3734">
-<h2 id="orga1e3734">Problem</h2>
+<section id="slide-orgade2c87">
+<h2 id="orgade2c87">Problem</h2>
 <p>
 A tank of oil has a right-triangular panel near the bottom. Ignoring \(P_a\), find the hydrostatic force and the CP on the panel.
 </p>
 
-<figure id="org7b89c2d">
+<figure id="org4700ffc">
 <img src="images/hydrostatic_forces_example_2a.png" alt="hydrostatic_forces_example_2a.png" width="50%">
 
 </figure>
 </section>
+<section id="slide-org8ab7617">
+<h3 id="org8ab7617">Solution</h3>
+<p>
+\[A=(1/2)(6)(12)=36\,\mathrm{m^2}\]
+\[I_{xx} = \dfrac{bL^3}{36} = \dfrac{(6)(12)}{36} = 288\,\mathrm{m^4}\]
+\[I_{xy} = \dfrac{b(b-2s)L^2}{72} = \dfrac{(6)[6-(2)(6)](12)^2}{72} = -72\,\mathrm{m^4}\]
+\[h_{\text{CG}} = 5 + 4 = 9\,\mathrm{m}\]
+\[F = \rho g h_{\text{CG}}A = (800)(9.81)(9)(36) = 2.54 \times 10^6\,\mathrm{N}\]
+</p>
 </section>
 <section>
-<section id="slide-org2984780">
-<h2 id="org2984780">Example</h2>
+<p>
+\[y_{\text{CP}} = - \dfrac{I_{xx} \sin{\theta}}{h_{\text{CG}}A} = -\dfrac{(288)\sin{30^{\circ}}}{(9)(36)} = -0.444\,\mathrm{m}\]
+\[x_{\text{CP}} = - \dfrac{I_{xy}\sin{\theta}}{h_{\text{CG}}A} = - \dfrac{(-72)\sin{30^{\circ}}}{(9)(36)} = 0.111\,\mathrm{m}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org28177c8">
+<h2 id="org28177c8">Example</h2>
 <div class="twocolumn"><div>
 
-<figure id="org9ae04f8">
+<figure id="org6e3cc0f">
 <img src="images/submerged_car.png" alt="submerged_car.png">
 
 </figure>
@@ -129,8 +145,8 @@ What assumptions do we have to make for the solution?
 </p>
 </div>
 </section>
-<section id="slide-org027b716">
-<h3 id="org027b716">Solution</h3>
+<section id="slide-orgdfc96be">
+<h3 id="orgdfc96be">Solution</h3>
 <span class="fragment">
 <p>
 \[P_C = \rho g h_C = (1000)(9.81)(8+1.2/2) = 84400\,\mathrm{N/m^2}\]
@@ -147,18 +163,6 @@ What assumptions do we have to make for the solution?
 \[= 8.61\,\mathrm{m}\]
 </p>
 </span>
-</section>
-</section>
-<section>
-<section id="slide-org89ceea9">
-<h2 id="org89ceea9">You should</h2>
-<ul>
-<li class="fragment appear">Know the operating principle of a manometer</li>
-<li class="fragment appear">Be able to calculate the hydrostatic forces on a submerged plane surface</li>
-<li class="fragment appear">Be able to calculate the pressure on the plane surface</li>
-<li class="fragment appear">Be able to calculate the line of action coordinates</li>
-
-</ul>
 </section>
 </section>
 </div>
