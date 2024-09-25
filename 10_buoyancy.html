@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-orge02c401">
+<h2 id="orge02c401">Eureka!</h2>
+
+<figure id="org8496e9a">
+<img src="images/eureka.png" alt="eureka.png" width="70%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org6a15467">
+<h2 id="org6a15467">Buoyancy</h2>
+<blockquote>
+<p>
+A body immersed in a fluid experiences a vertical buoyant force equal to the weight of the fluid it disposes
+</p>
+</blockquote>
+<span class="fragment">
+<blockquote>
+<p>
+A floating body displaces its own weight in the fluid in which it floats
+</p>
+</blockquote>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org5025858">
+<h2 id="org5025858">Buoyant force</h2>
+<div class="twocolumn"><div>
+
+<figure id="org4db873a">
+<img src="images/buoyant_force.png" alt="buoyant_force.png">
+
+</figure>
+</div><div>
+<span class="fragment">
+<p>
+\[F_{\text{top}} = \rho_f g s A\]
+\[F_{\text{bottom}} = \rho_f g (s+h) A\]
+</p>
+</span>
+</div>
+</section>
+<section>
+<p>
+Difference is net upward force: <font color="chocolate">buoyant force</font>
+</p>
+<span class="fragment">
+<p>
+\[F_B = F_{\text{bottom}} - F_{\text{top}} = \rho_f g (s + h) A - \rho_f g s A = \rho_f g h A\]
+\[\Rightarrow F_B = \rho_f g V\kern-0.8em\raise0.3ex-\]
+</p>
+</span>
+<span class="fragment">
+<blockquote>
+<p>
+The buoyant force is equal to the weight of the liquid displaced by the plate.
+</p>
+</blockquote>
+</span>
+</section>
+<section id="slide-orgd74e7ce">
+<h3 id="orgd74e7ce">Line of action of buoyant force</h3>
+
+<figure id="org7495669">
+<img src="images/center_of_buoyancy.png" alt="center_of_buoyancy.png" width="80%">
+
+</figure>
+<ul>
+<li class="fragment appear">Assumption of uniform specific weight</li>
+<li class="fragment appear">Line of action passes through center of volume of displaced body</li>
+<li class="fragment appear">May of may not be same as center of mass of the body itself</li>
+
+</ul>
+</section>
+<section id="slide-org0076d55">
+<h3 id="org0076d55">Case of layered fluids</h3>
+<p>
+Buoyant force equation can be generalized for layered fluids
+\[F_{B,\text{LF}} = \sum \rho_i g V\kern-0.8em\raise0.3ex-_i\]
+</p>
+</section>
+<section id="slide-org5eef886">
+<h3 id="org5eef886">Floating bodies</h3>
+
+<figure id="org8b16514">
+<img src="images/center_of_buoyancy.png" alt="center_of_buoyancy.png" width="60%">
+
+</figure>
+
+<p>
+\[F_B = \gamma V\kern-0.8em\raise0.3ex- = W\]
+</p>
+<span class="fragment">
+<p>
+\[\Rightarrow \rho_f g V\kern-0.8em\raise0.3ex-_{\text{sub}} = \rho_b g V\kern-0.8em\raise0.3ex-_{\text{total}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{V\kern-0.8em\raise0.3ex-_{\text{sub}}}{V\kern-0.8em\raise0.3ex-_{\text{total}}} = \dfrac{\rho_b}{\rho_f}\]
+</p>
+</span>
+</section>
+<section id="slide-orge7683ac">
+<h3 id="orge7683ac">Sink or float?</h3>
+
+<figure id="org7a2120a">
+<img src="images/buoyancy_density.png" alt="buoyancy_density.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org19bd1fe">
+<h2 id="org19bd1fe">Buoyant forces of gases</h2>
+<p>
+What is the buoyant force exerted by air on a person?
+</p>
+<span class="fragment">
+<p>
+\[F_B = \rho g V\kern-0.8em\raise0.3ex- = (1.2\,\mathrm{kg/m^3})(9.81\,\mathrm{m/s^2})(0.1\,\mathrm{m^3}) \approx 1.2\,\mathrm{N}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Weight of an 80-kg person is \(80 \times 9.81 = 788\,\mathrm{N}\)
+</p>
+</span>
+<span class="fragment">
+<p>
+Error in weight of just 0.15%
+</p>
+</span>
+</section>
+<section id="slide-org91b5fca" data-background="./images/hot_air_balloons.png" data-background-opacity="0.8" data-background-transition="slide">
+<h3 id="org91b5fca">Buoyancy effects of gases can be important!</h3>
+</section>
+</section>
+<section>
+<section id="slide-org335edfc">
+<h2 id="org335edfc">Example</h2>
+<div class="twocolumn"><div>
+
+<figure id="org92c20e3">
+<img src="images/object_seawater_example.png" alt="object_seawater_example.png">
+
+</figure>
+</div><div>
+<p>
+Determine the tension in the rope of the crane that is used to lower a rectangular \(0.4 \times 0.4 \times 3\) m concrete block (\(\rho_b=2300\,\mathrm{kg/m^3}\)) into seawater (\(\rho_s=1025\,\mathrm{kg/m^3}\)).
+</p>
+</div>
+</section>
+<section id="slide-orge06098b">
+<h3 id="orge06098b">When it is suspended in air</h3>
+<span class="fragment">
+<p>
+\[F_{T,\text{air}} = W = \rho_b g V\kern-0.8em\raise0.3ex-\]
+\[ = (2300)(9.81)(0.4)(0.4)(3) = 10830.2\,\mathrm{N}\]
+</p>
+</span>
+</section>
+<section id="slide-org1c4e636">
+<h3 id="org1c4e636">When completely immersed in water</h3>
+<span class="fragment">
+<p>
+\[F_B = \rho_s g V\kern-0.8em\raise0.3ex-\]
+\[ = (1025)(9.81)(0.4)(0.4)(3) = 4826.5\,\mathrm{N}\]
+\[F_{T,\text{water}} = W - F_B = 10830.2 - 4826.5 = 6003.7\,\mathrm{N}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org15d9863" data-background="./images/costa-concordia.jpg" data-background-opacity="0.8" data-background-transition="slide">
+<h2 id="org15d9863">Stability</h2>
+</section>
+<section id="slide-orgaef70fd">
+<h3 id="orgaef70fd">Ball on the floor</h3>
+<div class="threecolumn"><div><span class="fragment">
+
+<figure id="org16493fa">
+<img src="images/stable_ball.png" alt="stable_ball.png">
+
+</figure>
+</span></div><div><span class="fragment">
+
+<figure id="org4cb4c63">
+<img src="images/neutral_ball.png" alt="neutral_ball.png">
+
+</figure>
+</span></div><div><span class="fragment">
+
+<figure id="org830d69e">
+<img src="images/unstable_ball.png" alt="unstable_ball.png">
+
+</figure>
+</span></div>
+</section>
+<section id="slide-org080a6b5">
+<h3 id="org080a6b5">Rotational stability of immersed bodies</h3>
+<ul>
+<li class="fragment appear">Depends on the <font color="slateblue">relative locations</font> of the center of gravity and the center of buoyancy</li>
+<li class="fragment appear">Center of gravity \(G\)</li>
+<li class="fragment appear">Center of buoyancy \(B\): centroid of the displaced volume</li>
+
+</ul>
+</section>
+<section>
+<div class="twocolumn"><div>
+
+<figure id="org70b1e1b">
+<img src="images/immersed_stability.png" alt="immersed_stability.png">
+
+</figure>
+</div><div>
+<ul>
+<li class="fragment appear"><font color="skyblue">Stable</font>: center of gravity (\(G\)) <i>below</i> center of buoyancy (\(B\))</li>
+<li class="fragment appear">Rotational disturbance will produce a <b>restoring moment</b></li>
+<li class="fragment appear"><font color="indianred">Unstable</font>: \(G\) directly above \(B\)</li>
+<li class="fragment appear"><font color="forestgreen">Neutrally stable</font>: \(G\) and \(B\) coincide</li>
+
+</ul>
+</div>
+</section>
+<section id="slide-orge6f78d7">
+<h3 id="orge6f78d7">Stability of floating bodies</h3>
+
+<figure id="orge811413">
+<img src="images/floating_stability.png" alt="floating_stability.png" width="90%">
+
+</figure>
+</section>
+<section>
+
+<figure id="orgfcac8b3">
+<img src="images/floating_stability.png" alt="floating_stability.png" width="40%">
+
+</figure>
+<ul>
+<li class="fragment appear">Calculate \(B\) and \(C\)</li>
+<li class="fragment appear">With \(\Delta \theta\) tilt, vertical line from \(B'\) to symmetry line intersects at \(M\)</li>
+<li class="fragment appear">\(M\) is the <font color="lightsalmon">metacenter</font></li>
+<li class="fragment appear">If \(M\) is above \(G\) \(\rightarrow\) <b>stable</b></li>
+<li class="fragment appear">If \(M\) is below \(G\) \(\rightarrow\) <b>unstable</b></li>
+
+</ul>
+</section>
+<section id="slide-org67ae7c7">
+<h3 id="org67ae7c7">Calculating the metacentric height</h3>
+
+<figure id="orge22299a">
+<img src="images/waterline.png" alt="waterline.png" width="65%">
+
+</figure>
+<span class="fragment">
+<p>
+\[\overline{MG} = \dfrac{I_O}{V\kern-0.8em\raise0.3ex-_{\text{sub}}} - \overline{GB}\]
+\(I_O\): area moment of inertia about the tilt axis
+</p>
+</span>
+</section>
+<section id="slide-orgd3eb74e">
+<h3 id="orgd3eb74e">Example</h3>
+<p>
+Consider a wooden cylinder (SG = 0.6) 1 m in diameter and 0.8 m long. Would this cylinder be stable if placed to float with its axis vertical in oil (SG = 0.8)?
+</p>
+</section>
+<section id="slide-orgc527ee9">
+<h4 id="orgc527ee9">Solution</h4>
+
+<figure id="orgcd744fb">
+<img src="images/cylinder_stability.png" alt="cylinder_stability.png" width="50%">
+
+</figure>
+</section>
+<section>
+<p>
+Force balance
+\[\gamma_O \pi R^2 h = \gamma_W \pi R^2 L\]
+\[\Rightarrow h = \dfrac{\gamma_W L}{\gamma_O} = \dfrac{(0.6)(0.8)}{0.85} = 0.565\,\mathrm{m}\]
+\(B\) at \(h/2\)
+\[\overline{MG} = \dfrac{I_O}{V\kern-0.8em\raise0.3ex-_{\text{sub}}} - \overline{GB}\]
+\[= \dfrac{\pi R^4}{4 \pi R^2 (h/2)} - (L/2 - h/2) = \dfrac{R^2}{2h} - \dfrac{L-h}{2}\]
+</p>
+</section>
+<section>
+<p>
+\[= \dfrac{(0.5^2)}{2(0.565)} - \dfrac{0.8 - 0.565}{2} = 0.111 - 0.118 = -0.007\,\mathrm{m}\]
+<b>Unstable</b>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orge1b5355">
+<h2 id="orge1b5355">You should&#x2026;</h2>
+<ul>
+<li class="fragment appear">Know how to calculate the buoyant force</li>
+<li class="fragment appear">Understand the concept of rotational stability</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
