@@ -26,11 +26,11 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org859c212">
-<h2 id="org859c212">Hydrostatic forces on curved surfaces</h2>
+<section id="slide-org3c56d1c">
+<h2 id="org3c56d1c">Hydrostatic forces on curved surfaces</h2>
 <div class="twocolumn"><div><span class="fragment">
 
-<figure id="org6fcee5f">
+<figure id="orgb7f3033">
 <img src="images/curved_submerged_surface.png" alt="curved_submerged_surface.png">
 
 </figure>
@@ -42,10 +42,10 @@
 </ul>
 </div>
 </section>
-<section id="slide-org54c5278">
-<h3 id="org54c5278">An easier way</h3>
+<section id="slide-orgccf6f08">
+<h3 id="orgccf6f08">An easier way</h3>
 
-<figure id="org15338d7">
+<figure id="orgbd8deca">
 <img src="images/curved_free_body_forces.png" alt="curved_free_body_forces.png" width="100%">
 
 </figure>
@@ -56,8 +56,15 @@
 </p>
 </span>
 </section>
-<section id="slide-orgb3192de">
-<h3 id="orgb3192de">General rules</h3>
+<section>
+
+<figure id="org6988544">
+<img src="images/curved_free_body_forces_multi.png" alt="curved_free_body_forces_multi.png">
+
+</figure>
+</section>
+<section id="slide-org47a1fb3">
+<h3 id="org47a1fb3">General rules</h3>
 <blockquote>
 <p>
 The horizontal component of force on a curved surface equals the force on the plane area formed by the projection of the curved surface onto a vertical plane normal to the component.
@@ -71,8 +78,8 @@ The vertical component of pressure force on a curved surface equals in magnitude
 </blockquote>
 </span>
 </section>
-<section id="slide-org6f522e5">
-<h3 id="org6f522e5">Resultant force</h3>
+<section id="slide-org03df84f">
+<h3 id="org03df84f">Resultant force</h3>
 <ul>
 <li class="fragment appear">Magnitude of force \(F_R = \sqrt{F_H^2 + F_V^2}\)</li>
 <li class="fragment appear">Angle with the horizontal is \(\tan{\alpha} = \dfrac{F_V}{F_H}\)</li>
@@ -80,10 +87,10 @@ The vertical component of pressure force on a curved surface equals in magnitude
 
 </ul>
 </section>
-<section id="slide-org3c8ec1f">
-<h3 id="org3c8ec1f">Curved surface above a liquid</h3>
+<section id="slide-org813891c">
+<h3 id="org813891c">Curved surface above a liquid</h3>
 
-<figure id="orga2a3d9b">
+<figure id="org0466a74">
 <img src="images/curved_surface_above_liquid.png" alt="curved_surface_above_liquid.png" width="48%">
 
 </figure>
@@ -92,21 +99,21 @@ The vertical component of pressure force on a curved surface equals in magnitude
 Weight needs to be <font color="darkolivegreen">subtracted</font> from the vertical force component
 </p>
 </section>
-<section id="slide-org5b769c5">
-<h3 id="org5b769c5">Example</h3>
+<section id="slide-orgda37f1a">
+<h3 id="orgda37f1a">Example</h3>
 <p>
-A parabolic dam is 50-ft wide, with \(x_0=10\,\mathrm{ft}\) and water (\(\gamma=62.4\,\mathrm{lbf/ft^3}\)). Compute the horizontal and vertical forces.
+A parabolic dam is 50-ft wide, with \(x_0=10\,\mathrm{ft}\), \(z_0=24\,\mathrm{ft}\), and water (\(\gamma=62.4\,\mathrm{lbf/ft^3}\)). Compute the horizontal and vertical forces.
 </p>
 
-<figure id="orga9e6bcd">
+<figure id="org43f7a8b">
 <img src="images/parabolic_dam.png" alt="parabolic_dam.png" width="45%">
 
 </figure>
 </section>
-<section id="slide-orgb28e0cc">
-<h4 id="orgb28e0cc">Solution</h4>
+<section id="slide-orgd2534fa">
+<h4 id="orgd2534fa">Solution</h4>
 
-<figure id="orgfc40bb7">
+<figure id="orgbbdd601">
 <img src="images/parabolic_dam_diagram.png" alt="parabolic_dam_diagram.png" width="80%">
 
 </figure>
@@ -116,7 +123,7 @@ A parabolic dam is 50-ft wide, with \(x_0=10\,\mathrm{ft}\) and water (\(\gamma=
 \[h_{C} = 24/2 = 12\,\mathrm{ft}\]
 \[A = (24)(50) = 1200\,\mathrm{ft^2}\]
 \[F_H = \gamma h_C A = (62.4)(12)(1200) = 898560\,\mathrm{lbf}\]
-\[y_P = - \dfrac{I_{xx} \sin{\theta}}{h_C A} = - \dfrac{(1/12)(50)(24)\sin{90^{\circ}}}{(12)(1200)} = -4\,\mathrm{ft}\]
+\[y_P = - \dfrac{I_{xx} \sin{\theta}}{h_C A} = - \dfrac{(1/12)(50)(24)^3\sin{90^{\circ}}}{(12)(1200)} = -4\,\mathrm{ft}\]
 </p>
 </section>
 <section>
@@ -127,29 +134,36 @@ A parabolic dam is 50-ft wide, with \(x_0=10\,\mathrm{ft}\) and water (\(\gamma=
 \[\alpha = \tan^{-1}{\dfrac{499200}{898560}} = 29^{\circ}\]
 </p>
 </section>
+<section>
+
+<figure id="org062e979">
+<img src="images/curved_surface_F_R.png" alt="curved_surface_F_R.png">
+
+</figure>
+</section>
 </section>
 <section>
-<section id="slide-orgefcbf61">
-<h2 id="orgefcbf61">Think - pair - share</h2>
-<div class="outline-text-2" id="text-orgefcbf61">
+<section id="slide-org8b1b557">
+<h2 id="org8b1b557">Think - pair - share</h2>
+<div class="outline-text-2" id="text-org8b1b557">
 </div>
 </section>
-<section id="slide-org696bcc8">
-<h3 id="org696bcc8">Question</h3>
+<section id="slide-orgcfe5cbe">
+<h3 id="orgcfe5cbe">Question</h3>
 <p>
 Someone claims that they can compute the magnitude of the hydrostatic force acting on a submerged plane surface regardless of its shape and orientation if they knew the vertical distance of the centroid from the free surface and the area of the surface. True or False? Why?
 </p>
 </section>
-<section id="slide-orgceb7a0c">
-<h3 id="orgceb7a0c">Question</h3>
+<section id="slide-org943a844">
+<h3 id="org943a844">Question</h3>
 <p>
 A submerged horizontal plate is suspended in water by a string attached at the centroid of its upper surface. Now the plate is rotated 45° about an axis that passes through the centroid. How is the hydrostatic force going to change? Assume that the plate remains submerged at all times.
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org2581958">
-<h2 id="org2581958">Hydrostatic forces in layered fluids</h2>
+<section id="slide-org98de29e">
+<h2 id="org98de29e">Hydrostatic forces in layered fluids</h2>
 <ul>
 <li class="fragment appear">Fluid layered with different densities</li>
 <li class="fragment appear">Equations for hydrostatic forces are valid for each layer</li>
@@ -159,7 +173,7 @@ A submerged horizontal plate is suspended in water by a string attached at the c
 </section>
 <section>
 
-<figure id="orgc43971a">
+<figure id="orga414c63">
 <img src="images/submerged_surface_multifluid.png" alt="submerged_surface_multifluid.png" width="80%">
 
 </figure>
@@ -182,21 +196,21 @@ Center of pressure for each layer's force
 
 </ul>
 </section>
-<section id="slide-org4462dd4">
-<h3 id="org4462dd4">Example</h3>
+<section id="slide-org74e3e41">
+<h3 id="org74e3e41">Example</h3>
 <p>
 A tank 20 ft deep and 7 ft wide is layered with 8 ft oil, 6 ft of water and 4 ft of mercury. What is the total hydrostatic force and the center of pressure on the right-hand side of the tank?
 </p>
 </section>
 <section>
 
-<figure id="org3844916">
+<figure id="org8cc9250">
 <img src="images/multifluid_tank.png" alt="multifluid_tank.png">
 
 </figure>
 </section>
-<section id="slide-org6eb8bc3">
-<h4 id="org6eb8bc3">Solution</h4>
+<section id="slide-orgca607f7">
+<h4 id="orgca607f7">Solution</h4>
 <p>
 \[P_{C,1} = (55)(4) = 220\,\mathrm{lbf/ft^2}\]
 \[P_{C,2} = (55)(8) + (62.4)(3) = 627\,\mathrm{lbf/ft^2}\]
