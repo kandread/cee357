@@ -17,3 +17,5 @@
 [Lecture #8 - Hydrostatic Forces](https://kandread.github.io/cee357/08_hydrostatic_forces.html)
 
 [Lecture #9 - Hydrostatic Forces](https://kandread.github.io/cee357/09_hydrostatic_forces.html)
+
+[Lecture #10 - Buoyancy](https://kandread.github.io/cee357/10_buoyancy.html)
