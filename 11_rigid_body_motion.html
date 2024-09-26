@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org63e7220" data-background="./images/oil_tank_train.webp" data-background-opacity="0.6" data-background-transition="slide">
+<h2 id="org63e7220">Fluids in rigid-body motion</h2>
+<ul>
+<li class="fragment appear">Container with fluid accelerates along a path or rotates about a fixes axis</li>
+<li class="fragment appear">Fluid will move as a rigid body</li>
+<li class="fragment appear">No relative motion \(\rightarrow\) no shear stress</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3579139">
+<h2 id="org3579139">Uniform linear acceleration</h2>
+
+<figure id="org4adcab9">
+<img src="images/tilting_pressure_surface.png" alt="tilting_pressure_surface.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-orgaefe5b8" data-background="./images/tilting_pressure_surface.png" data-background-size="80%" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orgaefe5b8"></h3>
+<p>
+\[\nabla P = \rho (\overrightarrow{\mathbf{g}} - \overrightarrow{\mathbf{a}})\]
+</p>
+<span class="fragment">
+<p>
+\[\theta = \tan^{-1}{\dfrac{a_x}{g + a_z}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{dP}{ds} = \rho \sqrt{a_x^2 + (g + a_z)^2}\]
+</p>
+</span>
+</section>
+<section id="slide-orgb9e0dd1">
+<h3 id="orgb9e0dd1">Example</h3>
+<p>
+A drag racer rests a coffee mug on a horizontal tray while they accelerate at \(7\,\mathrm{m/s^2}\). The mug is 10-cm deep and 6-cm in diameter and contains coffee 7-cm deep at rest. Assuming rigid-body acceleration, will the coffee (\(\rho=1010\,\mathrm{kg/m^3}\)) spill out of the mug?
+</p>
+</section>
+<section>
+
+<figure id="org85fd133">
+<img src="images/drag_racer_coffee.png" alt="drag_racer_coffee.png">
+
+</figure>
+</section>
+<section id="slide-orgd7a41d0">
+<h4 id="orgd7a41d0">Will coffee spill?</h4>
+<p>
+\[\theta = \tan^{-1}{\dfrac{a_x}{g}} = \tan^{-1}{\dfrac{7.0}{9.81}} = 35.5^{\circ}\]
+If the mug is symmetric, then the rear side of the coffee will rise
+\[\Delta z = (3)(\tan{35.5^{\circ}}) = 2.14\,\mathrm{cm} < 3\,\mathrm{cm}\]
+</p>
+</section>
+<section id="slide-orgaa35749">
+<h4 id="orgaa35749">What is the gage pressure at point A?</h4>
+<span class="fragment">
+<p>
+At rest, \[P_A = \rho g h_{\text{rest}} = (1010)(9.81)(0.07) = 694\,\mathrm{Pa}\]
+When accelerating, \[P_A = \rho \sqrt{a_x^2 + g^2} \Delta s\]
+\[= (1010)\sqrt{9.81^2 + 7.0^2} \left[ (0.07 + 0.0214) \cos{35.5^{\circ}} \right] \approx 906\,\mathrm{Pa}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org6eb99a9">
+<h2 id="org6eb99a9">Rigid body rotation</h2>
+
+<figure id="org4cdd75d">
+<img src="images/rigid_body_rotation.png" alt="rigid_body_rotation.png">
+
+</figure>
+</section>
+<section id="slide-orgeaf2293" data-background="./images/rigid_body_rotation.png" data-background-size="85%" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orgeaf2293">Pressure distribution</h3>
+<p>
+\[\boxed{P = P_0 - \gamma z + \dfrac{1}{2} \rho r^2 \Omega^2}\]
+$$&Omega;: angular velocity
+\(P_0\): pressure at \((r,z)=(0,0)\)
+</p>
+</section>
+<section id="slide-org9e21fe9">
+<h3 id="org9e21fe9">Constant-pressure surfaces</h3>
+<p>
+\[z = \dfrac{P_0 - P_1}{\gamma} + \dfrac{r^2 \Omega^2}{2g} = a + br^2\]
+</p>
+
+<figure id="orgecf4ad0">
+<img src="images/rigid_body_rotation.png" alt="rigid_body_rotation.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-org0b47afe">
+<h3 id="org0b47afe">Calculation of free surface</h3>
+
+<figure id="org9b0360b">
+<img src="images/rotation_free_surface.png" alt="rotation_free_surface.png" width="70%">
+
+</figure>
+
+<p>
+Center of the fluid drops by \(\dfrac{h}{2} = \dfrac{\Omega^2 R^2}{4g}\)
+</p>
+</section>
+<section id="slide-orgc102829">
+<h3 id="orgc102829">Example</h3>
+<p>
+Coffee cup is removed from the drag racer and put on a turntable that rotates about its central axis.
+</p>
+
+<figure id="org5162815">
+<img src="images/turntable_coffee_cup.png" alt="turntable_coffee_cup.png" width="40%">
+
+</figure>
+</section>
+<section id="slide-orgda84c3d">
+<h4 id="orgda84c3d">What is the angular velocity that will cause the coffee to reach the lip of the cup?</h4>
+<span class="fragment">
+<p>
+\[\dfrac{h}{2} = 0.03 = \dfrac{\Omega^2 R^2}{4g} = \dfrac{(9 \times 10^{-4}) \Omega^2}{(4)(9.81)}\]
+\[\Rightarrow \Omega^2 = 1308 \Rightarrow \Omega = 36.2\,\mathrm{rad/s}\]
+</p>
+</span>
+</section>
+<section id="slide-org80ae19b">
+<h4 id="org80ae19b">What is the gage pressure at A?</h4>
+<span class="fragment">
+<p>
+\[P_0=0\]
+Point A at \((r,z)=(3,-4)\)
+\[P_A = P_0 - \gamma z + \dfrac{1}{2} \rho r^2 \Omega^2\]
+\[= 0 - (1010)(9.81)(-0.04) + \dfrac{1}{2}(1010)(0.03^2)(1308)\]
+\[=396 + 594 = 990\,\mathrm{Pa}\]
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

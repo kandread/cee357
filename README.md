@@ -19,3 +19,5 @@
 [Lecture #9 - Hydrostatic Forces](https://kandread.github.io/cee357/09_hydrostatic_forces.html)
 
 [Lecture #10 - Buoyancy](https://kandread.github.io/cee357/10_buoyancy.html)
+
+[Lecture #11 - Rigid Body Motion](https://kandread.github.io/cee357/11_rigid_body_motion.html)
