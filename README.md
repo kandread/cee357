@@ -21,3 +21,5 @@
 [Lecture #10 - Buoyancy](https://kandread.github.io/cee357/10_buoyancy.html)
 
 [Lecture #11 - Rigid Body Motion](https://kandread.github.io/cee357/11_rigid_body_motion.html)
+
+[Lecture #12 - Fluid Statics Review](https://kandread.github.io/cee357/12_fluid_statics_review.html)
