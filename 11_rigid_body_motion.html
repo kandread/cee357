@@ -26,8 +26,8 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-orga6ffe10" data-background="./images/oil_tank_train.webp" data-background-opacity="0.6" data-background-transition="slide">
-<h2 id="orga6ffe10">Fluids in rigid-body motion</h2>
+<section id="slide-org219211b" data-background="./images/oil_tank_train.webp" data-background-opacity="0.6" data-background-transition="slide">
+<h2 id="org219211b">Fluids in rigid-body motion</h2>
 <ul>
 <li class="fragment appear">Container with fluid accelerates along a path or rotates about a fixed axis</li>
 <li class="fragment appear">Fluid will move as a rigid body</li>
@@ -37,16 +37,16 @@
 </section>
 </section>
 <section>
-<section id="slide-org5daea74">
-<h2 id="org5daea74">Uniform linear acceleration</h2>
+<section id="slide-orgfd581cb">
+<h2 id="orgfd581cb">Uniform linear acceleration</h2>
 
-<figure id="org9fed9b9">
+<figure id="org1cebe4a">
 <img src="images/tilting_pressure_surface.png" alt="tilting_pressure_surface.png" width="80%">
 
 </figure>
 </section>
-<section id="slide-orga8d0169" data-background="./images/tilting_pressure_surface.png" data-background-size="80%" data-background-opacity="0.2" data-background-transition="slide">
-<h3 id="orga8d0169"></h3>
+<section id="slide-orgcb7cacc" data-background="./images/tilting_pressure_surface.png" data-background-size="80%" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orgcb7cacc"></h3>
 <p>
 \[\nabla P = \rho (\overrightarrow{\mathbf{g}} - \overrightarrow{\mathbf{a}})\]
 </p>
@@ -61,34 +61,41 @@
 </p>
 </span>
 </section>
-<section id="slide-orgdc3762d">
-<h3 id="orgdc3762d">Example</h3>
+<section id="slide-org2de2292">
+<h3 id="org2de2292">Example</h3>
 <p>
 A drag racer rests a coffee mug on a horizontal tray while they accelerate at \(7\,\mathrm{m/s^2}\). The mug is 10-cm deep and 6-cm in diameter and contains coffee 7-cm deep at rest. Assuming rigid-body acceleration, will the coffee (\(\rho=1010\,\mathrm{kg/m^3}\)) spill out of the mug?
 </p>
 </section>
 <section>
 
-<figure id="org686424f">
+<figure id="orgc24a1f9">
 <img src="images/drag_racer_coffee.png" alt="drag_racer_coffee.png">
 
 </figure>
 </section>
-<section id="slide-orge900ccd">
-<h4 id="orge900ccd">Will coffee spill?</h4>
+<section id="slide-org5beaf35">
+<h4 id="org5beaf35">Will coffee spill?</h4>
 <span class="fragment">
 <p>
 \[\theta = \tan^{-1}{\dfrac{a_x}{g}} = \tan^{-1}{\dfrac{7.0}{9.81}} = 35.5^{\circ}\]
+</p>
+</span>
+<span class="fragment">
+<p>
 If the mug is symmetric, then the rear side of the coffee will rise
 \[\Delta z = (3)(\tan{35.5^{\circ}}) = 2.14\,\mathrm{cm} < 3\,\mathrm{cm}\]
 </p>
 </span>
 </section>
-<section id="slide-orgd497395">
-<h4 id="orgd497395">What is the gage pressure at point A?</h4>
+<section id="slide-org83e7671">
+<h4 id="org83e7671">What is the gage pressure at point A?</h4>
 <span class="fragment">
 <p>
 At rest, \[P_A = \rho g h_{\text{rest}} = (1010)(9.81)(0.07) = 694\,\mathrm{Pa}\]
+</p>
+</span><span class="fragment">
+<p>
 When accelerating, \[P_A = \rho \sqrt{a_x^2 + g^2} \Delta s\]
 \[= (1010)\sqrt{9.81^2 + 7.0^2} \left[ (0.07 + 0.0214) \cos{35.5^{\circ}} \right] \approx 906\,\mathrm{Pa}\]
 </p>
@@ -96,37 +103,37 @@ When accelerating, \[P_A = \rho \sqrt{a_x^2 + g^2} \Delta s\]
 </section>
 </section>
 <section>
-<section id="slide-orgb5fdad3">
-<h2 id="orgb5fdad3">Rigid body rotation</h2>
+<section id="slide-org6a00f04">
+<h2 id="org6a00f04">Rigid body rotation</h2>
 
-<figure id="org1dff050">
+<figure id="orgf12d538">
 <img src="images/rigid_body_rotation.png" alt="rigid_body_rotation.png">
 
 </figure>
 </section>
-<section id="slide-org8e5451f" data-background="./images/rigid_body_rotation.png" data-background-size="85%" data-background-opacity="0.2" data-background-transition="slide">
-<h3 id="org8e5451f">Pressure distribution</h3>
+<section id="slide-orge60c97d" data-background="./images/rigid_body_rotation.png" data-background-size="85%" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orge60c97d">Pressure distribution</h3>
 <p>
 \[\boxed{P = P_0 - \gamma z + \dfrac{1}{2} \rho r^2 \Omega^2}\]
 \(\Omega\): angular velocity
 \(P_0\): pressure at \((r,z)=(0,0)\)
 </p>
 </section>
-<section id="slide-org2a7b13c">
-<h3 id="org2a7b13c">Constant-pressure surfaces</h3>
+<section id="slide-org5def0e8">
+<h3 id="org5def0e8">Constant-pressure surfaces</h3>
 <p>
 \[z = \dfrac{P_0 - P_1}{\gamma} + \dfrac{r^2 \Omega^2}{2g} = a + br^2\]
 </p>
 
-<figure id="org727fe87">
+<figure id="orgd67b52e">
 <img src="images/rigid_body_rotation.png" alt="rigid_body_rotation.png" width="60%">
 
 </figure>
 </section>
-<section id="slide-orgdc2a58e">
-<h3 id="orgdc2a58e">Calculation of free surface</h3>
+<section id="slide-org4e922d0">
+<h3 id="org4e922d0">Calculation of free surface</h3>
 
-<figure id="orgda1e5cd">
+<figure id="org9cef408">
 <img src="images/rotation_free_surface.png" alt="rotation_free_surface.png" width="70%">
 
 </figure>
@@ -135,32 +142,41 @@ When accelerating, \[P_A = \rho \sqrt{a_x^2 + g^2} \Delta s\]
 Center of the fluid drops by \(\dfrac{h}{2} = \dfrac{\Omega^2 R^2}{4g}\)
 </p>
 </section>
-<section id="slide-org70753a7">
-<h3 id="org70753a7">Example</h3>
+<section id="slide-org5856b0e">
+<h3 id="org5856b0e">Example</h3>
 <p>
 Coffee cup is removed from the drag racer and put on a turntable that rotates about its central axis.
 </p>
 
-<figure id="org9c8761a">
+<figure id="org5f2e4bb">
 <img src="images/turntable_coffee_cup.png" alt="turntable_coffee_cup.png" width="40%">
 
 </figure>
 </section>
-<section id="slide-orgd9c6c18">
-<h4 id="orgd9c6c18">What is the angular velocity that will cause the coffee to reach the lip of the cup?</h4>
+<section id="slide-orgd91a59c">
+<h4 id="orgd91a59c">What is the angular velocity that will cause the coffee to reach the lip of the cup?</h4>
 <span class="fragment">
 <p>
 \[\dfrac{h}{2} = 0.03 = \dfrac{\Omega^2 R^2}{4g} = \dfrac{(9 \times 10^{-4}) \Omega^2}{(4)(9.81)}\]
+</p>
+</span><span class="fragment">
+<p>
 \[\Rightarrow \Omega^2 = 1308 \Rightarrow \Omega = 36.2\,\mathrm{rad/s}\]
 </p>
 </span>
 </section>
-<section id="slide-orgef2045a">
-<h4 id="orgef2045a">What is the gage pressure at A?</h4>
+<section id="slide-orgbac33b1">
+<h4 id="orgbac33b1">What is the gage pressure at A?</h4>
 <span class="fragment">
 <p>
 \[P_0=0\]
+</p>
+</span><span class="fragment">
+<p>
 Point A at \((r,z)=(3,-4)\)
+</p>
+</span><span class="fragment">
+<p>
 \[P_A = P_0 - \gamma z + \dfrac{1}{2} \rho r^2 \Omega^2\]
 \[= 0 - (1010)(9.81)(-0.04) + \dfrac{1}{2}(1010)(0.03^2)(1308)\]
 \[=396 + 594 = 990\,\mathrm{Pa}\]

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org9badb40">
+<h2 id="org9badb40">Fluid statics</h2>
+<table class="tableblock frame-all grid-all custom-style" style="width:100%">
+  <colgroup><col style="width:50%"><col style="width:50%"></colgroup>
+  <tbody><tr>
+      <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="image"><img src="https://www.pbs.org/wgbh/americanexperience/media/canonical_images/feature/Flood_Dam_canonical.jpg"></span></p></div></div></td>
+      <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><span class="image"><img src="https://www.cstindustries.com/wp-content/uploads/2016/09/Aquastore_potable-water.jpg"></span></p></div></div></td>
+</tr></tbody></table>
+</section>
+</section>
+<section>
+<section id="slide-org4ea90a0">
+<h2 id="org4ea90a0">Fluid kinematics</h2>
+
+<figure id="org09b28d9">
+<img src="images/helene.gif" alt="helene.gif">
+
+</figure>
+</section>
+<section>
+<blockquote>
+<p>
+Most flow problems require analysis of fluid motion defined by geometry, boundary conditions and laws of mechanics
+</p>
+</blockquote>
+<ol>
+<li class="fragment appear">Control volume</li>
+<li class="fragment appear">Rate of change of fluid property</li>
+<li class="fragment appear">Basic conservation laws of fluid mechanics
+<ul>
+<li>Mass</li>
+<li>Linear and Angular Momentum</li>
+<li>Energy</li>
+
+</ul></li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org77efe03">
+<h2 id="org77efe03">Typical control volumes</h2>
+<p>
+Fixed, Moving or Deforming
+</p>
+
+
+<figure id="org8ded764">
+<img src="images/typical_control_volumes.png" alt="typical_control_volumes.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org8ac3265">
+<h2 id="org8ac3265">Integral quantities</h2>
+<div class="twocolumn"><div>
+
+<figure id="org9ff78a0">
+<img src="images/Q_integral.png" alt="Q_integral.png">
+
+</figure>
+</div><div>
+<ul>
+<li class="fragment appear">Volume flow rate \(\rightarrow \int\) of velocity over area</li>
+<li class="fragment appear">Heat transfer \(\rightarrow \int\) of heat flux over area</li>
+<li class="fragment appear">Force is \(\rightarrow \int\) of stress over area</li>
+<li class="fragment appear">Case of unknown integral quantities or quantities not integral in nature</li>
+
+</ul>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc68cd40">
+<h2 id="orgc68cd40">Basic laws of a system</h2>
+<div class="outline-text-2" id="text-orgc68cd40">
+</div>
+</section>
+<section id="slide-org4703680">
+<h3 id="org4703680">Mass conservation</h3>
+<p>
+\[m_{\text{system}} = \text{const}\]
+\[\dfrac{dm}{dt} = 0\]
+</p>
+</section>
+<section id="slide-org18f2311">
+<h3 id="org18f2311">Momentum conservation</h3>
+<p>
+\[\vec{F} = m \vec{a} = m \dfrac{d \vec{V}}{dt}\]
+</p>
+<span class="fragment">
+<p>
+\[\vec{M} = \dfrac{d \vec{H}}{dt}\]
+where the angular momentum of the system about its center of mass is
+\[\vec{H} = \sum \left( \vec{r} \times \vec{V} \right) \delta m\]
+</p>
+</span>
+</section>
+<section id="slide-org7aa0bdb">
+<h3 id="org7aa0bdb">Energy conservation</h3>
+<p>
+\[\delta Q - \delta W = dE\]
+\[\dot{Q} - \dot{W} = \dfrac{dE}{dt}\]
+</p>
+<span class="fragment">
+<p>
+Entropy change relationship to heat added
+\[dS \geq \dfrac{\delta Q}{T}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org3a934d1">
+<h2 id="org3a934d1">System vs control volume</h2>
+
+<figure id="orgd26ecc6">
+<img src="images/fixed_CV_system.png" alt="fixed_CV_system.png" width="100%">
+
+</figure>
+<span class="fragment">
+<p>
+Lagrangian vs Eulerian
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org13cca97">
+<h2 id="org13cca97">Volume and Mass rate of flow</h2>
+
+<figure id="org5ecadb7">
+<img src="images/volume_flow_rate.png" alt="volume_flow_rate.png" width="60%">
+
+</figure>
+
+<span class="fragment">
+<p>
+Amount of fluid through \(dA\) in time \(dt\)
+\[d V\kern-0.8em\raise0.3ex-_ = \left( \vec{V} \cdot \vec{n} \right) dA dt\]
+</p>
+</span>
+</section>
+<section id="slide-org14ac98a">
+<h3 id="org14ac98a">Volumetric flow rate</h3>
+<p>
+\[Q = \int_S \left( \vec{V} \cdot \vec{n} \right) dA = \int_S V_n dA\]
+</p>
+<span class="fragment">
+<ul>
+<li class="fragment appear">\(\vec{n}\) is considered positive outwards</li>
+<li class="fragment appear">If \(Q\) is positive then <font color="salmon">outflow</font></li>
+<li class="fragment appear">If \(Q\) is negative then <font color="palegreen">inflow</font></li>
+<li class="fragment appear">Typical units are \(m^3/s\)</li>
+
+</ul>
+</span>
+</section>
+<section id="slide-orge039188">
+<h3 id="orge039188">Mass flow rate</h3>
+<p>
+If we multiply by density
+\[ \dot{m} = \int_S \rho \left( \vec{V} \cdot \vec{n} \right) dA = \int_S \rho V_n dA\]
+</p>
+<span class="fragment">
+<p>
+If density and velocity are constant over \(S\) then
+\[\dot{m} = \rho Q = \rho A V\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgfd56c16">
+<h2 id="orgfd56c16">Flow patterns and visualizations</h2>
+
+<figure id="orgecc408f">
+<img src="images/spinning_baseball.png" alt="spinning_baseball.png" width="80%">
+
+</figure>
+
+<p>
+ <font size="5"><a href="https://courses.washington.edu/me431/handouts/Album-Fluid-Motion-Van-Dyke.pdf">An Album of Fluid Motion</a></font>
+</p>
+</section>
+<section>
+
+<figure id="org1f6b94f">
+<img src="https://eaglepubs.erau.edu/app/uploads/sites/4/2021/07/Smoke_flow.png" alt="Smoke_flow.png" width="100%">
+
+</figure>
+<div class="bottom-left"><a href="https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/types-of-fluid-flows/">Intro to Aerospace Flight Vehicles</a></div>
+</section>
+<section>
+<video
+  data-autoplay
+  src="./images/nasa_vortex.mp4"
+></video>
+</section>
+<section id="slide-org5ba1aaf">
+<h3 id="org5ba1aaf">Streamlines</h3>
+<p>
+Useful indicators of the instantaneous direction of fluid motion throughout the flow field
+</p>
+<span class="fragment">
+
+<figure id="orge230c75">
+<img src="images/streamline_def.png" alt="streamline_def.png" width="70%">
+
+</figure>
+</span>
+</section>
+<section id="slide-org44e4ae7">
+<h3 id="org44e4ae7">Streamtubes</h3>
+
+<figure id="org4bad9ab">
+<img src="images/streamtubes_def.png" alt="streamtubes_def.png" width="60%">
+
+</figure>
+<ul>
+<li class="fragment appear">Consists of a bundle of streamlines</li>
+<li class="fragment appear">Fluid cannot cross a streamline or streamtube's boundary</li>
+
+</ul>
+</section>
+<section id="slide-orgf29609b">
+<h3 id="orgf29609b">Pathlines</h3>
+<p>
+The actual path traveled by an individual fluid particle over some time period
+</p>
+
+<figure id="orgda688ec">
+<img src="images/pathline_def.png" alt="pathline_def.png" width="70%">
+
+</figure>
+</section>
+<section id="slide-org5a0dfd4">
+<h3 id="org5a0dfd4">Streaklines</h3>
+<p>
+The curve formed by all fluid particles that have passed sequentially through a prescribed point in the flow
+</p>
+
+<figure id="org79f94ab">
+<img src="images/streakline_def.png" alt="streakline_def.png" width="50%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org25c865c">
+<h2 id="org25c865c">You should&#x2026;</h2>
+<ul>
+<li class="fragment appear">Be able to distinguish between various types of flow visualizations</li>
+<li class="fragment appear">Understand the concept of the control volume</li>
+<li class="fragment appear">Understand why we will apply the basic laws of system to the control volume</li>
+<li class="fragment appear">Reynolds Transport Theorem</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
