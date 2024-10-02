@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org7c72ae0">
+<h2 id="org7c72ae0">Application of physical laws</h2>
+<ul>
+<li class="fragment appear">Fluid mechanics based on physical laws</li>
+<li class="fragment appear">Easier to work with control volumes
+<img src="images/fixed_CV_system.png" alt="fixed_CV_system.png"></li>
+<li class="fragment appear">Mass flows across boundaries of control volume</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org789d9d5">
+<h2 id="org789d9d5">Extensive properties</h2>
+<ul>
+<li class="fragment appear">Extensive properties depend on system mass (e.g., momentum, energy)</li>
+<li class="fragment appear">Intensive properties independent of mass (e.g., pressure, density)</li>
+<li class="fragment appear">Physical laws deal with time rates of change in extensive properties</li>
+<li class="fragment appear">Need relationship between time rates of change for a system and for a control volume</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge2d5f70">
+<h2 id="orge2d5f70">Reynolds Transport Theorem</h2>
+
+<figure id="org2ede1dd">
+<img src="images/rtt.png" alt="rtt.png">
+
+</figure>
+</section>
+<section>
+<p>
+Conversion differs depending on type of control volume
+</p>
+
+<figure id="org2b96bb6">
+<img src="images/cv_types_rtt.png" alt="cv_types_rtt.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgad8d1ee">
+<h2 id="orgad8d1ee">RTT derivation</h2>
+<img src="./images/cv_rtt.png" class="left-image">
+<div class="content-left-image"><span class="fragment">
+<p>
+\[B_{\text{sys},t} = B_{\text{CV},t}\]
+</p>
+</span><span class="fragment">
+<p>
+\[B_{\text{sys},t+\Delta t} = B_{\text{CV},t+\Delta t} - B_{\text{I},t+\Delta t} + B_{\text{II},t+\Delta t}\]
+</p>
+</span></div>
+
+<span class="fragment">
+<p>
+\[\dfrac{B_{\text{sys},t+\Delta t} - B_{\text{sys},t}}{\Delta t} = \dfrac{B_{\text{CV},t+\Delta t} - B_{\text{CV},t}}{\Delta t} - \dfrac{B_{\text{I},t+\Delta t}}{\Delta t} + \dfrac{B_{\text{II},t+\Delta t}}{\Delta t}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+Taking the limit as \(\Delta t \rightarrow 0\)
+\[\dfrac{dB_{\text{sys}}}{dt} = \dfrac{B_{\text{CV}}}{dt} - \dot{B}_{\text{in}} + \dot{B}_{\text{out}}\]
+</p>
+<span class="fragment">
+<p>
+\[B_{\text{I},t+\Delta t} = b_1  m_{\text{I},t+\Delta t} = b_1 \rho_1 V\kern-0.8em\raise0.3ex-_{\text{I},t+\Delta t} = b_1 \rho_1 V_1 \Delta t A_1\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dot{B_{\text{in}}} = \dot{B_{\text{I}}} = \lim_{\Delta t \rightarrow 0} \dfrac{B_{\text{I},t+\Delta t}}{\Delta t} = \lim_{\Delta t \rightarrow 0} \dfrac{b_1 \rho_1 V_1 \Delta A_1}{\Delta t} = b_1 \rho_1 V_1 A_1\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{B_{\text{sys}}}{dt} = \dfrac{dB_{\text{CV}}}{dt} - \dot{B}_{\text{in}} + \dot{B}_{\text{out}}\]
+</p>
+<span class="fragment">
+<blockquote>
+<p>
+The time rate of change of property \(B\) of the system is equal to the time rate of change of \(B\) of the control volume plus the net flux of \(B\) out of the control volume by mass crossing the control surface.
+</p>
+</blockquote>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org0748a7e">
+<h2 id="org0748a7e">Arbitrary fixed control volume</h2>
+
+<figure id="org0430181">
+<img src="images/arbitrary_fixed_cv.png" alt="arbitrary_fixed_cv.png" width="85%">
+
+</figure>
+</section>
+<section>
+<p>
+\[b = \dfrac{dB}{dm}\]
+</p>
+<span class="fragment">
+<p>
+\[B_{\text{CV}} = \int_{\text{CV}} b dm = \int_{\text{CV}} b \rho dV\kern-0.8em\raise0.3ex-\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[B = b m = b \rho V\kern-0.8em\raise0.3ex- = b \rho V \Delta A\]
+</p>
+</span>
+<span class="fragment"><div style="position: absolute; left: -200px;">
+<p>
+\[\boxed{\dfrac{d}{dt}\left(B_{\text{sys}}\right) = \dfrac{d}{dt}\left( \int_{\text{CV}} b \rho dV\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho V \cos{\theta} dA_{\text{out}} - \int_{\text{CS}} b \rho V \cos{\theta} dA_{\text{in}}}\]
+</p>
+</div></span>
+</section>
+<section>
+<p>
+Remember that \[\vec{V} \cdot \vec{n} = V_n\]
+</p>
+<span class="fragment">
+<p>
+\[\boxed{\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho dV\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho \left( V \cdot n \right) dA}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org1bed9b5">
+<h2 id="org1bed9b5">Control volume moving at constant velocity</h2>
+<p>
+CV is moving uniformly at velocity \(V_s\)
+</p>
+<span class="fragment">
+<p>
+Relative velocity \[V_r = V - V_s\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho dV\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho \left( V_r \cdot n \right) dA\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org8016d5f">
+<h2 id="org8016d5f">Deformable and moving CV</h2>
+
+<figure id="org49de6b4">
+<img src="images/arbitrary_moving_deformable_cv.png" alt="arbitrary_moving_deformable_cv.png" width="70%">
+
+</figure>
+</section>
+<section>
+<p>
+\[V_r = V(r,t) - V_s(r,t)\]
+</p>
+<span class="fragment">
+<p>
+\[\boxed{\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho dV\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho \left( V_r \cdot n \right) dA }\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgf45c228">
+<h2 id="orgf45c228">1-D flux term approximations</h2>
+
+<figure id="orgb92624b">
+<img src="images/1d_flux_cv.png" alt="1d_flux_cv.png" width="70%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org818c4cb">
+<img src="images/1d_flux_cv.png" alt="1d_flux_cv.png" width="40%">
+
+</figure>
+<span class="fragment"><div style="position: absolute; left: -100px;">
+<p>
+\[\dfrac{d}{dt}\left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b dm \right) + b_2 (\rho A V)_2 + b_3 (\rho A V)_3 + b_5 (\rho A V)_5\]
+\[ - b_1 (\rho A V)_1 - b_4 (\rho A V)_4\]
+</p>
+</div></span>
+</section>
+</section>
+<section>
+<section id="slide-org7c9379b">
+<h2 id="org7c9379b">Quiz</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/als7wkshqu8p83ba86jcb1baz8w6o9vv/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-orgd48e088">
+<h2 id="orgd48e088">Example</h2>
+
+<figure id="org70cf8f7">
+<img src="images/cv_choice.png" alt="cv_choice.png" width="70%">
+
+</figure>
+
+<p>
+Find the rate of the water level rise if water is coming through a 0.1 m<sup>2</sup> pipe with 0.5 m/s, and exiting at 0.2 m<sup>3</sup>/s. The container has a circular cross section with a 0.5 m diameter.
+</p>
+</section>
+<section id="slide-orgf22ac45">
+<h3 id="orgf22ac45">Solution</h3>
+
+<figure id="org4efc204">
+<img src="images/cv_choice.png" alt="cv_choice.png" width="30%">
+
+</figure>
+
+<p>
+\[\dfrac{d}{dt}(m_{\text{sys}}) = \dfrac{d}{dt} \int_{\text{CV}} \rho dV\kern-0.8em\raise0.3ex- + \rho (-V_1)A_1 + \rho V_2 A_2\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{d}{dt} \int_{\text{CV}} \rho dV\kern-0.8em\raise0.3ex- + \rho (-V_1)A_1 + \rho V_2 A_2 = 0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[ \dfrac{d}{dt}(\rho h \pi D^2 / 4) - \rho V_1 A_1 + \rho Q_2 = 0\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[ \Rightarrow \dfrac{\pi D^2}{4} \dfrac{dh}{dt} - V_1 A_1 + Q_2 = 0\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{dh}{dt} = \dfrac{V_1 A_1 - Q_2}{\pi D^2 / 4} = \dfrac{(0.5)(0.1)-0.2}{\pi(0.5^2)/4} = -0.764\,\mathrm{m/s}\]
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
