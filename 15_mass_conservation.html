@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org6dc25be">
+<h2 id="org6dc25be">Reminder</h2>
+<p>
+Reynolds Transport Theorem
+\[\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho d V\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho (\vec{V} \cdot \vec{n}) dA\]
+</p>
+
+
+<figure id="orgcf12ef4">
+<img src="images/rtt.png" alt="rtt.png" width="40%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org4b60ca2">
+<h2 id="org4b60ca2">Volume and Mass flow rates</h2>
+
+<figure id="orgf5fcf14">
+<img src="images/volume_flow_rate.png" alt="volume_flow_rate.png" width="60%">
+
+</figure>
+
+<span class="fragment">
+<p>
+Amount of fluid through \(dA\) in time \(dt\)
+\[d V\kern-0.8em\raise0.3ex-_ = \left( \vec{V} \cdot \vec{n} \right) dA dt\]
+</p>
+</span>
+</section>
+<section id="slide-org9958794">
+<h3 id="org9958794">Volumetric flow rate</h3>
+<p>
+\[Q = \int_S \left( \vec{V} \cdot \vec{n} \right) dA = \int_S V_n dA\]
+</p>
+<ul>
+<li class="fragment appear">\(\vec{n}\) is considered positive outwards</li>
+<li class="fragment appear">If \(Q\) is positive then <font color="salmon">outflow</font></li>
+<li class="fragment appear">If \(Q\) is negative then <font color="palegreen">inflow</font></li>
+<li class="fragment appear">Typical units are \(m^3/s\)</li>
+
+</ul>
+</section>
+<section id="slide-orgeec0ec1">
+<h3 id="orgeec0ec1">Mass flow rate</h3>
+<p>
+If we multiply by density
+\[ \dot{m} = \int_S \rho \left( \vec{V} \cdot \vec{n} \right) dA = \int_S \rho V_n dA\]
+</p>
+<span class="fragment">
+<p>
+If density and velocity are constant over \(S\) then
+\[\dot{m} = \rho Q = \rho A V\]
+</p>
+</span>
+</section>
+<section id="slide-org67f41da">
+<h4 id="org67f41da">Average velocity</h4>
+
+<figure id="org8fbea8c">
+<img src="images/average_velocity.png" alt="average_velocity.png" width="50%">
+
+</figure>
+
+<p>
+\[V_{\text{avg}} = \dfrac{1}{A} \int_A V_n dA\]
+</p>
+
+<p>
+\(A\) is the cross-sectional area normal to the flow direction
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga9b5d75">
+<h2 id="orga9b5d75">Conservation of mass</h2>
+<blockquote>
+<p>
+The net mass transfer to or from a control volume during a time interval \(\Delta t\) is equal to the net change (increase or decrease) of the total mass within the control volume.
+</p>
+</blockquote>
+<p>
+\[m_{\text{in}} - m_{\text{out}} = \Delta m_{\text{CV}}\]
+\[\dot{m_{\text{in}}} - \dot{m_{\text{out}}} = \dfrac{dm_{\text{CV}}}{dt}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org12d9846">
+<h2 id="org12d9846">From Reynolds Transport Theorem</h2>
+<p>
+\[\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho d V\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho (\vec{V} \cdot \vec{n}) dA\]
+</p>
+<span class="fragment">
+<p>
+\(B=m\) and \(b=B/m=1\)
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{d}{dt} \left( m_{\text{sys}} \right) = 0 = \dfrac{d}{dt} \left( \int_{\text{CV}} \rho d V\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} \rho (\vec{V} \cdot \vec{n}) dA\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\boxed{\dfrac{d}{dt} \int_{\text{CV}} \rho d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho \left( \vec{V} \cdot \vec{n} \right) dA}\]
+</p>
+<span class="fragment">
+<p>
+Usually we deal with inlets and outlets
+\[\dfrac{d}{dt} \int_{\text{CV}} \rho d V\kern-0.8em\raise0.3ex- + \sum_{\text{out}} \rho V_n A - \sum_{\text{in}} \rho V_n A = 0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\boxed{\dfrac{d}{dt} \int_{\text{CV}} \rho d V\kern-0.8em\raise0.3ex- = \dfrac{dm_{\text{CV}}}{dt} = \sum_{\text{in}} \dot{m} - \sum_{\text{out}} \dot{m}}\]
+</p>
+</span>
+</section>
+<section id="slide-org1137938">
+<h3 id="org1137938">Choosing the control volume</h3>
+
+<figure id="org7706c65">
+<img src="images/mass_cv_choice.png" alt="mass_cv_choice.png" width="55%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org2e3be42">
+<h2 id="org2e3be42">Steady flow</h2>
+<blockquote>
+<p>
+The total rate of mass entering a control volume is equal to the total rate of mass leaving it.
+</p>
+</blockquote>
+<span class="fragment">
+<p>
+\[\cancelto{0}{\dfrac{dm_{\text{CV}}}{dt}} = \sum_{\text{in}} \dot{m} - \sum_{\text{out}} \dot{m}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\sum_{\text{in}} \dot{m} - \sum_{\text{out}} \dot{m}\]
+</p>
+</span>
+</section>
+<section id="slide-orgd653e49">
+<h3 id="orgd653e49">Incompressible steady flow</h3>
+
+<figure id="org42f98ad">
+<img src="images/mass_conservation_Q.png" alt="mass_conservation_Q.png" width="40%">
+
+</figure>
+
+<span class="fragment">
+<p>
+\[\dot{m}_1 = \dot{m}_2 \Rightarrow \rho_1 V_1 A_1 = \rho_2 V_2 A_2\]
+</p>
+</span>
+</section>
+<section>
+<p>
+For liquids \(\rightarrow\) incompressible flow
+</p>
+<span class="fragment">
+<p>
+\[V_1 A_1 = V_2 A_2\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgd93a28d">
+<h2 id="orgd93a28d">Example</h2>
+<p>
+The velocity profile for flow through a circular tube is \(u = U_0 \left( 1 - \dfrac{r}{R} \right)^{m}\)
+Compute the average velocity for laminar flow (\(m \approx 1/2\)).
+</p>
+
+
+<figure id="org09c691c">
+<img src="images/vavg_example.png" alt="vavg_example.png" width="40%">
+
+</figure>
+</section>
+<section id="slide-org0d6c8a2">
+<h3 id="org0d6c8a2">Solution</h3>
+<p>
+\[\overline{V} = \dfrac{1}{A} \int u dA\]
+</p>
+<span class="fragment">
+<p>
+\[\overline{V} = \dfrac{1}{\pi R^2} \int_0^R U_0 \left( 1 - \dfrac{r}{R} \right)^{m} 2 \pi r dr\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\overline{V} = U_0 \dfrac{2}{(1+m)(2+m)}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\overline{V} \approx 0.53U_0\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org9f22039">
+<h2 id="org9f22039">Example</h2>
+<img src="./images/discharge_from_water_tank.png" class="limage" style="--top: 0px; --left: -50px; --width: 50%">
+<div class="content-limage" style="--margin: 30%">
+<p>
+A 4-ft high, 3-ft diameter cylindrical water tank is filled with water. The discharge plug is pulled out and a water jet whose diameter is 0.5 in streams out. The average velocity of the jet is \(V=\sqrt{2gh}\). How long will it take for the water level in the tank to drop to 2 ft from the bottom?
+</p>
+</div>
+</section>
+<section id="slide-org6df9b9d">
+<h3 id="org6df9b9d">Solution</h3>
+<p>
+\[\dot{m}_{\text{in}} - \dot{m}_{\text{out}} = \dfrac{dm_{\text{CV}}}{dt}\]
+</p>
+<span class="fragment">
+<p>
+\[\dot{m}_{\text{in}} = 0\]
+\[\dot{m}_{\text{out}} = \rho V A = \rho \sqrt{2gh} (\pi D_{\text{jet}}^2 / 4)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[m_{\text{CV}} = \rho V\kern-0.8em\raise0.3ex- = \rho h \pi D_{\text{tank}}^2 / 4\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[-\rho \sqrt{2gh} (\pi D_{\text{jet}}^2 / 4) = \dfrac{\pi D_{\text{tank}}^2}{4} \dfrac{dh}{dt}\]
+</p>
+<span class="fragment">
+<p>
+\[dt = - \dfrac{D_{\text{tank}}^2}{D_{\text{jet}}^2} \dfrac{dh}{\sqrt{2gh}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\int_0^t dt = - \dfrac{D_{\text{tank}}^2}{D_{\text{jet}}^2 \sqrt{2g}} \int_{h_0}^{h_2} \dfrac{dh}{\sqrt{h}}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[t = \dfrac{\sqrt{h_0}- \sqrt{h_2}}{\sqrt{g/2}} \left( \dfrac{D_{\text{tank}}^2}{D_{\text{jet}}^2} \right)^2\]
+</p>
+<span class="fragment">
+<p>
+\[t = \dfrac{\sqrt{4} - \sqrt{2}}{\sqrt{32.2/2}} \left( \dfrac{(3)(12)}{0.5} \right)^2 = 757\,\mathrm{s}\]
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

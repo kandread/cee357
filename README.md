@@ -27,3 +27,5 @@
 [Lecture #13 - Integral Relations](https://kandread.github.io/cee357/13_integral_relations.html)
 
 [Lecture #14 - Reynolds Transport Theorem](https://kandread.github.io/cee357/14_reynolds_theorem.html)
+
+[Lecture #15 - Mass Conservation](https://kandread.github.io/cee357/15_mass_conservation.html)

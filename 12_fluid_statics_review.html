@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -26,18 +27,148 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org93c269f">
-<h2 id="org93c269f">Problem</h2>
+<section id="slide-org0a43723">
+<h2 id="org0a43723">Fluid statics</h2>
+</section>
+<section>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/al9b6jytyjqzm3u3xqu3v14pm8zrbgr6/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+<section id="slide-org5320d1e">
+<h3 id="org5320d1e">The normal force exerted by a fluid per unit area is called&#x2026;</h3>
+<span class="fragment">
+<p>
+Pressure and its SI unit is 1 Pa = 1 N/m<sup>2</sup>
+</p>
+</span>
+</section>
+<section id="slide-orgb229efd">
+<h3 id="orgb229efd">The absolute, gage and vacuum pressures are related by&#x2026;</h3>
+<span class="fragment">
+<p>
+\[P_{\text{gage}} = P_{\text{abs}} - P_{\text{atm}}\]
+\[P_{\text{vac}} = P_{\text{atm}} - P_{\text{abs}} = -P_{\text{gage}}\]
+</p>
+</span>
+</section>
+<section id="slide-org24d61bf">
+<h3 id="org24d61bf">The variation of pressure with elevation/depth in a fluid at rest is given by&#x2026;</h3>
+<span class="fragment">
+<p>
+\[\dfrac{dP}{dz} = -\rho g\]
+</p>
+</span>
+</section>
+<section id="slide-org4b78326">
+<h3 id="org4b78326">The gage pressure in a static fluid open to the atmosphere at depth \(h\) from the free surface is given by&#x2026;</h3>
+<span class="fragment">
+<p>
+\[P = \rho g h\]
+</p>
+</span>
+</section>
+<section id="slide-org9f7c8fe">
+<h3 id="org9f7c8fe">The magnitude of the resultant force acting on a plane surface of a submerged plate is equal to&#x2026;</h3>
+<span class="fragment">
+<p>
+\[F = (P_a + \rho g h_C)A\]
+</p>
+</span>
+</section>
+<section id="slide-org0b93a7b">
+<h3 id="org0b93a7b">The center of pressure defines the&#x2026;</h3>
+<span class="fragment">
+<p>
+line of action of the resultant pressure force
+</p>
+</span>
+</section>
+<section id="slide-org84565a4">
+<h3 id="org84565a4">The vertical location of the line of action of the resultant force is given by&#x2026;</h3>
+<span class="fragment">
+<p>
+\[y_P = \dfrac{I_{xx}\sin{\theta}}{h_C A}\] and it is relative to the centroid of the submerged surface
+</p>
+</span>
+</section>
+<section id="slide-orgd8833a0">
+<h3 id="orgd8833a0">The upward force exerted on a submerged body by the fluid is called&#x2026; and is given by&#x2026;</h3>
+<span class="fragment">
+<p>
+The buoyant force is given by \[F_B = \rho_f g V\kern-0.8em\raise0.3ex-\]
+</p>
+</span>
+</section>
+<section id="slide-org6912cdc">
+<h3 id="org6912cdc">A floating body is stable if the metacentric height is&#x2026;</h3>
+<span class="fragment">
+<p>
+\[\overline{MG} = \dfrac{I_O}{V\kern-0.8em\raise0.3ex-_{\text{sub}}} - \overline{GB}\]
+</p>
+</span>
+</section>
+<section id="slide-org4a307c8">
+<h3 id="org4a307c8">When a fluid that acts as a rigid body is linearly accelerated, pressure is expressed as&#x2026;</h3>
+<span class="fragment">
+<p>
+\[P = P_0 - \rho a_x x - \rho (g + a_z) z\]
+</p>
+</span>
+</section>
+<section id="slide-org2a08c3d">
+<h3 id="org2a08c3d">During rigid-body motion in a rotating cylinder, pressure is expressed as&#x2026;</h3>
+<span class="fragment">
+<p>
+\[P = P_0 + \dfrac{\rho \Omega^2}{2} r^2 - \rho g z\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org170ede7">
+<h2 id="org170ede7">Problem</h2>
 <p>
 A cylindrical sluice gate of unit length and radius 0.5 m, opens rotating about A when the level of the tank is \(h_w=3.5\,\mathrm{m}\). What is the magnitude and the line of action of the force exerted by the water for incipient opening condition? What is the weight of the sluice gate?
 </p>
 </section>
 <section>
 
-<figure id="org1b9612b">
+<figure id="orgcc638f6">
 <img src="images/sluice_gate.png" alt="sluice_gate.png">
 
 </figure>
+</section>
+<section id="slide-org763099f">
+<h3 id="org763099f">Solution</h3>
+
+<figure id="org22eed08">
+<img src="images/sluice_gate_diagram.png" alt="sluice_gate_diagram.png" width="60%">
+
+</figure>
+</section>
+<section>
+<p>
+The horizontal component of the pressure force is given by
+\[ F_H = \gamma \left( h_w - \dfrac{R}{2} \right) R\]
+\[=(9790\mathrm{N/m^3})[(3.5 - 0.5/2)\mathrm{m}](0.5\mathrm{m})(1\mathrm{m}) \]
+\[ = 15908.75\mathrm{N} \]
+</p>
+</section>
+<section>
+<p>
+\[ F_V = \gamma \left[ (h_w - R)R + \dfrac{\pi R^2}{4} \right]\]
+\[= (9790\mathrm{N/m^3})\left[ (3.5-0.5)(0.5) + \dfrac{\pi 0.5^2}{4} \right]\mathrm{m^2}(1\mathrm{m}) \]
+\[ F_V = 16607.26\mathrm{N} \]
+\[ \beta = \tan^{-1} \dfrac{F_V}{F_H} = \tan^{-1} \dfrac{16607.26}{15908.8} \]
+\[ = 46.23\mathrm{^{\circ}} \]
+</p>
+</section>
+<section>
+<p>
+The moment of the water force at incipient opening conditions need to be equal to the weight moment
+\[ W R = |\mathbf{F}| R \sin \beta \]
+\[ \Rightarrow W = |\mathbf{F}| \sin \beta \]
+\[ W = F_V = 16607.26\mathrm{N} \]
+</p>
 </section>
 </section>
 </div>
@@ -46,7 +177,6 @@ A cylindrical sluice gate of unit length and radius 0.5 m, opens rotating about 
 <script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
-<script src="./reveal.js/plugin/math/math.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/menu/menu.js"></script>
 <script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
@@ -72,7 +202,7 @@ transition: 'convex',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [
