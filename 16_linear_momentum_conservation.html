@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org28e57e2" data-background="./images/wind_turbines.jpg" data-background-opacity="0.8" data-background-transition="slide">
+<h2 id="org28e57e2">Power generation and wind loading of a wind turbine</h2>
+</section>
+<section id="slide-org66c8d99">
+<h3 id="org66c8d99">Problem</h3>
+<ul>
+<li class="fragment appear">A wind turbine has a 30-ft diameter blade span and a cut-in wind speed of 7 mph</li>
+<li class="fragment appear">At that velocity it generates 0.4 kW of power</li>
+<li class="fragment appear">What is the efficiency of the turbine?</li>
+<li class="fragment appear">What is the effect of doubling the wind velocity to 14 mph on power generation and the force exerted?</li>
+<li class="fragment appear">Density of air is 0.076 lbm/ft<sup>3</sup></li>
+
+</ul>
+</section>
+<section>
+
+<figure id="org00cf8c7">
+<img src="images/wind_turbine_cv.png" alt="wind_turbine_cv.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-orgcc0167f">
+<h4 id="orgcc0167f">Solution</h4>
+<p>
+\[V_1 = 7\,\mathrm{mph} = 10.27\,\mathrm{ft/s}\]
+</p>
+<span class="fragment">
+<p>
+\[\dot{m} = \rho_1 V_1 A_1 = \rho_1 V_1 \dfrac{\pi D^2}{4} = (0.076)(10.27)\dfrac{\pi(30)^2}{4}\]
+\[= 551.7\,\mathrm{lb/s}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dot{W} = \dot{m} \dfrac{V_1^2}{2}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dot{W} = (551.7)(10.27^2/2) = 1.225\,\mathrm{kW}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\eta = \dfrac{\dot{W}_{\text{actual}}}{\dot{W}_{\text{max}}} = \dfrac{0.4}{1.225} = 0.327\]
+or \[32.7\%\]
+</p>
+</section>
+<section>
+<p>
+\[\dot{m} \dfrac{V_2^2}{2} = \dot{m} \dfrac{V_1^2}{2} (1 - \eta)\]
+</p>
+<span class="fragment">
+<p>
+\[V_2 = V_1 \sqrt{1 - \eta} = (10.27) \sqrt{1 - 0.327} = 8.43\,\mathrm{ft/s}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+<font color="slateblue">How do we calculate the force on the mast?</font>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org3463531">
+<h2 id="org3463531">Newton's laws</h2>
+<p>
+\[\vec{F} = m \vec{a}\]
+</p>
+<div class="twocolumn"><div>
+<span class="fragment">
+
+<figure id="orgfc64152">
+<img src="images/linear_momentum_mV.png" alt="linear_momentum_mV.png">
+
+</figure>
+</span></div><div><span class="fragment">
+
+<figure id="orgbda4a50">
+<img src="images/newtons_2nd_law.png" alt="newtons_2nd_law.png">
+
+</figure>
+</span></div>
+</section>
+</section>
+<section>
+<section id="slide-org50b980c">
+<h2 id="org50b980c">Conservation of momentum</h2>
+<p>
+\[\sum \vec{F} = m \vec{a} = m \dfrac{d\vec{V}}{dt} = \dfrac{d}{dt} \left( m \vec{V} \right)\]
+where \(m\vec{V}\) is the <font color="skyblue">linear momentum of the system</font>
+</p>
+</section>
+<section id="slide-org1822f41">
+<h3 id="org1822f41">Let's apply the Reynolds Transport Theorem</h3>
+<p>
+\[\dfrac{dB_{\text{sys}}}{dt} = \dfrac{d}{dt} \int_{\text{CV}} \rho b d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho b \left( \vec{V} \cdot \vec{n} \right) dA\]
+</p>
+<span class="fragment">
+<p>
+\[B=m \vec{V}~~~~~b=\vec{V}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{\left( m \vec{V} \right)_{\text{sys}}}{dt} = \dfrac{d}{dt} \int_{\text{CV}} \rho \vec{V} d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho \vec{V} \left( \vec{V}_r \cdot \vec{n} \right) dA\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\boxed{\sum \vec{F} = \dfrac{d}{dt} \int_{\text{CV}} \rho \vec{V} d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho \vec{V} \left( \vec{V}_r \cdot \vec{n} \right) dA}\]
+</p>
+<span class="fragment">
+<p>
+When fixed CV
+\[\vec{V}_r = \vec{V}\]
+</p>
+</span>
+</section>
+<section id="slide-org9fa73fb">
+<h3 id="org9fa73fb">1-D Momentum flux</h3>
+<p width="40%">
+<img src="images/momentum_inlets_outlets.png" alt="momentum_inlets_outlets.png" width="40%">
+\[\int_A \rho \vec{V} \left( \vec{V} \cdot \vec{n} \right) dA = \rho V_{\text{avg}} A \vec{V}_{\text{avg}} = \dot{m} \vec{V}_{\text{avg}}\]
+assuming uniform velocity \(\vec{V} = \vec{V}_{\text{avg}}\)
+</p>
+</section>
+<section>
+<p>
+\[\boxed{\sum \vec{F} = \dfrac{d}{dt} \left( \int_{\text{CV}} \vec{V} \rho d V\kern-0.8em\raise0.3ex- \right) + \sum \left( \dot{m}_i \vec{V}_i \right)_{\text{out}} - \sum \left( \dot{m}_i \vec{V}_i \right)_{\text{in}}}\]
+</p>
+<span class="fragment">
+<p>
+But is velocity actually uniform?
+</p>
+</span>
+</section>
+<section id="slide-org82dc0cd">
+<h3 id="org82dc0cd">Momentum-flux correction factor</h3>
+<div class="twocolumn"><div>
+
+<figure id="orgfe3c4b5">
+<img src="images/momentum_correction_example1.png" alt="momentum_correction_example1.png">
+
+</figure>
+</div><div><span class="fragment">
+<p>
+\[ \int_A \rho \vec{V} \left( \vec{V} \cdot \vec{n} \right) dA = \zeta \dot{m} \vec{V}_{\text{avg}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\zeta = \dfrac{1}{A} \int_A \left( \dfrac{V}{V_{\text{avg}}} \right)^2 dA\]
+</p>
+</span></div>
+</section>
+<section id="slide-org157a634">
+<h3 id="org157a634">Solution</h3>
+<a href="#/1/1">Let's go back to the problem</a>
+</section>
+<section>
+<p>
+\[\sum \vec{F} = \dfrac{d}{dt} \int_{\text{CV}} \rho \vec{V} d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho \vec{V} \left( \vec{V} \cdot \vec{n} \right) dA\]
+</p>
+<span class="fragment">
+<p>
+\[\sum \vec{F} = \cancelto{0}{\dfrac{d}{dt} \int_{\text{CV}} \rho \vec{V} d V\kern-0.8em\raise0.3ex-} + \sum\limits_{\text{out}} \dot{m} \vec{V} - \sum\limits_{\text{in}} \dot{m} \vec{V}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[F_R = \dot{m} V_2 - \dot{m} V_1 = (551.7)(8.43 - 10.27)\]
+\[=-31.5\,\mathrm{lbf}\]
+</p>
+</span>
+</section>
+<section id="slide-org11de76f">
+<h3 id="org11de76f">Steady flow</h3>
+<p width="40%">
+<img src="images/momentum_steady_flow.png" alt="momentum_steady_flow.png" width="40%">
+\[\boxed{\sum \vec{F} = \sum_{\text{out}} \zeta \dot{m} \vec{V} - \sum_{\text{in}} \zeta \dot{m} \vec{V}}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org1439ce5">
+<h2 id="org1439ce5">Problem</h2>
+<p>
+Water flows steadily through an expanding elbow, and at the inlet of the elbow absolute pressure is 230 kPa and cross-sectional area is 0.004 m<sup>2</sup>. The direction of flow is 45°. At the outlet absolute pressure is 200 kPa, cross-sectional area is 0.01 m<sup>2</sup>, and velocity is 2 m/s. If water density is 1000 kg/m<sup>3</sup>, calculate the anchoring forces in <i>x</i> and <i>y</i> directions required to hold the elbow in place. Ignore frictional forces and the weights of water and the elbow.
+</p>
+</section>
+<section>
+
+<figure id="org6b1bed1">
+<img src="images/momentum_elbow.png" alt="momentum_elbow.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-orgf2f25dc">
+<h3 id="orgf2f25dc">Solution</h3>
+<p>
+We assume uniform flow at the elbow inlet and outlet, and atmospheric pressure of 101 kPa.
+</p>
+<span class="fragment">
+<p>
+\[\sum \vec{F} = \dot{m}_2 \vec{V}_2 - \dot{m}_1 \vec{V}_1\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[R_x + P_1 A_1 \cos{\theta} - P_2 A_2 = (\rho A_2 V_2) V_2 - (\rho A_1 V_1) V_1 \cos{\theta}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[V_1 = V_2 \dfrac{A_2}{A_1} = (2)\dfrac{0.01}{0.004} = 5\,\mathrm{m/s}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+R<sub>x</sub> = -(230-101)(0.004)cos{45} + (200-101)(0.01) + (1000)[(0.01)(2)<sup>2</sup> - (0.004)(5)<sup>2</sup> cos{45^}]\[
+\] = 594.4\,\mathrm{N}$$
+</p>
+</span>
+</section>
+<section>
+<p>
+\[R_y + P_1 A_1 \sin{\theta} = 0 - (\rho A_1 V_1) V_1 \sin{\theta}\]
+</p>
+<span class="fragment">
+<p>
+\[R_y = -(230-101)(0.004) \sin{45} - (1000)(0.004)(5)^2 \sin{45}\]
+\[= -435.6\,\mathrm{N}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgbd23fcf">
+<h2 id="orgbd23fcf">You should&#x2026;</h2>
+<ul>
+<li class="fragment appear">Know the momentum conservation equation and that it is a vector equation</li>
+<li class="fragment appear">Understand that the momentum flux terms describe both the direction of the velocity vector as well as the inflow/outflow from the control volume</li>
+<li class="fragment appear">Know when to employ the 1-D flux approximation</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -26,8 +27,8 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org9badb40">
-<h2 id="org9badb40">Fluid statics</h2>
+<section id="slide-org9fe9968">
+<h2 id="org9fe9968">Fluid statics</h2>
 <table class="tableblock frame-all grid-all custom-style" style="width:100%">
   <colgroup><col style="width:50%"><col style="width:50%"></colgroup>
   <tbody><tr>
@@ -37,10 +38,10 @@
 </section>
 </section>
 <section>
-<section id="slide-org4ea90a0">
-<h2 id="org4ea90a0">Fluid kinematics</h2>
+<section id="slide-orgf3b6e06">
+<h2 id="orgf3b6e06">Fluid kinematics</h2>
 
-<figure id="org09b28d9">
+<figure id="orged3aeee">
 <img src="images/helene.gif" alt="helene.gif">
 
 </figure>
@@ -66,25 +67,11 @@ Most flow problems require analysis of fluid motion defined by geometry, boundar
 </section>
 </section>
 <section>
-<section id="slide-org77efe03">
-<h2 id="org77efe03">Typical control volumes</h2>
-<p>
-Fixed, Moving or Deforming
-</p>
-
-
-<figure id="org8ded764">
-<img src="images/typical_control_volumes.png" alt="typical_control_volumes.png">
-
-</figure>
-</section>
-</section>
-<section>
-<section id="slide-org8ac3265">
-<h2 id="org8ac3265">Integral quantities</h2>
+<section id="slide-org4ee4017">
+<h2 id="org4ee4017">Integral quantities</h2>
 <div class="twocolumn"><div>
 
-<figure id="org9ff78a0">
+<figure id="org12726e5">
 <img src="images/Q_integral.png" alt="Q_integral.png">
 
 </figure>
@@ -100,20 +87,20 @@ Fixed, Moving or Deforming
 </section>
 </section>
 <section>
-<section id="slide-orgc68cd40">
-<h2 id="orgc68cd40">Basic laws of a system</h2>
-<div class="outline-text-2" id="text-orgc68cd40">
+<section id="slide-org339209f">
+<h2 id="org339209f">Basic laws of a system</h2>
+<div class="outline-text-2" id="text-org339209f">
 </div>
 </section>
-<section id="slide-org4703680">
-<h3 id="org4703680">Mass conservation</h3>
+<section id="slide-orgcd09df0">
+<h3 id="orgcd09df0">Mass conservation</h3>
 <p>
 \[m_{\text{system}} = \text{const}\]
 \[\dfrac{dm}{dt} = 0\]
 </p>
 </section>
-<section id="slide-org18f2311">
-<h3 id="org18f2311">Momentum conservation</h3>
+<section id="slide-org91e7f7d">
+<h3 id="org91e7f7d">Momentum conservation</h3>
 <p>
 \[\vec{F} = m \vec{a} = m \dfrac{d \vec{V}}{dt}\]
 </p>
@@ -125,8 +112,8 @@ where the angular momentum of the system about its center of mass is
 </p>
 </span>
 </section>
-<section id="slide-org7aa0bdb">
-<h3 id="org7aa0bdb">Energy conservation</h3>
+<section id="slide-org522d8e0">
+<h3 id="org522d8e0">Energy conservation</h3>
 <p>
 \[\delta Q - \delta W = dE\]
 \[\dot{Q} - \dot{W} = \dfrac{dE}{dt}\]
@@ -140,10 +127,10 @@ Entropy change relationship to heat added
 </section>
 </section>
 <section>
-<section id="slide-org3a934d1">
-<h2 id="org3a934d1">System vs control volume</h2>
+<section id="slide-orgc70935f">
+<h2 id="orgc70935f">System vs control volume</h2>
 
-<figure id="orgd26ecc6">
+<figure id="orge7a1eb7">
 <img src="images/fixed_CV_system.png" alt="fixed_CV_system.png" width="100%">
 
 </figure>
@@ -155,55 +142,24 @@ Lagrangian vs Eulerian
 </section>
 </section>
 <section>
-<section id="slide-org13cca97">
-<h2 id="org13cca97">Volume and Mass rate of flow</h2>
+<section id="slide-org2243c5e">
+<h2 id="org2243c5e">Typical control volumes</h2>
+<p>
+Fixed, Moving or Deforming
+</p>
 
-<figure id="org5ecadb7">
-<img src="images/volume_flow_rate.png" alt="volume_flow_rate.png" width="60%">
+
+<figure id="org6925869">
+<img src="images/typical_control_volumes.png" alt="typical_control_volumes.png">
 
 </figure>
-
-<span class="fragment">
-<p>
-Amount of fluid through \(dA\) in time \(dt\)
-\[d V\kern-0.8em\raise0.3ex-_ = \left( \vec{V} \cdot \vec{n} \right) dA dt\]
-</p>
-</span>
-</section>
-<section id="slide-org14ac98a">
-<h3 id="org14ac98a">Volumetric flow rate</h3>
-<p>
-\[Q = \int_S \left( \vec{V} \cdot \vec{n} \right) dA = \int_S V_n dA\]
-</p>
-<span class="fragment">
-<ul>
-<li class="fragment appear">\(\vec{n}\) is considered positive outwards</li>
-<li class="fragment appear">If \(Q\) is positive then <font color="salmon">outflow</font></li>
-<li class="fragment appear">If \(Q\) is negative then <font color="palegreen">inflow</font></li>
-<li class="fragment appear">Typical units are \(m^3/s\)</li>
-
-</ul>
-</span>
-</section>
-<section id="slide-orge039188">
-<h3 id="orge039188">Mass flow rate</h3>
-<p>
-If we multiply by density
-\[ \dot{m} = \int_S \rho \left( \vec{V} \cdot \vec{n} \right) dA = \int_S \rho V_n dA\]
-</p>
-<span class="fragment">
-<p>
-If density and velocity are constant over \(S\) then
-\[\dot{m} = \rho Q = \rho A V\]
-</p>
-</span>
 </section>
 </section>
 <section>
-<section id="slide-orgfd56c16">
-<h2 id="orgfd56c16">Flow patterns and visualizations</h2>
+<section id="slide-orgb7b3570">
+<h2 id="orgb7b3570">Flow patterns and visualizations</h2>
 
-<figure id="orgecc408f">
+<figure id="orgfab86ad">
 <img src="images/spinning_baseball.png" alt="spinning_baseball.png" width="80%">
 
 </figure>
@@ -214,7 +170,7 @@ If density and velocity are constant over \(S\) then
 </section>
 <section>
 
-<figure id="org1f6b94f">
+<figure id="orgfbefa73">
 <img src="https://eaglepubs.erau.edu/app/uploads/sites/4/2021/07/Smoke_flow.png" alt="Smoke_flow.png" width="100%">
 
 </figure>
@@ -226,23 +182,23 @@ If density and velocity are constant over \(S\) then
   src="./images/nasa_vortex.mp4"
 ></video>
 </section>
-<section id="slide-org5ba1aaf">
-<h3 id="org5ba1aaf">Streamlines</h3>
+<section id="slide-org4af6492">
+<h3 id="org4af6492">Streamlines</h3>
 <p>
 Useful indicators of the instantaneous direction of fluid motion throughout the flow field
 </p>
 <span class="fragment">
 
-<figure id="orge230c75">
+<figure id="org8875fb8">
 <img src="images/streamline_def.png" alt="streamline_def.png" width="70%">
 
 </figure>
 </span>
 </section>
-<section id="slide-org44e4ae7">
-<h3 id="org44e4ae7">Streamtubes</h3>
+<section id="slide-org4da60db">
+<h3 id="org4da60db">Streamtubes</h3>
 
-<figure id="org4bad9ab">
+<figure id="orgb8beee9">
 <img src="images/streamtubes_def.png" alt="streamtubes_def.png" width="60%">
 
 </figure>
@@ -252,32 +208,32 @@ Useful indicators of the instantaneous direction of fluid motion throughout the 
 
 </ul>
 </section>
-<section id="slide-orgf29609b">
-<h3 id="orgf29609b">Pathlines</h3>
+<section id="slide-org027cc78">
+<h3 id="org027cc78">Pathlines</h3>
 <p>
 The actual path traveled by an individual fluid particle over some time period
 </p>
 
-<figure id="orgda688ec">
+<figure id="orgfb41149">
 <img src="images/pathline_def.png" alt="pathline_def.png" width="70%">
 
 </figure>
 </section>
-<section id="slide-org5a0dfd4">
-<h3 id="org5a0dfd4">Streaklines</h3>
+<section id="slide-org489cc78">
+<h3 id="org489cc78">Streaklines</h3>
 <p>
 The curve formed by all fluid particles that have passed sequentially through a prescribed point in the flow
 </p>
 
-<figure id="org79f94ab">
+<figure id="org43a56a9">
 <img src="images/streakline_def.png" alt="streakline_def.png" width="50%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org25c865c">
-<h2 id="org25c865c">You should&#x2026;</h2>
+<section id="slide-orga9e1b99">
+<h2 id="orga9e1b99">You should&#x2026;</h2>
 <ul>
 <li class="fragment appear">Be able to distinguish between various types of flow visualizations</li>
 <li class="fragment appear">Understand the concept of the control volume</li>
@@ -293,7 +249,6 @@ The curve formed by all fluid particles that have passed sequentially through a 
 <script src="./reveal.js/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js/plugin/zoom/zoom.js"></script>
 <script src="./reveal.js/plugin/notes/notes.js"></script>
-<script src="./reveal.js/plugin/math/math.js"></script>
 <script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
 <script src="./reveal.js/plugin/menu/menu.js"></script>
 <script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
@@ -319,7 +274,7 @@ transition: 'convex',
 transitionSpeed: 'default',
 
 // Plugins with reveal.js 4.x
-plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
 
 // Optional libraries used to extend reveal.js
 dependencies: [

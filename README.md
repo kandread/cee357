@@ -29,3 +29,5 @@
 [Lecture #14 - Reynolds Transport Theorem](https://kandread.github.io/cee357/14_reynolds_theorem.html)
 
 [Lecture #15 - Mass Conservation](https://kandread.github.io/cee357/15_mass_conservation.html)
+
+[Lecture #16 - Linear Momentum Conservation](https://kandread.github.io/cee357/16_linear_momentum_conservation.html)
