@@ -27,11 +27,11 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org28e57e2" data-background="./images/wind_turbines.jpg" data-background-opacity="0.8" data-background-transition="slide">
-<h2 id="org28e57e2">Power generation and wind loading of a wind turbine</h2>
+<section id="slide-org34d4742" data-background="./images/wind_turbines.jpg" data-background-opacity="0.8" data-background-transition="slide">
+<h2 id="org34d4742">Power generation and wind loading of a wind turbine</h2>
 </section>
-<section id="slide-org66c8d99">
-<h3 id="org66c8d99">Problem</h3>
+<section id="slide-org0b57708">
+<h3 id="org0b57708">Problem</h3>
 <ul>
 <li class="fragment appear">A wind turbine has a 30-ft diameter blade span and a cut-in wind speed of 7 mph</li>
 <li class="fragment appear">At that velocity it generates 0.4 kW of power</li>
@@ -43,13 +43,23 @@
 </section>
 <section>
 
-<figure id="org00cf8c7">
+<figure id="org8364fad">
 <img src="images/wind_turbine_cv.png" alt="wind_turbine_cv.png" width="60%">
 
 </figure>
 </section>
-<section id="slide-orgcc0167f">
-<h4 id="orgcc0167f">Solution</h4>
+<section id="slide-orgc88d3be">
+<h4 id="orgc88d3be">Assumptions</h4>
+<ul>
+<li class="fragment appear">Wind flow is steady and incompressible</li>
+<li class="fragment appear">Efficiency of turbine is independent of wind speed</li>
+<li class="fragment appear">Frictional effects are negligible</li>
+<li class="fragment appear">Average velocity of air through the turbine is the same as wind velocity</li>
+
+</ul>
+</section>
+<section id="slide-org87039f6">
+<h4 id="org87039f6">Solution</h4>
 <p>
 \[V_1 = 7\,\mathrm{mph} = 10.27\,\mathrm{ft/s}\]
 </p>
@@ -93,21 +103,21 @@ or \[32.7\%\]
 </section>
 </section>
 <section>
-<section id="slide-org3463531">
-<h2 id="org3463531">Newton's laws</h2>
+<section id="slide-org5709891">
+<h2 id="org5709891">Newton's laws</h2>
 <p>
 \[\vec{F} = m \vec{a}\]
 </p>
 <div class="twocolumn"><div>
 <span class="fragment">
 
-<figure id="orgfc64152">
+<figure id="orgd1fbf9f">
 <img src="images/linear_momentum_mV.png" alt="linear_momentum_mV.png">
 
 </figure>
 </span></div><div><span class="fragment">
 
-<figure id="orgbda4a50">
+<figure id="orge249851">
 <img src="images/newtons_2nd_law.png" alt="newtons_2nd_law.png">
 
 </figure>
@@ -115,15 +125,15 @@ or \[32.7\%\]
 </section>
 </section>
 <section>
-<section id="slide-org50b980c">
-<h2 id="org50b980c">Conservation of momentum</h2>
+<section id="slide-org3e1ce4b">
+<h2 id="org3e1ce4b">Conservation of momentum</h2>
 <p>
 \[\sum \vec{F} = m \vec{a} = m \dfrac{d\vec{V}}{dt} = \dfrac{d}{dt} \left( m \vec{V} \right)\]
 where \(m\vec{V}\) is the <font color="skyblue">linear momentum of the system</font>
 </p>
 </section>
-<section id="slide-org1822f41">
-<h3 id="org1822f41">Let's apply the Reynolds Transport Theorem</h3>
+<section id="slide-org187641d">
+<h3 id="org187641d">Let's apply the Reynolds Transport Theorem</h3>
 <p>
 \[\dfrac{dB_{\text{sys}}}{dt} = \dfrac{d}{dt} \int_{\text{CV}} \rho b d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho b \left( \vec{V} \cdot \vec{n} \right) dA\]
 </p>
@@ -149,8 +159,16 @@ When fixed CV
 </p>
 </span>
 </section>
-<section id="slide-org9fa73fb">
-<h3 id="org9fa73fb">1-D Momentum flux</h3>
+<section id="slide-orged4d3fa">
+<h3 id="orged4d3fa">Moving control volume</h3>
+
+<figure id="orgeabe273">
+<img src="images/airplane_moving_CV.png" alt="airplane_moving_CV.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-org8294d86">
+<h3 id="org8294d86">1-D Momentum flux</h3>
 <p width="40%">
 <img src="images/momentum_inlets_outlets.png" alt="momentum_inlets_outlets.png" width="40%">
 \[\int_A \rho \vec{V} \left( \vec{V} \cdot \vec{n} \right) dA = \rho V_{\text{avg}} A \vec{V}_{\text{avg}} = \dot{m} \vec{V}_{\text{avg}}\]
@@ -167,11 +185,11 @@ But is velocity actually uniform?
 </p>
 </span>
 </section>
-<section id="slide-org82dc0cd">
-<h3 id="org82dc0cd">Momentum-flux correction factor</h3>
+<section id="slide-orgc7da2bc">
+<h3 id="orgc7da2bc">Momentum-flux correction factor</h3>
 <div class="twocolumn"><div>
 
-<figure id="orgfe3c4b5">
+<figure id="orgb79e271">
 <img src="images/momentum_correction_example1.png" alt="momentum_correction_example1.png">
 
 </figure>
@@ -186,8 +204,8 @@ But is velocity actually uniform?
 </p>
 </span></div>
 </section>
-<section id="slide-org157a634">
-<h3 id="org157a634">Solution</h3>
+<section id="slide-orge2b6f6e">
+<h3 id="orge2b6f6e">Solution</h3>
 <a href="#/1/1">Let's go back to the problem</a>
 </section>
 <section>
@@ -206,8 +224,8 @@ But is velocity actually uniform?
 </p>
 </span>
 </section>
-<section id="slide-org11de76f">
-<h3 id="org11de76f">Steady flow</h3>
+<section id="slide-orgd06f60b">
+<h3 id="orgd06f60b">Steady flow</h3>
 <p width="40%">
 <img src="images/momentum_steady_flow.png" alt="momentum_steady_flow.png" width="40%">
 \[\boxed{\sum \vec{F} = \sum_{\text{out}} \zeta \dot{m} \vec{V} - \sum_{\text{in}} \zeta \dot{m} \vec{V}}\]
@@ -215,21 +233,21 @@ But is velocity actually uniform?
 </section>
 </section>
 <section>
-<section id="slide-org1439ce5">
-<h2 id="org1439ce5">Problem</h2>
+<section id="slide-orgbb79067">
+<h2 id="orgbb79067">Problem</h2>
 <p>
 Water flows steadily through an expanding elbow, and at the inlet of the elbow absolute pressure is 230 kPa and cross-sectional area is 0.004 m<sup>2</sup>. The direction of flow is 45°. At the outlet absolute pressure is 200 kPa, cross-sectional area is 0.01 m<sup>2</sup>, and velocity is 2 m/s. If water density is 1000 kg/m<sup>3</sup>, calculate the anchoring forces in <i>x</i> and <i>y</i> directions required to hold the elbow in place. Ignore frictional forces and the weights of water and the elbow.
 </p>
 </section>
 <section>
 
-<figure id="org6b1bed1">
+<figure id="orga058abc">
 <img src="images/momentum_elbow.png" alt="momentum_elbow.png" width="100%">
 
 </figure>
 </section>
-<section id="slide-orgf2f25dc">
-<h3 id="orgf2f25dc">Solution</h3>
+<section id="slide-org17c597a">
+<h3 id="org17c597a">Solution</h3>
 <p>
 We assume uniform flow at the elbow inlet and outlet, and atmospheric pressure of 101 kPa.
 </p>
@@ -250,7 +268,7 @@ We assume uniform flow at the elbow inlet and outlet, and atmospheric pressure o
 </span>
 <span class="fragment">
 <p>
-R<sub>x</sub> = -(230-101)(0.004)cos{45} + (200-101)(0.01) + (1000)[(0.01)(2)<sup>2</sup> - (0.004)(5)<sup>2</sup> cos{45^}]\[
+R<sub>x</sub> = -(230-101)(0.004)cos(45) + (200-101)(0.01) + (1000)[(0.01)(2)<sup>2</sup> - (0.004)(5)<sup>2</sup> cos(45)]\[
 \] = 594.4\,\mathrm{N}$$
 </p>
 </span>
@@ -268,8 +286,8 @@ R<sub>x</sub> = -(230-101)(0.004)cos{45} + (200-101)(0.01) + (1000)[(0.01)(2)<su
 </section>
 </section>
 <section>
-<section id="slide-orgbd23fcf">
-<h2 id="orgbd23fcf">You should&#x2026;</h2>
+<section id="slide-orgd6aa7ad">
+<h2 id="orgd6aa7ad">You should&#x2026;</h2>
 <ul>
 <li class="fragment appear">Know the momentum conservation equation and that it is a vector equation</li>
 <li class="fragment appear">Understand that the momentum flux terms describe both the direction of the velocity vector as well as the inflow/outflow from the control volume</li>
