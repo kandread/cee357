@@ -31,3 +31,5 @@
 [Lecture #15 - Mass Conservation](https://kandread.github.io/cee357/15_mass_conservation.html)
 
 [Lecture #16 - Linear Momentum Equation](https://kandread.github.io/cee357/16_linear_momentum_equation.html)
+
+[Lecture #17 - Bernoulli Equation](https://kandread.github.io/cee357/17_bernoulli_equation.html)

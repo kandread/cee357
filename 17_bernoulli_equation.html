@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org9d178cb" data-background="https://www.carparts.com/blog/wp-content/uploads/2023/04/siphoning-of-car-fuel-1200x800.jpg" data-background-transition="slide">
+<h2 id="org9d178cb"></h2>
+<span class="fragment">
+
+<figure id="org8fd6892">
+<img src="images/siphoning_gas.png" alt="siphoning_gas.png" width="60%">
+
+</figure>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org2053528">
+<h2 id="org2053528">The Bernoulli Equation</h2>
+<ul>
+<li class="fragment appear">Approximate relation between <b>pressure</b>, <b>velocity</b> and <b>elevation</b></li>
+<li class="fragment appear">Valid in regions of steady, incompressible flow</li>
+<li class="fragment appear">Net frictional forces are negligible</li>
+<li class="fragment appear">Many applications despite its simplicity</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org114e27b">
+<h2 id="org114e27b">Inviscid regions of flow</h2>
+<span class="fragment">
+
+<figure id="org2f0b570">
+<img src="images/inviscid_flow_regions.png" alt="inviscid_flow_regions.png" width="90%">
+
+</figure>
+</span>
+</section>
+<section>
+
+<figure id="org62c9276">
+<img src="images/bernoulli_validity_examples.png" alt="bernoulli_validity_examples.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgd7c7c6a">
+<h2 id="orgd7c7c6a">Derivation of the Bernoulli equation</h2>
+<img src="./images/bernoulli_derivation.png" class="limage" style="--top: 80px; --left: -120px; --width: 80%">
+<div class="content-limage" style="--margin: 40%">
+<span class="fragment">
+<p>
+\[\sum F_s = m a_s\]
+</p>
+</span><span class="fragment">
+<p>
+\[P dA - (P + dP) dA - W \sin{\theta} = m V \dfrac{dV}{ds}\]
+</p>
+</span><span class="fragment">
+<p>
+\[m = \rho V\kern-0.8em\raise0.3ex- = \rho dA ds\]
+\[W = m g = \rho g \, dA \, ds\]
+</p>
+</span></div>
+</section>
+<section>
+<p>
+\[-dP \, dA - \rho g \, dA \, ds \dfrac{dz}{ds} = \rho dA \, ds \, V \dfrac{dV}{ds}\]
+</p>
+<span class="fragment">
+<p>
+\[-dP - \rho g dz = \rho V dV\]
+</p>
+</span><span class="fragment">
+<p>
+\[V dV = \dfrac{1}{2} d\left( V^2 \right)\]
+</p>
+</span><span class="fragment">
+<p>
+\[\dfrac{dP}{\rho} + \dfrac{1}{2} d \left( V^2 \right) + g dz = 0\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\boxed{\dfrac{P}{\rho} + \dfrac{V^2}{2} + gz = \text{constant}}\]
+</p>
+<span class="fragment">
+<p>
+\[\boxed{\dfrac{P_1}{\rho} + \dfrac{V_1^2}{2} + gz_1 = \dfrac{P_2}{\rho} + \dfrac{V_2^2}{2} + gz_2}\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgad4fd44">
+<img src="images/bernoulli_energies.png" alt="bernoulli_energies.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org4ae8311">
+<h2 id="org4ae8311">Bernoulli as pressures</h2>
+<ul>
+<li class="fragment appear">Sum of flow, kinetic, and potential energies along a streamline is <font color="orange">constant</font></li>
+<li class="fragment appear">Kinetic and potential energies can be converted to flow energy</li>
+<li class="fragment appear">Causes pressure change!</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[P + \rho \dfrac{V^2}{2} + \rho g z = \text{constant}\]
+</p>
+</span>
+</section>
+<section id="slide-org98cb48e">
+<h3 id="org98cb48e">Each term is a pressure</h3>
+<ul>
+<li class="fragment appear"><font color="orangered"> Static pressure</font> \(P\): actual thermodynamic pressure of the fluid</li>
+<li class="fragment appear"><font color="orangered"> Dynamic pressure</font> \(\frac{\rho V^2}{2}\): pressure rise when fluid in motion comes to a stop</li>
+<li class="fragment appear"><font color="orangered"> Hydrostatic pressure</font> \(\rho g z\): pressure due to elevation effects (fluid weight)</li>
+<li class="fragment appear"><p>
+<font color="powderblue"> Stagnation pressure</font> is the sum of static and dynamic pressures
+</p>
+</section>
+<section>
+<div class="twocolumn"><div>
+<p>
+\[P_{\text{stag}} = P + \rho \dfrac{V^2}{2}\]
+\[V = \sqrt{\dfrac{2(P_{\text{stag}} - P)}{\rho}}\]
+</p>
+</div><div>
+
+<figure id="orgae136e4">
+<img src="images/stagnation_pressure.png" alt="stagnation_pressure.png" width="100%">
+
+</figure>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org495f351">
+<h3 id="org495f351">Stagnation point</h3>
+
+<figure id="orgb158b67">
+<img src="images/stagnation_streamline.png" alt="stagnation_streamline.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-orgef085f9">
+<h3 id="orgef085f9">Pitot tube</h3>
+
+<figure id="org606c7fd">
+<img src="https://1.bp.blogspot.com/-XrdWnCWT_Yw/WQsNkeTYaEI/AAAAAAAAA0M/U_wtJtI1VaUDISquTNB0Bk5UpggczsL0QCLcB/s1600/pitot%2Btube%2Bin%2Baircraft.jpg" alt="pitot%2Btube%2Bin%2Baircraft.jpg" width="100%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org7cb6157">
+<img src="images/pitot_tube_types.png" alt="pitot_tube_types.png" width="50%">
+
+</figure>
+<ul>
+<li class="fragment appear">Piezometer, U-tube manometer or pressure transducer</li>
+<li class="fragment appear">Static pressure holes on Pitot probe</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgd2f318e">
+<h2 id="orgd2f318e">Limitations of Bernoulli equation</h2>
+<ol>
+<li class="fragment appear">Steady flow</li>
+<li class="fragment appear">Negligible viscous effects</li>
+<li class="fragment appear">No shaft work</li>
+<li class="fragment appear">Incompressible flow</li>
+<li class="fragment appear">Negligible heat transfer</li>
+<li class="fragment appear">Flow along a streamline</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org343fd09">
+<h2 id="org343fd09">Bernoulli as heights</h2>
+<span class="fragment">
+<p>
+\[\dfrac{P}{\rho g} + \dfrac{V^2}{2 g} + z = H = \text{constant}\]
+</p>
+</span>
+<ul>
+<li class="fragment appear"><font color="orangered"> Pressure head</font> \(\frac{P}{\rho g}\): height of fluid that produces static pressure</li>
+<li class="fragment appear"><font color="orangered"> Velocity head</font> \(\frac{V^2}{2g}\): elevation needed to reach velocity at frictionless free fall</li>
+<li class="fragment appear"><font color="orangered"> Elevation head</font>  \(z\): represents potential energy of the fluid</li>
+
+</ul>
+</section>
+<section id="slide-org8f25db5">
+<h3 id="org8f25db5">Hydraulic and Energy grade lines</h3>
+
+<figure id="org6167b89">
+<img src="images/hgl_egl.png" alt="hgl_egl.png" width="100%">
+
+</figure>
+<span class="fragment">
+<p>
+\(\text{HGL} = \frac{P}{\rho g} + z\)
+</p>
+
+<p>
+\(\text{EGL} = \frac{P}{\rho g} + z + \frac{V^2}{2g}\)
+</p>
+</span>
+</section>
+<section id="slide-org91216c1">
+<h3 id="org91216c1">Quiz</h3>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/n/alt5i2uuw2ae5h7m2dw6daz3rspazkkh/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

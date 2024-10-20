@@ -27,25 +27,25 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-orgb5adefa">
-<h2 id="orgb5adefa">Reminder</h2>
+<section id="slide-org288d3fe">
+<h2 id="org288d3fe">Reminder</h2>
 <p>
 Reynolds Transport Theorem
 \[\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho d V\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho (\vec{V} \cdot \vec{n}) dA\]
 </p>
 
 
-<figure id="org0ed123f">
+<figure id="org496748d">
 <img src="images/rtt.png" alt="rtt.png" width="40%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-orge0fa55b">
-<h2 id="orge0fa55b">Volume and Mass flow rates</h2>
+<section id="slide-org2e50eca">
+<h2 id="org2e50eca">Volume and Mass flow rates</h2>
 
-<figure id="org5fe21cf">
+<figure id="org937bbdd">
 <img src="images/volume_flow_rate.png" alt="volume_flow_rate.png" width="60%">
 
 </figure>
@@ -57,8 +57,8 @@ Amount of fluid through \(dA\) in time \(dt\)
 </p>
 </span>
 </section>
-<section id="slide-orgf7b8e1f">
-<h3 id="orgf7b8e1f">Volumetric flow rate</h3>
+<section id="slide-orgbc9a952">
+<h3 id="orgbc9a952">Volumetric flow rate</h3>
 <p>
 \[Q = \int_S \left( \vec{V} \cdot \vec{n} \right) dA = \int_S V_n dA\]
 </p>
@@ -70,8 +70,8 @@ Amount of fluid through \(dA\) in time \(dt\)
 
 </ul>
 </section>
-<section id="slide-orgf072b2c">
-<h3 id="orgf072b2c">Mass flow rate</h3>
+<section id="slide-org44ce56b">
+<h3 id="org44ce56b">Mass flow rate</h3>
 <p>
 If we multiply by density
 \[ \dot{m} = \int_S \rho \left( \vec{V} \cdot \vec{n} \right) dA = \int_S \rho V_n dA\]
@@ -83,10 +83,10 @@ If density and velocity are constant over \(S\) then
 </p>
 </span>
 </section>
-<section id="slide-orga4814e8">
-<h4 id="orga4814e8">Average velocity</h4>
+<section id="slide-org0111f3e">
+<h4 id="org0111f3e">Average velocity</h4>
 
-<figure id="orgb1211b7">
+<figure id="orge63e172">
 <img src="images/average_velocity.png" alt="average_velocity.png" width="50%">
 
 </figure>
@@ -101,8 +101,8 @@ If density and velocity are constant over \(S\) then
 </section>
 </section>
 <section>
-<section id="slide-org3a64338">
-<h2 id="org3a64338">Conservation of mass</h2>
+<section id="slide-orge25ae47">
+<h2 id="orge25ae47">Conservation of mass</h2>
 <blockquote>
 <p>
 The net mass transfer to or from a control volume during a time interval \(\Delta t\) is equal to the net change (increase or decrease) of the total mass within the control volume.
@@ -115,8 +115,8 @@ The net mass transfer to or from a control volume during a time interval \(\Delt
 </section>
 </section>
 <section>
-<section id="slide-org1b66030">
-<h2 id="org1b66030">From Reynolds Transport Theorem</h2>
+<section id="slide-orgef9c242">
+<h2 id="orgef9c242">From Reynolds Transport Theorem</h2>
 <p>
 \[\dfrac{d}{dt} \left( B_{\text{sys}} \right) = \dfrac{d}{dt} \left( \int_{\text{CV}} b \rho d V\kern-0.8em\raise0.3ex- \right) + \int_{\text{CS}} b \rho (\vec{V} \cdot \vec{n}) dA\]
 </p>
@@ -147,18 +147,18 @@ Usually we deal with inlets and outlets
 </p>
 </span>
 </section>
-<section id="slide-orge3a312e">
-<h3 id="orge3a312e">Choosing the control volume</h3>
+<section id="slide-orge8e561b">
+<h3 id="orge8e561b">Choosing the control volume</h3>
 
-<figure id="org0211ed5">
+<figure id="org872af56">
 <img src="images/mass_cv_choice.png" alt="mass_cv_choice.png" width="55%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org98b21f0">
-<h2 id="org98b21f0">Steady flow</h2>
+<section id="slide-orge658a0c">
+<h2 id="orge658a0c">Steady flow</h2>
 <blockquote>
 <p>
 The total rate of mass entering a control volume is equal to the total rate of mass leaving it.
@@ -175,10 +175,10 @@ The total rate of mass entering a control volume is equal to the total rate of m
 </p>
 </span>
 </section>
-<section id="slide-orgd56db28">
-<h3 id="orgd56db28">Incompressible steady flow</h3>
+<section id="slide-org27e5dfd">
+<h3 id="org27e5dfd">Incompressible steady flow</h3>
 
-<figure id="org2a200e2">
+<figure id="org500c894">
 <img src="images/mass_conservation_Q.png" alt="mass_conservation_Q.png" width="40%">
 
 </figure>
@@ -201,21 +201,21 @@ For liquids \(\rightarrow\) incompressible flow
 </section>
 </section>
 <section>
-<section id="slide-orgb981e1e">
-<h2 id="orgb981e1e">Example</h2>
+<section id="slide-orgce33a8c">
+<h2 id="orgce33a8c">Example</h2>
 <p>
 The velocity profile for flow through a circular tube is \(u = U_0 \left( 1 - \dfrac{r}{R} \right)^{m}\)
 Compute the average velocity for laminar flow (\(m \approx 1/2\)).
 </p>
 
 
-<figure id="org42d3c9e">
+<figure id="orgec3c02f">
 <img src="images/vavg_example.png" alt="vavg_example.png" width="40%">
 
 </figure>
 </section>
-<section id="slide-org67d988b">
-<h3 id="org67d988b">Solution</h3>
+<section id="slide-orgc22c0da">
+<h3 id="orgc22c0da">Solution</h3>
 <p>
 \[\overline{V} = \dfrac{1}{A} \int u dA\]
 </p>
@@ -237,8 +237,8 @@ Compute the average velocity for laminar flow (\(m \approx 1/2\)).
 </section>
 </section>
 <section>
-<section id="slide-orge3dcccb">
-<h2 id="orge3dcccb">Example</h2>
+<section id="slide-orga4f4c45">
+<h2 id="orga4f4c45">Example</h2>
 <img src="./images/discharge_from_water_tank.png" class="limage" style="--top: 0px; --left: -50px; --width: 50%">
 <div class="content-limage" style="--margin: 30%">
 <p>
@@ -246,8 +246,8 @@ A 4-ft high, 3-ft diameter cylindrical water tank is filled with water. The disc
 </p>
 </div>
 </section>
-<section id="slide-orga903aa8">
-<h3 id="orga903aa8">Solution</h3>
+<section id="slide-org977b3bf">
+<h3 id="org977b3bf">Solution</h3>
 <p>
 \[\dot{m}_{\text{in}} - \dot{m}_{\text{out}} = \dfrac{dm_{\text{CV}}}{dt}\]
 </p>
@@ -287,6 +287,12 @@ A 4-ft high, 3-ft diameter cylindrical water tank is filled with water. The disc
 \[t = \dfrac{\sqrt{4} - \sqrt{2}}{\sqrt{32.2/2}} \left( \dfrac{(3)(12)}{0.5} \right)^2 = 757\,\mathrm{s}\]
 </p>
 </span>
+</section>
+</section>
+<section>
+<section id="slide-org5b8be12">
+<h2 id="org5b8be12">Quiz</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/n/algp6mybh5fv6cfei8otj7ug4ycfs21b/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
 </section>
 </section>
 </div>
