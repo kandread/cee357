@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-orgf6b1b04" data-background="./images/beer_keg.jpg" data-background-opacity="0.5" data-background-transition="slide">
+<h2 id="orgf6b1b04">Problem 1</h2>
+<p>
+If you had a beer keg that was not full but the height of the beer inside was at 80 cm, what is the velocity that beer will flow at the tap?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org49b95e0">
+<h2 id="org49b95e0">Problem 2</h2>
+
+<figure id="org9f8475a">
+<img src="images/pitot_example.png" alt="pitot_example.png" width="50%">
+
+</figure>
+
+<p>
+What is the velocity at the center of the pipe?
+</p>
+</section>
+<section id="slide-org115361e">
+<h3 id="org115361e">Solution</h3>
+<ul>
+<li class="fragment appear">Flow is steady and incompressible</li>
+<li class="fragment appear">No energy loss between 1 and 2</li>
+
+</ul>
+
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{V_1^2}{2g} = \dfrac{P_2 - P_1}{\rho g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{V_1^2}{2g} = \dfrac{\rho g (h_1 + h_2 + h_3) - \rho g (h_1 + h_2)}{\rho g} = h_3\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[V_1 = \dfrac{2 g h_3} = \sqrt{2(9.81)(0.12)} = 1.53\,\mathrm{m/s}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgb5b0ba7">
+<h2 id="orgb5b0ba7">Problem 3</h2>
+<ul>
+<li class="fragment appear">In a hydroelectric power plant, water enters the turbine nozzles at 800 kPa absolute pressure with a low velocity</li>
+<li class="fragment appear">The nozzle outlets are exposed to atmospheric pressure of 100 kPa</li>
+<li class="fragment appear">Calculate the maximum velocity water can be accelerated before striking the turbine blades</li>
+
+</ul>
+</section>
+<section id="slide-org243392b">
+<h3 id="org243392b">Solution</h3>
+<p>
+Assume density of water at 1000 kg/m<sup>3</sup>
+</p>
+
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} = \dfrac{P_a}{\rho g} + \dfrac{V_2^2}{2g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[V_2 = \sqrt{\dfrac{2(P_1 - P_a)}{\rho}} = \sqrt{\dfrac{(2)(800-100)}{1000}} = 37.4\,\mathrm{m/s}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org42cddba">
+<h2 id="org42cddba">Problem 4</h2>
+<p>
+A Pitot-static probe connected to a water manometer is used to measure air velocity. If the vertical distance between the fluid levels is 5.5 cm, calculate the air velocity. Assume the density of air is 1.16 kg/m<sup>3</sup>
+</p>
+
+<figure id="org1b8d547">
+<img src="images/pitot_static_probe_problem.png" alt="pitot_static_probe_problem.png" width="60%">
+
+</figure>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

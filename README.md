@@ -33,3 +33,5 @@
 [Lecture #16 - Linear Momentum Equation](https://kandread.github.io/cee357/16_linear_momentum_equation.html)
 
 [Lecture #17 - Bernoulli Equation](https://kandread.github.io/cee357/17_bernoulli_equation.html)
+
+[Lecture #18 - Bernoulli Equation](https://kandread.github.io/cee357/18_bernoulli_equation.html)
