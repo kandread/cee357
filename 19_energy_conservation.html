@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org8579c4d">
+<h2 id="org8579c4d">Quiz</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/n/aln1vz376qtkvg1mt9ovgur77cn5uqxs/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-orgdfc51cc">
+<h2 id="orgdfc51cc">First law of thermodynamics</h2>
+<span class="fragment">
+
+<figure id="org1d6b4be">
+<img src="images/first_law_of_thermodynamics.png" alt="first_law_of_thermodynamics.png" width="40%">
+
+</figure>
+</span>
+<span class="fragment">
+<ul>
+<li>Energy changes forms</li>
+<li>\(E_{\text{in}} - E_{\text{out}} = \Delta E\)</li>
+
+</ul>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org6d0c740">
+<h2 id="org6d0c740">Change in energy content</h2>
+<div class="container"><div class="left" style="--padding: 10px">
+
+<figure id="orgda635f0">
+<img src="images/energy_change.png" alt="energy_change.png" width="80%">
+
+</figure>
+</div><div class="right">
+<ul>
+<li>Heat transfer \(Q\)</li>
+<li>Work transfer \(W\)</li>
+
+</ul>
+</div></div>
+<span class="fragment">
+<p>
+\[\dfrac{dE_{\text{sys}}}{dt} = \dfrac{dQ}{dt} + \dfrac{dW}{dt} = \dfrac{d}{dt} \int_{\text{sys}} \rho e d V\kern-0.8em\raise0.3ex-\]
+</p>
+</span>
+</section>
+<section>
+<p>
+For simple compressible systems, total energy consists of internal, kinetic, and potential energies
+\[e = \hat{u} + \text{ke} + \text{pe} = \hat{u} + \dfrac{V^2}{2} + gz\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgd0cab4c">
+<h2 id="orgd0cab4c">Heat transfer</h2>
+<div class="image-container"><div class="image-item" style="padding: 10px">
+
+<figure id="org4e40b28">
+<img src="images/hvac.png" alt="hvac.png">
+
+</figure>
+</div><div class="image-item" style="padding: 10px">
+
+<figure id="org9490ddc">
+<img src="images/cpu_cooling.png" alt="cpu_cooling.png">
+
+</figure>
+</div><div class="image-item" style="padding: 10px">
+
+<figure id="orgec7f3d2">
+<img src="images/geothermal_heat_pumps.png" alt="geothermal_heat_pumps.png">
+
+</figure>
+</div></div>
+</section>
+<section>
+<p>
+<img src="https://knowyourgrinder.com/wp-content/uploads/2016/01/cupandbrew-how_it_works-_heat_exchanger_espresso_machine.png" alt="cupandbrew-how_it_works-_heat_exchanger_espresso_machine.png">
+ <font size="5"><a href="https://knowyourgrinder.com/how-does-an-hx-espresso-machine-work-2/">How Does An HX Espresso Machine Work?</a></font>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org814c50e">
+<h2 id="org814c50e">Work</h2>
+<ul>
+<li class="fragment appear">Energy interaction is <font color="orangered">work</font> if associated with a force</li>
+<li class="fragment appear">Time rate of doing work is <font color="lightblue">power</font> \(\dot{W}\)</li>
+<li class="fragment appear">Numerous forms of work</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[W_{\text{total}} = W_{\text{shaft}} + W_{\text{pressure}} + W_{\text{viscous}} = W_s + W_p + W_{v}\]
+</p>
+</span>
+</section>
+<section id="slide-orgaf561d0" data-background="./images/hydroelectric-turbine.jpg" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orgaf561d0">Shaft work</h3>
+<ul>
+<li class="fragment appear">Pumps, turbines, fans, compressors</li>
+<li class="fragment appear">Shaft protrudes through the control surface</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[\dot{W}_s = \omega T_s = 2 \pi \dot{n} T_s\]
+</p>
+</span>
+</section>
+<section id="slide-org2458f5a">
+<h3 id="org2458f5a">Pressure work</h3>
+<div class="container"><div class="left" style="padding: 40px">
+
+<figure id="org9b150e5">
+<img src="images/piston_pressure_work.png" alt="piston_pressure_work.png">
+
+</figure>
+</div><div class="right"><span class="fragment">
+<p>
+\[\delta W = P A \delta s\]
+</p>
+</span><span class="fragment">
+<p>
+\[\delta \dot{W}_p = P A V_{\text{piston}}\]
+</p>
+</span></div></div>
+</section>
+<section>
+
+<figure id="org15ace58">
+<img src="images/system_pressure_work.png" alt="system_pressure_work.png" width="50%">
+
+</figure>
+<span class="fragment">
+<p>
+\[\delta \dot{W}_p = - P dA V_n = - P dA \left( \vec{V} \cdot \vec{n} \right)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dot{W}_p = - \int_A P \left( \vec{V} \cdot \vec{n} \right) dA\]
+</p>
+</span>
+</section>
+<section id="slide-org4265630">
+<h3 id="org4265630">Shear work</h3>
+<p>
+Work due to viscous stresses at the control surface
+\[\dot{W}_v = - \int_{\text{CS}} \vec{\tau} \cdot \vec{V} dA\]
+</p>
+
+<ul>
+<li class="fragment appear"><i>Solid surface</i>: no-slip condition \(V=0\)</li>
+<li class="fragment appear"><i>Machine surface</i>: Included in shaft work</li>
+<li class="fragment appear"><i>Inlet or Outlet</i>: Normal stress very small</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge06d70a">
+<h2 id="orge06d70a">Applying the Reynolds Transport Theorem</h2>
+<p>
+\[\dfrac{dB_{\text{sys}}}{dt} = \dfrac{d}{dt} \int_{\text{CV}} \rho b d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \rho b \left( \vec{V_r} \cdot \vec{n} \right) dA\]
+</p>
+<span class="fragment">
+<p>
+\[B=E~~~~~b=e\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{\left( dE \right)_{\text{sys}}}{dt} = \dfrac{d}{dt} \int_{\text{CV}} e \rho d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} e \rho \left( \vec{V}_r \cdot \vec{n} \right) dA\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dot{Q} + \dot{W}_s + \dot{W}_p + \dot{W}_v = \dfrac{d}{dt} \int_{\text{CV}} e \rho d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} e \rho \left( \vec{V}_r \cdot \vec{n} \right) dA\]
+</p>
+<span class="fragment">
+<p>
+\[\dot{W}_p = - \int_{\text{CS}} \dfrac{P}{\rho} \rho \left( \vec{V}_r \cdot \vec{n} \right) dA ~~~~~~~ \dot{W}_v=0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\boxed{\dot{Q} + \dot{W}_s = \dfrac{d}{dt} \int_{\text{CV}} e \rho d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \left( \dfrac{P}{\rho} + e \right) \rho \left( \vec{V}_r \cdot \vec{n} \right) dA}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org5df1b92">
+<h2 id="org5df1b92">Problem</h2>
+<div class="image-container">
+  <img src="./images/mechanical_energy_problem.png" class="compact-image" style="width: 50%">
+<ul class="compact-list">
+            <li class="fragment">Power generated is measured to be 1862 kW and the generator efficiency is 95%</li>
+            <li class="fragment">What is the overall efficiency of the turbine–generator?</li>
+        </ul>
+</div>
+</section>
+<section id="slide-orgb9e0480">
+<h3 id="orgb9e0480">Solution</h3>
+<p>
+Assume irreversible losses in the pipes are negligible.
+</p>
+<span class="fragment">
+<p>
+\[\Delta e_{\text{mech}} = \cancelto{0}{\dfrac{P_1 - P_2}{\rho}} + \cancelto{0}{\dfrac{V_1^2 - V_2^2}{2}} + g (z_1 - z_2)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[=gh = (9.81\,\mathrm{m/s^2})(50\,\mathrm{m})=490.5\,\mathrm{J/kg}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\Delta E = \dot{m} \Delta e = (5000\,\mathrm{kg/s})(0.491\,\mathrm{kJ/kg}) = 2455\,\mathrm{kW}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\eta = \dfrac{\dot{W}_{\text{out}}}{\Delta E} = \dfrac{1862\,\mathrm{kW}}{2455\,\mathrm{kW}}\]
+\[= 0.76\]
+or 76%
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgbb9a004">
+<h2 id="orgbb9a004">Summary</h2>
+<ul>
+<li class="fragment appear">You should understand the different types of work</li>
+<li class="fragment appear">You should know why and when we can ignore work due to viscous forces</li>
+<li class="fragment appear">1-D energy flux and kinetic energy correction</li>
+<li class="fragment appear">Energy analysis of steady flows</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

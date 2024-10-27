@@ -35,3 +35,7 @@
 [Lecture #17 - Bernoulli Equation](https://kandread.github.io/cee357/17_bernoulli_equation.html)
 
 [Lecture #18 - Bernoulli Equation](https://kandread.github.io/cee357/18_bernoulli_equation.html)
+
+[Lecture #19 - Energy Conservation](https://kandread.github.io/cee357/19_energy_conservation.html)
+
+[Lecture #20 - Energy Conservation](https://kandread.github.io/cee357/20_energy_conservation.html)

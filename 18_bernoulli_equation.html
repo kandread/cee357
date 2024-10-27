@@ -27,18 +27,18 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-orgf6b1b04" data-background="./images/beer_keg.jpg" data-background-opacity="0.5" data-background-transition="slide">
-<h2 id="orgf6b1b04">Problem 1</h2>
+<section id="slide-orgdcc9ec5" data-background="./images/beer_keg.jpg" data-background-opacity="0.5" data-background-transition="slide">
+<h2 id="orgdcc9ec5">Problem 1</h2>
 <p>
 If you had a beer keg that was not full but the height of the beer inside was at 80 cm, what is the velocity that beer will flow at the tap?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org49b95e0">
-<h2 id="org49b95e0">Problem 2</h2>
+<section id="slide-org9c45195">
+<h2 id="org9c45195">Problem 2</h2>
 
-<figure id="org9f8475a">
+<figure id="org8543dc5">
 <img src="images/pitot_example.png" alt="pitot_example.png" width="50%">
 
 </figure>
@@ -47,8 +47,8 @@ If you had a beer keg that was not full but the height of the beer inside was at
 What is the velocity at the center of the pipe?
 </p>
 </section>
-<section id="slide-org115361e">
-<h3 id="org115361e">Solution</h3>
+<section id="slide-orgcacbfa2">
+<h3 id="orgcacbfa2">Solution</h3>
 <ul>
 <li class="fragment appear">Flow is steady and incompressible</li>
 <li class="fragment appear">No energy loss between 1 and 2</li>
@@ -78,8 +78,8 @@ What is the velocity at the center of the pipe?
 </section>
 </section>
 <section>
-<section id="slide-orgb5b0ba7">
-<h2 id="orgb5b0ba7">Problem 3</h2>
+<section id="slide-orgc8cc263">
+<h2 id="orgc8cc263">Problem 3</h2>
 <ul>
 <li class="fragment appear">In a hydroelectric power plant, water enters the turbine nozzles at 800 kPa absolute pressure with a low velocity</li>
 <li class="fragment appear">The nozzle outlets are exposed to atmospheric pressure of 100 kPa</li>
@@ -87,8 +87,8 @@ What is the velocity at the center of the pipe?
 
 </ul>
 </section>
-<section id="slide-org243392b">
-<h3 id="org243392b">Solution</h3>
+<section id="slide-orgf68b220">
+<h3 id="orgf68b220">Solution</h3>
 <p>
 Assume density of water at 1000 kg/m<sup>3</sup>
 </p>
@@ -111,16 +111,87 @@ Assume density of water at 1000 kg/m<sup>3</sup>
 </section>
 </section>
 <section>
-<section id="slide-org42cddba">
-<h2 id="org42cddba">Problem 4</h2>
+<section id="slide-org7a95dad">
+<h2 id="org7a95dad">Problem 4</h2>
 <p>
 A Pitot-static probe connected to a water manometer is used to measure air velocity. If the vertical distance between the fluid levels is 5.5 cm, calculate the air velocity. Assume the density of air is 1.16 kg/m<sup>3</sup>
 </p>
 
-<figure id="org1b8d547">
+<figure id="org7889588">
 <img src="images/pitot_static_probe_problem.png" alt="pitot_static_probe_problem.png" width="60%">
 
 </figure>
+</section>
+<section id="slide-orga4bf584">
+<h3 id="orga4bf584">Solution</h3>
+<p>
+Assume density of water 1000 kg/m<sup>3</sup>
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} = \dfrac{P_2}{\rho g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\Rightarrow V_1 = \sqrt{\dfrac{2(P_2 - P_1)}{\rho_{\text{air}}}}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[P_2 - P_1 = \rho_{\text{water}} g h\]
+</p>
+<span class="fragment">
+<p>
+\[V_1 = \sqrt{\dfrac{2 \rho_{\text{water}} g h}{\rho_{\text{air}}}} = \sqrt{\dfrac{(2)(1000)(9.81)(0.055)}{1.16}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\Rightarrow V_1 = 30.5\,\mathrm{m/s}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org0600bbb">
+<h2 id="org0600bbb">Problem 5</h2>
+<p>
+A piezometer and a Pitot tube are tapped into a 4-cm-diameter horizontal water pipe, and the height of the water columns are measured to be 26 cm in the piezometer and
+35 cm in the Pitot tube (both measured from the top surface of the pipe). Determine the velocity at the center of the pipe.
+</p>
+</section>
+<section id="slide-orgdcfb850">
+<h3 id="orgdcfb850">Solution</h3>
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + \cancel{z_1} = \dfrac{P_2}{\rho g} + \cancelto{0}{\dfrac{V_2^2}{2g}} + \cancel{z_2}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{V_1^2}{2g} = \dfrac{P_2 - P_1}{\rho g}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{V_1^2}{2g} = \dfrac{\rho g (h_{\text{pitot}} + R) - \rho g (h_{\text{piezo}} + R)}{\rho g} = h_{\text{pitot}} - h_{\text{piezo}}\]
+</p>
+<span class="fragment">
+<p>
+\[V_1 = \sqrt{2g(h_{\text{pitot}} - h_{\text{piezo}})} = \sqrt{2(9.81)(0.35 - 0.26)} = 1.33\,\mathrm{m/s}\]
+</p>
+</span>
 </section>
 </section>
 </div>
