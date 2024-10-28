@@ -27,8 +27,8 @@
 <h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
 </section>
 <section>
-<section id="slide-org6ca241a">
-<h2 id="org6ca241a">Energy equation for fixed CV</h2>
+<section id="slide-org11ab649">
+<h2 id="org11ab649">Energy equation for fixed CV</h2>
 <p>
 \[\dot{Q} + \dot{W}_s = \dfrac{d}{dt} \int_{\text{CV}} e \rho d V\kern-0.8em\raise0.3ex- + \int_{\text{CS}} \left( \dfrac{P}{\rho} + e \right) \rho \left( \vec{V}_r \cdot \vec{n} \right) dA\]
 </p>
@@ -40,8 +40,8 @@ For <font color="cornsilk">fixed control volume</font> \[\vec{V}_r \equiv \vec{V
 </section>
 </section>
 <section>
-<section id="slide-org12a0062">
-<h2 id="org12a0062">Enthalpy</h2>
+<section id="slide-org8d9931d">
+<h2 id="org8d9931d">Enthalpy</h2>
 <p>
 Remember that \(e = \hat{u} + \dfrac{V^2}{2} + gz\)
 </p>
@@ -64,10 +64,10 @@ Specific enthalpy:
 </section>
 </section>
 <section>
-<section id="slide-org77cee1b">
-<h2 id="org77cee1b">1-D energy flux</h2>
+<section id="slide-orge588200">
+<h2 id="orge588200">1-D energy flux</h2>
 
-<figure id="org5f365a8">
+<figure id="org3614a3f">
 <img src="images/1d_energy.png" alt="1d_energy.png" class="limage" style="--top: 80px; --left: 0px; --width: 70%">
 
 </figure>
@@ -91,10 +91,10 @@ Specific enthalpy:
 </section>
 </section>
 <section>
-<section id="slide-org94eb7c2">
-<h2 id="org94eb7c2">Problem</h2>
+<section id="slide-org940e6d2">
+<h2 id="org940e6d2">Problem</h2>
 
-<figure id="org3ebd16f">
+<figure id="org9bbe863">
 <img src="images/energy_steady_flows_problem.png" alt="energy_steady_flows_problem.png" width="40%">
 
 </figure>
@@ -160,8 +160,8 @@ Steady flow machine with air (\(R=1716\) and \(c_p=6003\,\mathrm{ft-lbf/slug \cd
 </tbody>
 </table>
 </section>
-<section id="slide-org830afe0">
-<h3 id="org830afe0">Solution</h3>
+<section id="slide-orge77b8fb">
+<h3 id="orge77b8fb">Solution</h3>
 <p>
 \[V_1 = \dfrac{Q_1}{A_1} = \dfrac{100\,\mathrm{ft^3/s}}{0.4\,\mathrm{ft^2}}=250\,\mathrm{ft/s}\]
 \[V_2 = \dfrac{Q_2}{A_2} = \dfrac{40\,\mathrm{ft^3/s}}{1.0\,\mathrm{ft^2}}=40\,\mathrm{ft/s}\]
@@ -236,8 +236,8 @@ or \(64\,\mathrm{Btu/s}\)
 </section>
 </section>
 <section>
-<section id="slide-orgf1a9f7a">
-<h2 id="orgf1a9f7a">Energy analysis of steady flows</h2>
+<section id="slide-orgad17301">
+<h2 id="orgad17301">Energy analysis of steady flows</h2>
 <blockquote>
 <p>
 During steady flow the net rate of energy transfer to a control volume by heat and work transfers is equal to the difference between the
@@ -246,9 +246,87 @@ rates of outgoing and incoming energy flows by mass flow
 </blockquote>
 <span class="fragment">
 <p>
-\[\boxed{\dot{Q} + \dot{W}_s = \sum_{\text{out}} \dot{m} \left( \hat{h} - \dfrac{V^2}{2} +gz \right) - \sum_{\text{in}} \dot{m} \left( \hat{h} + \dfrac{V^2}{2} +gz \right)}\]
+\[\boxed{\dot{Q} + \dot{W}_s = \sum_{\text{out}} \dot{m} \left( \hat{h} + \dfrac{V^2}{2} +gz \right) - \sum_{\text{in}} \dot{m} \left( \hat{h} + \dfrac{V^2}{2} +gz \right)}\]
 </p>
 </span>
+</section>
+<section id="slide-orgfd5a7bf">
+<h3 id="orgfd5a7bf">Energy equation in head form</h3>
+<p>
+Single inlet and single outlet
+</p>
+<span class="fragment">
+<p>
+\[\dot{Q} + \dot{W}_s + \dot{W}_v = \dot{m} \left[ \hat{h}_2 - \hat{h}_1 + \dfrac{V_2^2 - V_1^2}{2} + g (z_2 - z_1) \right]\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Dividing by the mass flow rate \(\dot{m}\)
+\[q + w_s + w_v = \hat{h}_2 - \hat{h}_1 + \dfrac{V_2^2 - V_1^2}{2} + g(z_2 - z_1)\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[q = Q / \dot{m}\]
+</p>
+<span class="fragment">
+<p>
+\[q + w_s + w_v = \hat{u}_2 + \dfrac{P_2}{\rho} - \hat{u}_1 - \dfrac{P_1}{\rho} + \dfrac{V_2^2 - V_1^2}{2} + g(z_2 - z_1)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Rearranging and dividing by \(g\)
+\[h_s + \dfrac{P_1}{\gamma} + \dfrac{\hat{u_1}}{g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\gamma} + \dfrac{\hat{u}_2}{g} + \dfrac{V_2^2}{2g} + z_2 - h_q - h_v\]
+</p>
+</span>
+</section>
+<section id="slide-org6f5f33a">
+<h3 id="org6f5f33a">Practical application</h3>
+
+<figure id="org11ed544">
+<img src="images/pumped_storage_hydropower.png" alt="pumped_storage_hydropower.png" width="60%" style="position: relative; top: -50px;">
+
+</figure>
+
+<div class="bottom-left" style="position: relative; top: -100px;"><a href="https://www.energy.gov/eere/water/pumped-storage-hydropower">Pumped Storage Hydropower (Energy.gov)</a></div>
+</section>
+<section>
+
+<figure id="org5d51be5">
+<img src="images/energy_mechanical_losses.png" alt="energy_mechanical_losses.png" width="100%">
+
+</figure>
+
+<p>
+Mechanical energy losses
+</p>
+</section>
+<section>
+<p>
+\[\dfrac{P_1}{\gamma} + \dfrac{V_1^2}{2g} + z_1 + h_{\text{pump}} = \dfrac{P_2}{\gamma} + \dfrac{V_2^2}{2g} + z_2 + h_{\text{turbine}} + h_{\text{losses}}\]
+</p>
+</section>
+<section id="slide-org389e070">
+<h3 id="org389e070">Kinetic energy correction factor</h3>
+
+<figure id="orgdc1efe3">
+<img src="images/velocity_profile.png" alt="velocity_profile.png" class="limage" style="--top: 80px; --left: 0px; --width: 40%">
+
+</figure>
+<div class="content-limage" style="--margin: 40%">
+<p>
+\[\int \dfrac{1}{2} V^2 \rho \left( \vec{V} \cdot \vec{n} \right) dA = \alpha \left(\dfrac{1}{2} V_{\text{avg}}^2 \right) \dot{m}\]
+\[V_{\text{avg}} = \dfrac{1}{A}\int u dA\]
+</p>
+<span class="fragment">
+<p>
+\[\boxed{\alpha = \dfrac{1}{A} \int \left( \dfrac{u}{V_{\text{avg}}} \right)^3 dA}\]
+</p>
+</span>
+</div>
 </section>
 </section>
 </div>
