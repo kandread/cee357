@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-orga4449ac">
+<h2 id="orga4449ac">Sizing a pump</h2>
+<span class="fragment">
+
+<figure id="org7d3cb64">
+<img src="https://www.blackmonkengineering.com/static/how-to-size-pump-sys-diag.png" alt="how-to-size-pump-sys-diag.png" width="100%">
+
+</figure>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org6590b8e">
+<h2 id="org6590b8e">Review</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/n/alcadtknjam2u4afwejfrb4zz8x45d8a/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-org9bc1697">
+<h2 id="org9bc1697">Problem 1</h2>
+
+<figure id="orgc059f29">
+<img src="images/energy_conservation_fig5_94.png" alt="energy_conservation_fig5_94.png" class="limage" style="--top: 80px; --left: 0px; --width: 70%">
+
+</figure>
+<div class="content-limage" style="--margin: 50%">
+<ul>
+<li class="fragment appear">Water to be pumped by a 78% efficient 5-kW pump</li>
+<li class="fragment appear">Diameters of pipe is 7 cm on the intake side, and 5 cm on the discharge side</li>
+<li class="fragment appear">Ignore elevation difference between pipe inlet/outlet</li>
+
+</ul>
+</div>
+</section>
+<section id="slide-org763cef7">
+<h3 id="org763cef7">What assumptions can we make?</h3>
+<span class="fragment">
+<ul>
+<li>Flow is incompressible and steady</li>
+<li>Elevation difference between pump inlet and outlet is negligible</li>
+<li>Frictional effects can be ignored</li>
+
+</ul>
+</span>
+</section>
+<section id="slide-orge20f0f7">
+<h3 id="orge20f0f7">What is the maximum flow rate of water?</h3>
+<span class="fragment">
+<p>
+\[\dot{W}_{\text{pump}} = \eta \dot{W}_{\text{electric}} = (0.78)(5) = 3.9\,\mathrm{kW}\]
+\[\dot{m} \left( \dfrac{P_1}{\rho} + \dfrac{V_1^2}{2} + gz_1 \right) + \dot{W}_{\text{pump}} = \dot{m} \left( \dfrac{P_2}{\rho} + \dfrac{V_2^2}{2} + gz_2 \right)\]
+\[ + \dot{W}_{\text{turbine}} + \dot{E}_{\text{loss}}\]
+\[\dot{W}_{\text{pump}} = \dot{m} g z_2 \Rightarrow \dot{m} = \dfrac{\dot{W}_{\text{pump}}}{g z_2}\]
+</p>
+</section>
+<section>
+<p>
+\[ = \dfrac{3.9}{(9.81)(30)} = 13.25\,\mathrm{kg/s}\]
+\[Q = \dfrac{\dot{m}}{\rho} = \dfrac{13.25}{1000} = 0.01325\,\mathrm{m^3/s}\]
+</p>
+</span>
+</section>
+<section id="slide-org3d9fdc1">
+<h3 id="org3d9fdc1">What is the pressure difference across the pump?</h3>
+<span class="fragment">
+<p>
+\[V_i = \dfrac{Q}{A_i} = \dfrac{Q}{\pi D_i^2 / 4} = \dfrac{0.01325}{\pi(0.07)^2 / 4} = 3.443\,\mathrm{m/s}\]
+\[V_o = \dfrac{Q}{A_o} = \dfrac{Q}{\pi D_o^2 / 4} = \dfrac{0.01325}{\pi(0.07)^2 / 4} = 6.748\,\mathrm{m/s}\]
+</p>
+</section>
+<section>
+<p>
+\[\dot{m} \left( \dfrac{P_i}{\rho} + \dfrac{V_i^2}{2} + gz_i \right) + \dot{W}_{\text{pump}} = \dot{m} \left( \dfrac{P_o}{\rho} + \dfrac{V_o^2}{2} + gz_o \right)\]
+\[ + \dot{W}_{\text{turbine}} + \dot{E}_{\text{loss}}\]
+\[\Rightarrow \rho Q \left( \dfrac{P_i}{\rho} + \dfrac{V_i^2}{2} \right) + \dot{W}_{\text{pump}} = \rho Q \left( \dfrac{P_o}{\rho} + \dfrac{V_o^2}{2} \right)\]
+</p>
+</section>
+<section>
+<p>
+\[ \Rightarrow P_o - P_i = \dfrac{\dot{W}_{\text{pump}}}{Q} + \dfrac{\rho (V_i^2 - V_o^2)}{2}\]
+\[= \dfrac{3.9}{0.01325} + \dfrac{(3.443)^2 - (6.748)^2}{2} = 294.3 - 16.8 = 277.5\,\mathrm{kPa}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org1e8cae7">
+<h2 id="org1e8cae7">Problem 2</h2>
+
+<figure id="orgc162f69">
+<img src="images/momentum_conservation_fig6_22.png" alt="momentum_conservation_fig6_22.png" width="50%">
+
+</figure>
+<ul>
+<li class="fragment appear">Diameter of elbow is 10 cm</li>
+<li class="fragment appear">Weight of elbow and water in it is negligible</li>
+<li class="fragment appear">Elevation difference between the centers of the exit and the inlet of the elbow is 50 cm</li>
+<li class="fragment appear">Momentum flux correction is 1.03</li>
+
+</ul>
+</section>
+<section id="slide-org36d70af">
+<h3 id="org36d70af">What is the gage pressure at the center of the inlet of the elbow?</h3>
+<span class="fragment">
+<p>
+\[\dot{m} = 40\,\mathrm{kg/s}\]
+\[V_1 = V_2 = \dfrac{\dot{m}}{\rho A} = \dfrac{\dot{m}}{\rho \pi D^2 / 4} = \dfrac{40}{(1000)\pi(0.1)^2 / 4}\]
+\[= 5.093\,\mathrm{m/s}\]
+</p>
+</section>
+<section>
+<p>
+\[\dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 = \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2\]
+\[P_1 - P_2 = \rho g (z_2 - z_1) \Rightarrow P_{1,\text{gage}} = \rho g (z_2 - z_1) =\]
+\[= (1000)(9.81)(0.50) = 4905\,\mathrm{N/m^2}\]
+</p>
+</span>
+</section>
+<section id="slide-orgfc691e2">
+<h3 id="orgfc691e2">What is the anchoring force needed to hold the elbow in place?</h3>
+<span class="fragment">
+<p>
+\[\sum \vec{F} = \sum_{\text{out}} \beta \dot{m} \vec{V} - \sum_{\text{in}} \beta \dot{m} \vec{V}\]
+ \[ F_{R,x} + P_{1,\text{gage}} A_1 = 0 - \beta \dot{m} V_1 = -\beta \dot{m} V \]
+\[ F_{R,z} = \beta \dot{m} V_2 = \beta \dot{m} V \]
+</p>
+</section>
+<section>
+<p>
+\[ F_{R,x} = -\beta \dot{m} V - P_{1.\text{gage}} A_1 \]
+\[ = -(1.03)(40)(5.093) - (4905)(\pi)(0.1^2)/4 = -248.4\,\mathrm{N}\]
+\[F_{R,z} = \beta \dot{m} V = (1.03)(40)(5.093) = 209.8\,\mathrm{N}\]
+</p>
+</section>
+<section>
+<p>
+\[F_R = \sqrt{F_{R,x}^2 + F_{R,z}^2} = \sqrt{(-248.4)^2 + (209.8)^2} = 325\,\mathrm{N}\]
+\[\theta = \tan^{-1}{\dfrac{F_{R,z}}{F_{R,x}}} = \tan^{-1}{\dfrac{209.8}{-284.4}} = -40.2\,\mathrm{^{\circ}}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org854db0f">
+<h2 id="org854db0f">Problem 3</h2>
+
+<figure id="orgb0970bd">
+<img src="images/energy_conservation_fig5_98.png" alt="energy_conservation_fig5_98.png" width="50%">
+
+</figure>
+<ul>
+<li class="fragment appear">Tank with discharge pipes accelerates to the left</li>
+<li class="fragment appear">Volumetric flow rates at both pipes are equal</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Bernoulli equation becomes \[P_1/\rho + V_1^2/2 + gz_1 - P_2/\rho - V_2^2/2 - gz_2 = a L + \text{Losses}\]</li>
+<li>What is the diameter \(D\) of the inclined pipe?</li>
+<li>Ignore frictional losses</li>
+
+</ul>
+</section>
+<section id="slide-orgf4932de">
+<h3 id="orgf4932de">Solution</h3>
+<p>
+\[\left( \cancel{\dfrac{P_A}{\rho g}} + z_A + \cancelto{0}{\dfrac{V_A^2}{2g}} \right) - \left( \cancel{\dfrac{P_B}{\rho g}} + z_B + \dfrac{V_B^2}{2g} \right) = \dfrac{a}{g} \Delta L\]
+\[\Rightarrow h = \dfrac{V_B^2}{g} + \dfrac{a}{g} \Delta L \Rightarrow \dfrac{V_B^2}{2g} = h - \dfrac{a}{g} \Delta L\]
+\[\left( \cancel{\dfrac{P_A}{\rho g}} + z_A + \cancelto{0}{\dfrac{V_A^2}{2g}} \right) - \left( \cancel{\dfrac{P_C}{\rho g}} + z_C + \dfrac{V_C^2}{2g} \right) = \cancelto{0}{\dfrac{a}{g} \Delta L}\]
+\[\Rightarrow h = \dfrac{V_C^2}{2g}\]
+</p>
+</section>
+<section>
+<p>
+\[\dfrac{V_B^2 / 2g}{V_C^2 / 2g} = \dfrac{h - \frac{a}{g} \Delta L}{h}\]
+\[\Rightarrow \left( \dfrac{V_B}{V_C} \right)^2 = 1 - \dfrac{a \Delta L}{gh} \Rightarrow \dfrac{V_B}{V_C} = \sqrt{1 - \dfrac{a \Delta L}{gh}}\]
+\[Q_B = Q_C \Rightarrow A_B V_B = A_C V_C \Rightarrow \dfrac{A_C}{A_B} = \dfrac{V_B}{V_C} = \dfrac{d^2}{D^2}\]
+</p>
+</section>
+<section>
+<p>
+\[\dfrac{d^2}{D^2} = \sqrt{1 - \dfrac{a \Delta L}{g h}} = \sqrt{1 - \dfrac{(3)(8)}{(9.81)(3)}} = 0.4295\]
+\[\Rightarrow D = \sqrt{\dfrac{0.01^2}{0.4295}} = 0.01526\,\mathrm{m} \approx 1.53\,\mathrm{cm}\]
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
