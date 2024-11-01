@@ -39,3 +39,5 @@
 [Lecture #19 - Energy Conservation](https://kandread.github.io/cee357/19_energy_conservation.html)
 
 [Lecture #20 - Energy Conservation](https://kandread.github.io/cee357/20_energy_conservation.html)
+
+[Lecture #21 - Integral Relations Review](https://kandread.github.io/cee357/21_integral_relations.html)
