@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-orga2bb255">
+<h2 id="orga2bb255">Internal and External flows</h2>
+<div class="twocolumn"><div>
+
+<figure id="org8cd86ea">
+<img src="images/internal_flows_example.png" alt="internal_flows_example.png">
+
+</figure>
+</div><div>
+
+<figure id="org1a2fcd1">
+<img src="images/external_flows_example.png" alt="external_flows_example.png">
+
+</figure>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb7869ac" data-background="./images/branched-pipe-flow.webp" data-background-opacity="0.2" data-background-transition="slide">
+<h2 id="orgb7869ac">Internal flows</h2>
+<ul>
+<li class="fragment appear">Flow in a conduit (completely filled with the fluid)</li>
+<li class="fragment appear">Flow driven primarily by pressure difference</li>
+<li class="fragment appear">Pressure drop and flow rate given pipe geometry and components</li>
+<li class="fragment appear">Understand laminar and turbulent flow in pipes</li>
+<li class="fragment appear">Calculate major and minor losses associated with pipe flow</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org60a146d">
+<h2 id="org60a146d">Laminar and turbulent flow</h2>
+<video autoplay="true" loop="true" width="60%">
+<source src='./images/candle.mp4'>
+</video>
+</section>
+<section>
+
+<figure id="orgc1c153a">
+<img src="images/dye_injection.png" alt="dye_injection.png" class="limage" style="--top:0px;--left:-30px;--width:100%">
+
+</figure>
+<div class="content-limage" style="--margin: 30%">
+<ul>
+<li class="fragment appear"><font color="indianred">Laminar</font>: smooth streamlines; highly ordered motion</li>
+<li class="fragment appear"><font color="indianred">Turbulent</font>: velocity fluctuations; highly disordered motion</li>
+<li class="fragment appear"><font color="indianred">Transition</font>: from laminar to turbulent</li>
+
+</ul>
+</section>
+<section>
+
+<figure id="orga99e0d6">
+<img src="images/viscous_flow_regimes.png" alt="viscous_flow_regimes.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgd843ec1">
+<h2 id="orgd843ec1">Reynolds number</h2>
+<blockquote>
+<p>
+Flow regime depends on the ratio of <i>inertial forces</i> to <i>viscous forces</i>
+</p>
+</blockquote>
+<span class="fragment">
+<p>
+\[\boxed{\text{Re} = \dfrac{V D}{\nu} = \dfrac{\rho V D}{\mu}}\]
+</p>
+</span>
+</section>
+<section id="slide-org4654827">
+<h3 id="org4654827">Characteristic length</h3>
+<video autoplay="true" loop="true">
+  <source src="./images/reynolds_length.mp4">
+</video>
+<div class="bottom-left"><a href="https://www.youtube.com/watch?v=9A-uUG0WR0w">Understanding Laminar and Turbulent Flow</a></div>
+</section>
+<section>
+<p>
+Reynolds number is <font color="powderblue">dimensionless</font>
+</p>
+<span class="fragment">
+<p>
+\[\text{Re} = \dfrac{\textcolor{mediumpurple}{\text{Inertial forces}}}{\textcolor{orangered}{\text{Viscous forces}}}\]
+</p>
+</span>
+<ul>
+<li class="fragment appear">Large \(\text{Re}\) → Inertial forces &gt;&gt; Viscous forces</li>
+<li class="fragment appear">Small \(\text{Re}\) → Viscous forces &gt;&gt; Inertial forces</li>
+<li class="fragment appear"><font color="firebrick">Critical Reynolds number</font></li>
+
+</ul>
+</section>
+<section id="slide-orge03e611">
+<h3 id="orge03e611">Hydraulic diameter</h3>
+
+<figure id="org21bd530">
+<img src="images/hydraulic_diameters.png" alt="hydraulic_diameters.png" width="40%">
+
+</figure>
+</section>
+<section id="slide-orgc99be20">
+<h3 id="orgc99be20">Critical Reynolds values</h3>
+<p>
+Transition from laminar to turbulent also depends on surface roughness, pipe vibrations, fluctuations in the upstream flow
+</p>
+<span class="fragment">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(\text{Re} \leq 2300\)</td>
+<td class="org-left">Laminar flow</td>
+</tr>
+
+<tr>
+<td class="org-left">\(2300 \leq \text{Re} \leq 4000\)</td>
+<td class="org-left">Transitional flow</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\text{Re} \geq 4000\)</td>
+<td class="org-left">Turbulent flow</td>
+</tr>
+</tbody>
+</table>
+</span>
+</section>
+<section id="slide-orgd5a42c2">
+<h3 id="orgd5a42c2">Transitional flow</h3>
+
+<figure id="orga986f3f">
+<img src="images/transitional_flow_dye.png" alt="transitional_flow_dye.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org83ac1da">
+<h2 id="org83ac1da">Entrance region</h2>
+
+<figure id="org6da64f8">
+<img src="images/pipe_entrance_region.png" alt="pipe_entrance_region.png" width="100%">
+
+</figure>
+</section>
+<section>
+<ul>
+<li class="fragment appear"><font color="lightblue">Boundary layer</font>: viscous effects dominate reducing velocity</li>
+<li class="fragment appear">Velocity at the pipe midsection increases to keep \(\dot{m}\) constant</li>
+<li class="fragment appear">Boundary layers merge and inviscid core region disappears</li>
+<li class="fragment appear"><font color="seagreen">Fully developed flow</font></li>
+<li class="fragment appear">Velocity profile becomes constant</li>
+<li class="fragment appear"><font color="pink">Hydrodynamic entry length</font> \(L_e\)</li>
+
+</ul>
+</section>
+<section id="slide-orgd84f5a1">
+<h3 id="orgd84f5a1">Developing velocity profile</h3>
+
+<figure id="org2a64ce4">
+<img src="images/pipe_velocity_profile.png" alt="pipe_velocity_profile.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-org67828bf">
+<h3 id="org67828bf">Shear stress</h3>
+
+<figure id="org2e16289">
+<img src="images/pipe_shear_stress_profile.png" alt="pipe_shear_stress_profile.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org993b4fa">
+<h2 id="org993b4fa">Entrance lengths</h2>
+<p>
+From dimensional analysis \[L_e = f(D,V,\rho,\mu) \Rightarrow \dfrac{L_e}{D} = g \left( \dfrac{\rho V D}{\mu} \right) = g (\text{Re})\]
+</p>
+<span class="fragment">
+<p>
+For laminar flow \(\dfrac{L_e}{D} \approx 0.06 \text{Re}\)
+</p>
+</span>
+<span class="fragment">
+<p>
+For turbulent flow \(\dfrac{L_e}{D} \approx 1.6 (\text{Re})^{\frac{1}{4}}\)
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org13895fb">
+<h2 id="org13895fb">Example</h2>
+<p>
+A 0.5-in-diameter water pipe is 60 ft long and delivers water at 5 gal/min at 20°C (\(\nu=10^{-5}\,\mathrm{ft^2/s}\)). What
+fraction of this pipe is taken up by the entrance region?
+</p>
+</section>
+<section id="slide-org59e6ebc">
+<h3 id="org59e6ebc">Solution</h3>
+<p>
+\[Q = (5\,\mathrm{gal/min})(0.00223\,\mathrm{ft^3/s}) = 0.0111\,\mathrm{ft^3/s}\]
+</p>
+<span class="fragment">
+<p>
+\[V = \dfrac{Q}{A} = \dfrac{0.0111}{(\pi/4)(0.5)(1/12)} = 8.17\,\mathrm{ft/s}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\text{Re} = \dfrac{V D}{\nu} = \dfrac{(8.17)(0.5)(1/12)}{10^{-5}} = 34041.7\]
+</p>
+</span>
+</section>
+<section>
+<p>
+Turbulent flow
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{L_e}{D} = 1.6 (\text{Re})^{1/4} = (1.6)(34041.7)^{1/4} = 21.73\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{L_e}{L} = \dfrac{21.73}{1440} = 0.015\]
+or 1.5%
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
