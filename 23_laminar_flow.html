@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org671d947">
+<h2 id="org671d947">Laminar flow</h2>
+<ul>
+<li class="fragment appear">Flow in pipes is laminar when \(\text{Re} \leq 2300\)</li>
+<li class="fragment appear">Entrance effects are negligible if pipe is sufficiently long (\(> 0.06\text{Re}D\))</li>
+<li class="fragment appear">Let's take a force balance on a ring-shaped differential volume</li>
+
+</ul>
+</section>
+<section>
+<p width="40%">
+<img src="images/laminar_free_body_diagram.png" alt="laminar_free_body_diagram.png" width="40%">
+\[\pi R^2 P - \pi R^2 (P + dP) - 2 \pi R dx \tau_w = 0 \Rightarrow \dfrac{dP}{dx} = - \dfrac{2 \tau_w}{R}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgf7935d5">
+<h2 id="orgf7935d5">Velocity profile</h2>
+<p width="20%">
+<img src="images/laminar_velocity_profile.png" alt="laminar_velocity_profile.png" width="20%">
+\[u(r) = 2 V_{\text{avg}} \left( 1 - \dfrac{r^2}{R^2} \right)\]
+</p>
+<span class="fragment">
+<p>
+\[u_{\text{max}} = 2 V_{\text{avg}}\]
+Average velocity in fully developed laminar pipe flow is half of maximum velocity
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org17ad7fa">
+<h2 id="org17ad7fa">Example</h2>
+<ul>
+<li>Consider the fully developed flow of glycerin at 40°C through a 70-m long, 4-cm-diameter horizontal pipe</li>
+<li>Velocity at centerline is 6 m/s</li>
+<li>What is the volumetric flow rate?</li>
+
+</ul>
+</section>
+<section id="slide-orgf97a4f5">
+<h3 id="orgf97a4f5">Solution</h3>
+<p>
+\[u(r) = u_{\text{max}} \left( 1 - \dfrac{r^2}{R^2} \right)\]
+\[\Rightarrow u(r) = (6)\left(1 - \dfrac{r^2}{(0.02)^2} \right) = 6(1-2500r^2)\]
+\[V = \dfrac{u_{\text{max}}}{2} = \dfrac{6}{2} = 3\,\mathrm{m/s}\]
+\[Q = V A = (3)(\pi)(0.04)^2 / 4 = 0.00377\,\mathrm{m^3/s}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgefab3d4">
+<h2 id="orgefab3d4">Head loss</h2>
+
+<figure id="org57fd8b8">
+<img src="images/pipe_CV_head_loss.png" alt="pipe_CV_head_loss.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-orgbe9650b" data-background="./images/pipe_CV_head_loss.png" data-background-opacity="0.2" data-background-transition="slide">
+<h3 id="orgbe9650b">Head loss</h3>
+<span class="fragment">
+<p>
+\[Q_1=Q_2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\left( \dfrac{P_1}{\rho g} + \dfrac{V_1^2}{2g} + z_1 \right) = \left( \dfrac{P_2}{\rho g} + \dfrac{V_2^2}{2g} + z_2 \right) + h_l\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\sum F_x  = \Delta P (\pi R^2) + \rho g \pi R^2 L \sin{\phi} - \tau_w (2 \pi R) L\]
+\[= \dot{m} (V_2 - V_1)  = 0\]
+</p>
+</span>
+</section>
+<section data-background="./images/pipe_CV_head_loss.png" data-background-opacity="0.2" data-background-transition="slide">
+<p>
+\[h_l = (z_1 - z_2) + \left( \dfrac{P_1}{\rho g} - \dfrac{P_2}{\rho g} \right) = \Delta z + \dfrac{\Delta P}{\rho g}\]
+</p>
+<span class="fragment">
+<p>
+\[\Delta P R + \rho g R L \sin{\phi} - 2 \tau_w  L = 0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{\Delta P}{\rho g} + \Delta z = \dfrac{2 \tau_w  L}{\rho g R}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{\Delta P}{\rho g} + \Delta z = h_l = \dfrac{4 \tau_w}{\rho g} \dfrac{L}{D}\]
+</p>
+</span>
+</section>
+<section id="slide-orgc3c0df3">
+<h3 id="orgc3c0df3">Correlation for head loss</h3>
+<span class="fragment">
+<p>
+\[\boxed{h_l = f \dfrac{L}{D} \dfrac{V^2}{2 g}}\]
+Friction (Darcy-Weisbach) factor \(f\) is a function of \(\text{Re}\), duct shape and roughness
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\boxed{f = \dfrac{8 \tau_w}{\rho V^2}}\]
+</p>
+</span>
+</section>
+<section id="slide-orgbcb5fab">
+<h3 id="orgbcb5fab">Pressure loss and head loss</h3>
+
+<figure id="org1e82159">
+<img src="images/pressure_loss_head_loss.png" alt="pressure_loss_head_loss.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org6396a5a">
+<h2 id="org6396a5a">Laminar flow in circular pipes</h2>
+<p>
+Friction factor only depends on Reynolds number for laminar flow
+\[\boxed{f = \dfrac{64 \mu}{\rho D V} = \dfrac{64}{\text{Re}}}\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{\Delta P}{\rho g} = h_l = f \dfrac{L}{D} \dfrac{V^2}{2g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\Rightarrow \dfrac{\Delta P}{\rho g} = \dfrac{64}{\text{Re}} \dfrac{L}{D} \dfrac{V^2}{2g} \Rightarrow \Delta P = \dfrac{64 \mu \rho g L D V^2}{2g D \rho D V} = \dfrac{32 \mu L V}{D^2}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgc38ed41">
+<h2 id="orgc38ed41">Example</h2>
+<ul>
+<li>Glycerin at 40°C (&rho;=1252 kg/m<sup>3</sup> and &mu;=0.3073 kg/m s)</li>
+<li>70-m long and 4-cm-diameter pipe</li>
+<li>Flow rate of 0.00377 m<sup>3</sup>/s</li>
+<li>What is the pumping power needed to maintain this flow?</li>
+
+</ul>
+</section>
+<section id="slide-org4a0e1fc">
+<h3 id="org4a0e1fc">Solution</h3>
+<p>
+\[\text{Re} = \dfrac{\rho V D}{\mu} = \dfrac{(1252)(3)(0.04)}{0.3073} = 488.9\]
+Laminar flow
+\[f=\dfrac{64}{\text{Re}} = \dfrac{64}{488.9} = 0.1309\]
+\[h_l = f \dfrac{L V^2}{D 2g} = (0.1309)\dfrac{(70)(3)}{(0.04)(2)(9.81)} = 105.1\,\mathrm{m}\]
+</p>
+</section>
+<section>
+<p>
+\[\dfrac{P_1}{\rho g} + \cancel{\dfrac{V_1^2}{2g}} + z_1 + h_p = \dfrac{P_2}{\rho g} + \cancel{\dfrac{V_2^2}{2g}} + z_2 + h_t + h_l\]
+\[\Delta P = P_1 - P_2 = \rho g (z_2 - z_1 + h_l)\]
+\[\Delta P = (1252)(9.81)(0 + 105.1) = 1290850.8\,\mathrm{Pa}\]
+\[W_p = Q \Delta P = (0.00377)(1290850.8) = 4866.51\,\mathrm{W}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org74829ff">
+<h2 id="org74829ff">Laminar flow in noncircular pipes</h2>
+
+<figure id="orge1074db">
+<img src="images/laminar_noncircular_table.png" alt="laminar_noncircular_table.png" width="50%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org8eb615d">
+<h2 id="org8eb615d">Problem</h2>
+<ul>
+<li>Laminar flow of a fluid through a square channel with smooth surfaces</li>
+<li>Average velocity of the fluid is doubled</li>
+<li>What is the change in the head loss of the fluid?</li>
+<li>Assume flow regime remains unchanged.</li>
+
+</ul>
+</section>
+<section id="slide-org3df89dc">
+<h3 id="org3df89dc">Solution</h3>
+<p>
+Assume that entrance effects are negligible and flow is fully developed.
+\[h_l = f \dfrac{L}{D} \dfrac{V^2}{2g}\]
+\[f = \dfrac{56.92}{\text{Re}}\]
+\[\text{Re} = \dfrac{\rho V D}{\mu}\]
+</p>
+</section>
+<section>
+<p>
+\[h_l = \dfrac{56.92 \mu}{\rho V D} \dfrac{L}{D} \dfrac{V^2}{2g} = \dfrac{28.46 \mu L V}{\rho g D^2}\]
+Therefore head loss will also double when velocity doubles.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>

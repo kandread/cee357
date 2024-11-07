@@ -43,3 +43,5 @@
 [Lecture #21 - Integral Relations Review](https://kandread.github.io/cee357/21_integral_relations.html)
 
 [Lecture #22 - Internal Flows](https://kandread.github.io/cee357/22_internal_flows.html)
+
+[Lecture #23 - Internal Flows](https://kandread.github.io/cee357/23_laminar_flow.html)
