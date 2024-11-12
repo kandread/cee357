@@ -44,4 +44,6 @@
 
 [Lecture #22 - Internal Flows](https://kandread.github.io/cee357/22_internal_flows.html)
 
-[Lecture #23 - Internal Flows](https://kandread.github.io/cee357/23_laminar_flow.html)
+[Lecture #23 - Laminar Flow](https://kandread.github.io/cee357/23_laminar_flow.html)
+
+[Lecture #24 - Turbulent Flow](https://kandread.github.io/cee357/24_turbulent_flow.html)
