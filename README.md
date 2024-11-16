@@ -47,3 +47,5 @@
 [Lecture #23 - Laminar Flow](https://kandread.github.io/cee357/23_laminar_flow.html)
 
 [Lecture #24 - Turbulent Flow](https://kandread.github.io/cee357/24_turbulent_flow.html)
+
+[Lecture #25 - Turbulent Flow](https://kandread.github.io/cee357/25_turbulent_flow.html)

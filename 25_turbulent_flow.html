@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org0ccf8c5">
+<h2 id="org0ccf8c5">Regions of turbulent flow near the wall</h2>
+
+<figure id="orgd0d5ec2">
+<img src="images/velocity_shear_near_wall.png" alt="velocity_shear_near_wall.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org409f623">
+<h2 id="org409f623">Viscous layer</h2>
+<ul>
+<li class="fragment appear">Thickness very small (&lt;1% of diameter)</li>
+<li class="fragment appear">Large velocity gradient</li>
+<li class="fragment appear">Essentially laminar flow</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[\tau_w = \mu \dfrac{u}{y} = \rho \nu \dfrac{u}{y} \Rightarrow \dfrac{\tau_w}{\rho} = \dfrac{\nu u}{y}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+<b>Friction velocity</b>
+\[u_{\ast} = \sqrt{\dfrac{\tau_w}{\rho}}\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{u}{u^{\ast}} = \dfrac{y u^{\ast}}{\nu} \Leftrightarrow y^{+} = u^{+} \]
+<font color="olivedrab">Law of the wall</font>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org8b2d805">
+<h2 id="org8b2d805">Overlap layer</h2>
+<p>
+\[\boxed{\dfrac{u}{u^{\ast}} = \dfrac{1}{\kappa} \ln{\dfrac{y u^{\ast}}{\nu}} + B}\]
+</p>
+<span class="fragment">
+<p>
+<font color="orchid">Logarithmic law</font>
+</p>
+</span>
+<span class="fragment">
+<p>
+\(B \approx 5.0\) and \(\kappa \approx 0.41\)
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orga386309">
+<img src="images/turbulent_wall_laws.png" alt="turbulent_wall_laws.png" width="80%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgcae20b5">
+<h2 id="orgcae20b5">Outer turbulent layer</h2>
+<p>
+\[\dfrac{u}{u^{\ast}} = 2.44 \ln{\dfrac{y u^{\ast}}{\nu}} + 5.0\]
+</p>
+<span class="fragment">
+<p>
+\(u_{\text{max}}\) at pipe centerline
+\[\dfrac{u_{\text{max}}}{u^{\ast}} = 2.44 \ln{\dfrac{R u^{\ast}}{\nu}} + B\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{u_{\text{max}} - u}{u^{\ast}} = 2.44 \ln{ \dfrac{R}{R- r}}\]
+Deviation of velocity from centerline <font color="palevioletred">velocity defect</font>
+</p>
+<span class="fragment">
+<blockquote>
+<p>
+Velocity profile in core region of flow is <i>independent</i> of viscosity!
+</p>
+</blockquote>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgbee1f74">
+<h2 id="orgbee1f74">Quiz</h2>
+<div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/app/presentation/alpqpojxdcc2h3nr2pbbcq3bhsggcvbz/embed' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
+</section>
+</section>
+<section>
+<section id="slide-org3d3d4b6">
+<h2 id="org3d3d4b6">Average velocity</h2>
+<p>
+\[\dfrac{u(r)}{u^{\ast}} \approx 2.44 \ln{\dfrac{(R - r)u^{\ast}}{\nu}} + 5.0\]
+</p>
+<span class="fragment">
+<p>
+\[V = \dfrac{1}{\pi R^2} \int_0^R u^{\ast} \left[ 2.44 \ln{\dfrac{(R-r)u^{\ast}}{\nu}} + 5.0 \right] 2 \pi r dr\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{V}{u^{\ast}} \approx 2.44 \ln{\dfrac{R u^{\ast}}{\nu}} + 1.34\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{V}{u^{\ast}} = \left( \dfrac{\rho V^2}{\tau_w} \right)^{1/2} = \left( \dfrac{8}{f} \right)^{1/2}\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{R u^{\ast}}{\nu} = \dfrac{(1/2)V D}{\nu} \dfrac{u^{\ast}}{V} = \dfrac{1}{2} \text{Re} \left( \dfrac{f}{8} \right)^{1/2}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgb939d18">
+<h2 id="orgb939d18">Effect of wall roughness</h2>
+
+<figure id="org7c6bad2">
+<img src="images/rough_smooth_wall.png" alt="rough_smooth_wall.png" width="50%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org0b8cda0">
+<img src="images/turbulent_f_roughness.png" alt="turbulent_f_roughness.png" width="90%">
+
+</figure>
+</section>
+<section id="slide-orgeb1beb3">
+<h3 id="orgeb1beb3">Roughness values</h3>
+
+<figure id="orgb00cb56">
+<img src="images/roughness_table.png" alt="roughness_table.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgecc27c0">
+<h2 id="orgecc27c0">Colebrook equation</h2>
+<p>
+\[\boxed{\dfrac{1}{\sqrt{f}} = -2.0 \log{ \left( \dfrac{\epsilon / D}{3.7} + \dfrac{2.51}{\text{Re} \sqrt{f}} \right)}}\]
+</p>
+<span class="fragment">
+<p>
+<font color="lightseagreen">Moody chart</font>
+</p>
+</span>
+</section>
+<section id="slide-org60cd6c8" data-background="./images/moody_chart.png" data-background-size="1100px" data-background-transition="slide">
+<h3 id="org60cd6c8"></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgc8e0869">
+<h2 id="orgc8e0869">Types of fluid flow problems</h2>
+<ol>
+<li class="fragment appear"><font color="lightblue">Given D, L, and V or Q</font> compute <font color="indianred">head loss or pressure drop</font></li>
+<li class="fragment appear"><font color="lightblue">Given D, L, and head loss</font> compute <font color="indianred">velocity or flow rate</font></li>
+<li class="fragment appear"><font color="lightblue">Given Q, L, and head loss</font> compute <font color="indianred">pipe diameter</font></li>
+<li class="fragment appear"><font color="lightblue">Given Q, D, and head loss</font> compute <font color="indianred">pipe length</font></li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orga6b0ef1">
+<h2 id="orga6b0ef1">Problem</h2>
+<ul>
+<li>Oil (&rho;=950 kg/m<sup>3</sup> and &nu;=2 &times; 10<sup>-5</sup> m<sup>2</sup>/s)</li>
+<li>Flows through 30-cm pipe diameter, 100-m long</li>
+<li>Head loss of 8-m</li>
+<li>Roughness ratio &epsilon;/D=0.0002</li>
+<li>Find average velocity and flow rate</li>
+
+</ul>
+</section>
+<section id="slide-org053648c">
+<h3 id="org053648c">Solution</h3>
+<p>
+\[f = h_l \dfrac{D}{L} \dfrac{2g}{V^2} = (8)\dfrac{0.3}{100} \dfrac{2(9.81)}{V^2}\]
+\[f V^2 \approx 0.471\]
+\[f=0.014 \Rightarrow V=\sqrt{0.471/0.014}=5.8\,\mathrm{m/s} \Rightarrow \text{Re} \approx 87000\]
+\[\dfrac{1}{\sqrt{f}} = -2.0 \log{ \left( \dfrac{\epsilon / D}{3.7} + \dfrac{2.51}{\text{Re} \sqrt{f}} \right)}\]
+</p>
+</section>
+<section>
+<p>
+\[f=0.020 \Rightarrow V=\sqrt{0.471/0.020}=4.85\,\mathrm{m/s} \Rightarrow \text{Re} \approx 72800\]
+\[\boxed{f=0.0201}\]
+\[V = 4.85\,\mathrm{m/s}\]
+\[Q = V \dfrac{\pi D^2}{4} = 0.343\,\mathrm{m^3/s}\]
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
