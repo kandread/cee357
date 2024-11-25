@@ -52,4 +52,6 @@
 
 [Lecture #26 - Minor Losses](https://kandread.github.io/cee357/26_minor_losses.html)
 
-[Lecture #2 - Multiple Pipes](https://kandread.github.io/cee357/27_multiple_pipes.html)
+[Lecture #27 - Multiple Pipes](https://kandread.github.io/cee357/27_multiple_pipes.html)
+
+[Lecture #28 - Open channel flow](https://kandread.github.io/cee357/28_open_channel_flow.html)

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-orgf4693eb">
+<h2 id="orgf4693eb">Open channel flows</h2>
+<ul>
+<li class="fragment appear">Presence of <i>free surface</i></li>
+<li class="fragment appear">Pressure constant along surface</li>
+<li class="fragment appear">Natural and human-made channels</li>
+
+</ul>
+<span class="fragment"><div class="twocolumn"><div>
+
+<figure id="org772b5f5">
+<img src="images/natural_channel.png" alt="natural_channel.png">
+
+</figure>
+</div><div>
+
+<figure id="orgc9ccde8">
+<img src="images/human_made_channel.png" alt="human_made_channel.png">
+
+</figure>
+</div></span>
+</section>
+</section>
+<section>
+<section id="slide-org5b904ed">
+<h2 id="org5b904ed">Flow velocity</h2>
+
+<figure id="orgdcfef00">
+<img src="images/velocity_contours.png" alt="velocity_contours.png" width="50%">
+
+</figure>
+<ul>
+<li class="fragment appear">No-slip condition at side and bottom</li>
+<li class="fragment appear">Maximum velocity below surface</li>
+<li class="fragment appear">Also varies with flow direction</li>
+<li class="fragment appear">Three-dimensional velocity field</li>
+
+</ul>
+</section>
+<section>
+<p>
+Engineering practice \(\rightarrow\) <font color="coral">1-D average velocity</font>
+</p>
+<span class="fragment">
+<p>
+\[Q = V(x) A(x)\]
+</p>
+</span>
+<ul>
+<li class="fragment appear">Average velocity or flow depth as representative quantity</li>
+<li class="fragment appear">Steady flow if no change with time at given location</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org36079e4">
+<h2 id="org36079e4">Uniform and Varied flows</h2>
+<ul>
+<li class="fragment appear">Depending on how flow depth changes along the channel</li>
+<li class="fragment appear"><font color="skyblue">Uniform</font> if depth remains constant, <font color="orangered">Varied</font> otherwise</li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org55cb675">
+<img src="images/uniform_flow_channel.png" alt="uniform_flow_channel.png" width="60%">
+
+</figure>
+</span>
+</section>
+<section>
+<p>
+Flow depth in uniform flow is <font color="lightblue">normal depth</font> \(y_n\)
+</p>
+<ul>
+<li class="fragment appear">Flow remains uniform until slope, cross section or roughness change</li>
+<li class="fragment appear">Presence of obstruction or change in slope and cross section \(\rightarrow\) flow becomes varied</li>
+<li class="fragment appear">Rapidly Varied Flow (RVF)</li>
+<li class="fragment appear">Gradually Varied Flow</li>
+
+</ul>
+</section>
+<section id="slide-orgf20073e" data-background="./images/open_channel_flow_classification.png" data-background-size="1600px" data-background-transition="slide">
+<h3 id="orgf20073e"></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgc97fc81">
+<h2 id="orgc97fc81">Hydraulic radius</h2>
+
+<figure id="orge238f85">
+<img src="images/open_channel_geometry.png" alt="open_channel_geometry.png" width="100%">
+
+</figure>
+<span class="fragment">
+<p>
+\[R_h = \dfrac{A_c}{p}\]
+\[D_h = \dfrac{4 A_c}{p}\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="org603012d">
+<img src="images/hydraulic_radii.png" alt="hydraulic_radii.png" width="70%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org54323f4">
+<h2 id="org54323f4">Reynolds number</h2>
+<span class="fragment">
+<p>
+\[\text{Re} = \dfrac{\rho V R_h}{\mu} = \dfrac{V R_h}{\nu}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Laminar flow for \(\text{Re} \lesssim 500\)
+</p>
+</span>
+</section>
+<section id="slide-orgfe2ed64" data-background="./images/rain_laminar_flow.jpg" data-background-transition="slide">
+<h3 id="orgfe2ed64"></h3>
+</section>
+</section>
+<section>
+<section id="slide-org27b078f">
+<h2 id="org27b078f">Froude number</h2>
+<blockquote>
+<p>
+Open channel flow can also be classified as <b>subcritical</b>, <b>critical</b>, and <b>supercritical</b>
+</p>
+</blockquote>
+<span class="fragment">
+<p>
+Froude number
+\[\text{Fr} = \dfrac{V}{\sqrt{g L_c}} = \dfrac{V}{\sqrt{g y}}\]
+</p>
+</span>
+<ul>
+<li class="fragment appear">\(\text{Fr} < 1\) subcritical flow</li>
+<li class="fragment appear">\(\text{Fr} = 1\) critical flow</li>
+<li class="fragment appear">\(\text{Fr} > 1\) supercritical flow</li>
+
+</ul>
+</section>
+<section id="slide-org2bbc372" data-background="./images/concorde.jpg" data-background-opacity="0.5" data-background-transition="slide">
+<h3 id="org2bbc372"></h3>
+<ul>
+<li class="fragment appear">Similarity to Mach number</li>
+<li class="fragment appear">\(\text{Ma} < 1\) subsonic, \(\text{Ma} > 1\) supersonic</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[\text{Ma} = \dfrac{V}{c}\]
+\[\text{Fr} = \dfrac{V}{c_0}\]
+</p>
+</span>
+</section>
+<section id="slide-org94301c7">
+<h3 id="org94301c7">Subcritical flow</h3>
+<video
+  controls muted
+  data-autoplay
+  loop
+  src='./images/subcritical_disturbance.mp4'>
+  </video>
+<p>
+ <font size="5"><a href="https://youtu.be/ObOmR5iXO04?si=b3ZyCZii_DRB4_dQ">Different types of flow (Aachen University)</a> </font>
+</p>
+</section>
+<section id="slide-org6188173">
+<h3 id="org6188173">Supercritical flow</h3>
+<video
+  controls muted
+  data-autoplay
+  loop
+  src='./images/supercritical_disturbance.mp4'>
+  </video>
+<p>
+ <font size="5"><a href="https://youtu.be/ObOmR5iXO04?si=b3ZyCZii_DRB4_dQ">Different types of flow (Aachen University)</a> </font>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgc782eeb">
+<h2 id="orgc782eeb">Speed of surface waves</h2>
+<blockquote>
+<p>
+The speed \(c_0\) of a surface disturbance as it travels through a liquid
+</p>
+</blockquote>
+<span class="fragment">
+<p>
+\[c_0 = \sqrt{g y}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Only true for shallow liquid bodies!
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org96e9277">
+<h2 id="org96e9277">Critical depth</h2>
+<div class="twocolumn"><div>
+
+<figure id="org2333022">
+<img src="images/critical_depth.png" alt="critical_depth.png">
+
+</figure>
+</div><div>
+<p>
+\[y_c = \dfrac{Q^2}{g A_c^2}\]
+</p>
+<span class="fragment">
+<p>
+For rectangular channel \[y_c = \left( \dfrac{Q^2}{b^2 g} \right)^{1/3}\]
+</p>
+</span>
+</div>
+</section>
+<section>
+
+<figure id="org11d7603">
+<img src="images/flow_under_sluice_gate.png" alt="flow_under_sluice_gate.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgc793e6b">
+<h2 id="orgc793e6b">Hydraulic jump</h2>
+<ul>
+<li>Liquid can accelerate from subcritical to supercritical flow</li>
+<li>Can also decelerate from supercritical to subcritical flow undergoing a shock</li>
+<li>Hydraulic jump</li>
+
+</ul>
+</section>
+<section>
+<video
+  controls muted
+  data-autoplay
+  loop
+  src='./images/hydraulic_jump.mp4'>
+  </video>
+<p>
+ <font size="5"><a href="https://youtu.be/ObOmR5iXO04?si=b3ZyCZii_DRB4_dQ">Different types of flow (Aachen University)</a> </font>
+</p>
+</section>
+<section id="slide-org07669fd">
+<h3 id="org07669fd">Classification of hydraulic jumps</h3>
+
+<figure id="org93dd7fa">
+<img src="images/hydraulic_jump_classification.png" alt="hydraulic_jump_classification.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-orge551a09">
+<h3 id="orge551a09">Hydraulic jump applications</h3>
+<div class="twocolumn"><div>
+<ul>
+<li>Energy dissipation in spillways (up to 60-70%)</li>
+<li>Erosion control</li>
+<li>Mixing and aeration</li>
+<li>Flood control structures</li>
+<li>Recreationd</li>
+
+</ul>
+</div><div>
+
+<figure id="org51d12d2">
+<img src="images/usbr_stilling_basins.png" alt="usbr_stilling_basins.png">
+
+</figure>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
