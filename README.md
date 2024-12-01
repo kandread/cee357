@@ -55,3 +55,5 @@
 [Lecture #27 - Multiple Pipes](https://kandread.github.io/cee357/27_multiple_pipes.html)
 
 [Lecture #28 - Open channel flow](https://kandread.github.io/cee357/28_open_channel_flow.html)
+
+[Lecture #29 - Uniform flow](https://kandread.github.io/cee357/29_uniform_flow.html)
