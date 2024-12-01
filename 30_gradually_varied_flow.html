@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elementary Fluid Mechanics</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-8EWJW4/$FILE/Jackson-pollock-alchemy.Jpg" data-background-opacity="0.5">
+<h1 class="title">Elementary Fluid Mechanics</h1><h2 class="date">CE-ENGIN 357 - Fall 2024</h2>
+</section>
+<section>
+<section id="slide-org6977f65">
+<h2 id="org6977f65">Specific energy</h2>
+<div class="twocolumn"><div>
+
+<figure id="org6300053">
+<img src="images/specific_energy_channel.png" alt="specific_energy_channel.png">
+
+</figure>
+</div><div>
+<span class="fragment">
+<p>
+\[E = y + \dfrac{V^2}{2g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+For rectangular channels
+\[E = y + \dfrac{Q^2}{2gb^2y^2}\]
+</p>
+</span>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6d2625f">
+<h2 id="org6d2625f">Specific energy and depth</h2>
+
+<figure id="org0ff1bb5">
+<img src="images/specific_energy_plot.png" alt="specific_energy_plot.png" width="100%">
+
+</figure>
+</section>
+<section>
+<ul>
+<li>Distance from point on the y-axis to curve is \(E\) at that \(y\)</li>
+
+</ul>
+<ul>
+<li class="fragment appear">Part between 1:1 line and curve is the kinetic energy head</li>
+<li class="fragment appear">\(y \rightarrow 0 \Rightarrow E \rightarrow \infty\)</li>
+<li class="fragment appear">Minimum value of \(E\) is the <font color="indianred">critical point</font></li>
+<li class="fragment appear">Flow can have two depths for a given value of \(E\) (<font color="rosybrown">alternate depths</font>)</li>
+
+</ul>
+</section>
+<section>
+<p>
+\[E = y + \dfrac{Q^2}{2gb^2y^2}\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{dE}{dy} = \dfrac{d}{dy} \left( y + \dfrac{Q^2}{2gb^2y^2} \right) = 1 - \dfrac{Q^2}{gb^2y^3} = 0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[y_c = \left( \dfrac{Q^2}{gb^2} \right)^{1/3}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[y_c^3 g b^2 = Q^2 = V_c^2 b^2 y_c^2 \Rightarrow V_c = \sqrt{gy_c}\]
+</p>
+</span>
+</section>
+<section id="slide-org8eabf61">
+<h3 id="org8eabf61">Froude number</h3>
+<p>
+\[\text{Fr} = \dfrac{V}{\sqrt{gy}} = \dfrac{V_c}{\sqrt{gy_c}} = 1\]
+</p>
+<ul>
+<li class="fragment appear">At lower flow velocities and higher flow depths, flow is subcritical</li>
+<li class="fragment appear">At higher flow velocities and lower flow depths, flow is supercritical</li>
+<li class="fragment appear">Critical flow at minimum specific energy</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgffe5ea6">
+<h2 id="orgffe5ea6">Gradually varied flow</h2>
+<blockquote>
+<p>
+Form of steady nonuniform flow characterized by gradual variations in flow depth and velocity
+</p>
+</blockquote>
+</section>
+<section>
+
+<figure id="orgd597743">
+<img src="images/gvf_channel.png" alt="gvf_channel.png" width="40%">
+
+</figure>
+<span class="fragment">
+<p>
+\[H = z  + y + \dfrac{V^2}{2g}\]
+\[\dfrac{dH}{dx} = \dfrac{dz}{dx} + \dfrac{dy}{dx} + \dfrac{V}{g} \dfrac{dV}{dx}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{dH}{dx} = - \dfrac{dh_l}{dx} = -S_f\]
+\[\dfrac{dz}{dx} = -S_0\]
+</p>
+<span class="fragment">
+<p>
+\[S_0 - S_f =  \dfrac{dy}{dx} + \dfrac{V}{g}\dfrac{dV}{dx}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[Q = ybV\]
+</p>
+<span class="fragment">
+<p>
+\[\dfrac{dQ}{dx} = 0 = bV \dfrac{dy}{dx} + yb\dfrac{dV}{dx} \Rightarrow \dfrac{dV}{dx} = - \dfrac{V}{y}  \dfrac{dy}{dx}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[S_0 - S_f =  \dfrac{dy}{dx} - \dfrac{V}{g}\dfrac{V}{y}\dfrac{dy}{dx}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[S_0 - S_f = \dfrac{dy}{dx} - \dfrac{V^2}{gy}\dfrac{dy}{dx} = \dfrac{dy}{dx} - \text{Fr}^2 \dfrac{dy}{dx}\]
+</p>
+</span>
+</section>
+<section id="slide-org35c6cdb">
+<h3 id="org35c6cdb">Gradually Varied Flow equation</h3>
+<p>
+\[\boxed{\dfrac{dy}{dx} = \dfrac{S_0 - S_f}{1 - \text{Fr}^2}}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org121f531">
+<h2 id="org121f531">Classification of surface profiles</h2>
+
+<figure id="org81f24a7">
+<img src="images/profile_classification_1.png" alt="profile_classification_1.png" width="100%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org8d1edf8">
+<img src="images/profile_classification_2.png" alt="profile_classification_2.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgf9f2538">
+<h2 id="orgf9f2538">Common surface profiles</h2>
+
+<figure id="org9714748">
+<img src="images/common_profile_1.png" alt="common_profile_1.png" width="100%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org4897b9f">
+<img src="images/common_profile_2.png" alt="common_profile_2.png" width="100%">
+
+</figure>
+</section>
+<section>
+
+<figure id="org3aa2eae">
+<img src="images/common_profile_3.png" alt="common_profile_3.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgddf98e2">
+<h2 id="orgddf98e2">Problem</h2>
+<ul>
+<li>10-m wide rectangular horizontal channel</li>
+<li>Water discharges from a sluice gate and undergoes hydraulic jump</li>
+<li>Flow depth and velocity before the jump are 0.8 m and 7 m/s</li>
+
+</ul>
+</section>
+<section>
+<div class="twocolumn"><div>
+
+<figure id="orgc9a0487">
+<img src="images/hydraulic_jump_channel.png" alt="hydraulic_jump_channel.png">
+
+</figure>
+</div><div>
+
+<figure id="orge051681">
+<img src="images/hydraulic_jump_specific_energy.png" alt="hydraulic_jump_specific_energy.png">
+
+</figure>
+</div>
+</section>
+<section>
+<p>
+\[y_1V_1 = y_2 V_2\]
+</p>
+<span class="fragment">
+<p>
+\[P_1A_1 - P_2A_2 = \dot{m}_2V_2 - \dot{m}_1V_1\]
+\[\dfrac{\rho g y_1}{2} b y_1 - \dfrac{\rho g y_2}{2}  b y_2 = \rho y_1 b V_1 (V_2 - V_1)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[y_1^2 - y_2^2 = \dfrac{2y_1V_1}{g}(V_2 - V_1) = \dfrac{2y_1V_1^2}{gy_2} (y_1 - y_2)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\left( \dfrac{y_2}{y_1} \right)^2 + \dfrac{y_2}{y_1} - 2 \text{Fr}_1^2 = 0\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\dfrac{y_2}{y_1} = 0.5 \left( -1 + \sqrt{1 + 8 \text{Fr}_1^2} \right)\]
+</p>
+</section>
+<section id="slide-orga030009">
+<h3 id="orga030009">What is the  flow depth and the Froude number after the jump?</h3>
+<span class="fragment">
+<p>
+\[\text{Fr}=\dfrac{V_1}{\sqrt{gy_1}} = \dfrac{7}{\sqrt{(9.81)(0.8)}} = 2.5\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{y_2}{y_1} = 0.5 \left( -1 + \sqrt{1 + 8 \text{Fr}_1^2} \right)\]
+</p>
+
+<p>
+\[\Rightarrow y_2 = 0.5(0.8)[-1 + \sqrt{1 + (8)(2.5)^2}] = 2.46\,\mathrm{m}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\text{Fr}_2 = \dfrac{V_2}{\sqrt{gy_2}} = \dfrac{(y_1/y_2)V_1}{\sqrt{gy_2}}\]
+</p>
+<span class="fragment">
+<p>
+\[= \dfrac{(0.8/2.46)(7)}{\sqrt{(9.81)(2.46)}} = 0.464\]
+</p>
+</span>
+</section>
+<section id="slide-org2474e2d">
+<h3 id="org2474e2d">What is the head loss and the energy dissipation ratio?</h3>
+<span class="fragment">
+<p>
+\[y_1 + \dfrac{V_1^2}{2g} = y_2 + \dfrac{V_2^2}{2g} + h_l\]
+\[\Rightarrow h_l = y_1 - y_2 + \dfrac{V_1^2 - V_2^2}{2g}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[h_l = y_1 - y_2 + \frac{y_1 \text{Fr}_1^2}{2}\left( 1 - \dfrac{y_1^2}{y_2^2} \right)\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[h_l = (0.8) - (2.46) + \dfrac{(7)^2 - (7)^2(0.8/2.46)^2}{(2)(9.81)} = 0.572\,\mathrm{m}\]
+</p>
+</section>
+<section>
+<p>
+Energy dissipation ratio
+\[\dfrac{h_l}{y_1 + V_1^2/2g} = \dfrac{h_l}{y_1(1 + \text{Fr}_1^2/2)}\]
+</p>
+<span class="fragment">
+<p>
+\[\text{Dissipation Ratio} = \dfrac{0.572}{(0.8) + (7)^2/[(2)(9.81)]} = 0.173\]
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/whiteboard.png' ], rememberColor: [true, true], boardmarkerWidth: 6, },});
+</script>
+</body>
+</html>
